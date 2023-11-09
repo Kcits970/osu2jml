@@ -1,6 +1,5 @@
 package jml;
 
-import jml.siteswap.Hand;
 import math.Point3D;
 
 import java.util.List;
@@ -9,11 +8,11 @@ import java.util.ArrayList;
 public class Event implements Cloneable {
     public double x, y, z, t;
     public int juggler;
-    public Hand hand;
+    public String hand;
 
     List<Manipulation> manipulations;
 
-    public Event(double x, double y, double z, double t, int juggler, Hand hand) {
+    public Event(double x, double y, double z, double t, int juggler, String hand) {
         this.x = x;
         this.y = y;
         this.z = z;

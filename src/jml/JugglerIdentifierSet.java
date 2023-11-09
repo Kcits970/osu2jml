@@ -1,12 +1,10 @@
 package jml;
 
-import jml.siteswap.Hand;
-
 public class JugglerIdentifierSet {
     public int juggler;
-    public Hand hand;
+    public String hand;
 
-    public JugglerIdentifierSet(int juggler, Hand hand) {
+    public JugglerIdentifierSet(int juggler, String hand) {
         this.juggler = juggler;
         this.hand = hand;
     }

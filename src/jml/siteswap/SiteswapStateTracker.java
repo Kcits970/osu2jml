@@ -58,7 +58,7 @@ public class SiteswapStateTracker {
         return sequence.juggler;
     }
 
-    public Hand getLastAssignedHand() {
+    public String getLastAssignedHand() {
         return sequence.handAt(currentSiteswapPosition);
     }
 }

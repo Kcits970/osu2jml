@@ -1,6 +1,5 @@
 package jml;
 
-import jml.siteswap.Hand;
 import list.Lists;
 
 import java.util.ArrayList;
@@ -83,7 +82,7 @@ public class Stablizer {
         }
     }
 
-    public static Event getDefaultEmptyEvent(Hand hand) {
-        return new Event((hand == Hand.LEFT_HAND) ? -25 : 25, 0, 0, 0, 1, hand);
+    public static Event getDefaultEmptyEvent(String hand) {
+        return new Event("left".equals(hand) ? -25 : 25, 0, 0, 0, 1, hand);
     }
 }

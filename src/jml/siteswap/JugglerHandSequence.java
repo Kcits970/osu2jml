@@ -9,8 +9,8 @@ public class JugglerHandSequence {
         this.jugglerHandSequenceString = jugglerHandSequenceString.toLowerCase();
     }
 
-    public Hand handAt(int nthBeat) {
+    public String handAt(int nthBeat) {
         char handSequenceCharacter = jugglerHandSequenceString.charAt((nthBeat - 1) % jugglerHandSequenceString.length());
-        return handSequenceCharacter == 'l' ? Hand.LEFT_HAND : Hand.RIGHT_HAND;
+        return handSequenceCharacter == 'l' ? "left" : "right";
     }
 }

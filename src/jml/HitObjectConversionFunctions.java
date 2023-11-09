@@ -54,8 +54,8 @@ public class HitObjectConversionFunctions {
 
     public static List<Stablizer> getStablizers(List<EventGroup> conversions, EmptyThresholdSet emptyThresholdSet, double cycleDuration) {
         List<Stablizer> stablizers = new ArrayList<>();
-        List<EventGroup> leftHandEventGroups = conversions.stream().filter(eventGroup -> eventGroup.getHand() == Hand.LEFT_HAND).collect(Collectors.toList());
-        List<EventGroup> rightHandEventGroups = conversions.stream().filter(eventGroup -> eventGroup.getHand() == Hand.RIGHT_HAND).collect(Collectors.toList());
+        List<EventGroup> leftHandEventGroups = conversions.stream().filter(eventGroup -> eventGroup.getHand().equals("left")).collect(Collectors.toList());
+        List<EventGroup> rightHandEventGroups = conversions.stream().filter(eventGroup -> eventGroup.getHand().equals("right")).collect(Collectors.toList());
 
         for (int i = 0; i < leftHandEventGroups.size(); i++)
             stablizers.add(new Stablizer(leftHandEventGroups.get(i), leftHandEventGroups.get((i+1) % leftHandEventGroups.size()), emptyThresholdSet, cycleDuration));

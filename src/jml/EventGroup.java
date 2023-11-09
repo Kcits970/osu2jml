@@ -1,7 +1,5 @@
 package jml;
 
-import jml.siteswap.Hand;
-
 import java.util.List;
 
 public class EventGroup {
@@ -32,7 +30,7 @@ public class EventGroup {
         }
     }
 
-    public Hand getHand() {
+    public String getHand() {
         return events.get(0).hand;
     }
 
