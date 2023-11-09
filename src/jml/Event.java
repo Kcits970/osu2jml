@@ -23,8 +23,8 @@ public class Event implements Cloneable {
         manipulations = new ArrayList<>();
     }
 
-    public Event(Point3D point, double t, JugglerIdentifierSet jugglerIdentifierSet) {
-        this(point.x, point.y, point.z, t, jugglerIdentifierSet.juggler, jugglerIdentifierSet.hand);
+    public Event(Point3D point, double t, int juggler, String hand) {
+        this(point.x, point.y, point.z, t, juggler, hand);
     }
 
     @Override

@@ -22,6 +22,7 @@ public class HitObjectConversionFunctions {
     static final double MAX_RPM = 477;
     static final PolarCoordinate SPIN_ORIGIN = new PolarCoordinate(50, -PI/2);
     static final double SPIN_DIRECTION = -1; //-1: clockwise spin, 1: counterclockwise spin
+    static final int JUGGLER_ID = 1;
 
     public static List<EventGroup> convertHitObjects(List<HitObject> objects, VanillaSiteswap siteswap, JugglerHandSequence sequence) {
         List<EventGroup> conversions = new ArrayList<>();
@@ -32,7 +33,7 @@ public class HitObjectConversionFunctions {
             conversions.add(
                     convertHitObject(
                             object,
-                            new JugglerIdentifierSet(stateTracker.getAssignedJuggler(), stateTracker.getLastAssignedHand()),
+                            stateTracker.getLastAssignedHand(),
                             stateTracker.getThrownBall()
                     )
             );
@@ -66,24 +67,25 @@ public class HitObjectConversionFunctions {
         return stablizers;
     }
 
-    public static EventGroup convertHitObject(HitObject object, JugglerIdentifierSet jugglerIdentifierSet, Ball ball) {
+    public static EventGroup convertHitObject(HitObject object, String hand, Ball ball) {
         if (object instanceof HitCircle)
-            return convertHitCircle((HitCircle) object, jugglerIdentifierSet, ball);
+            return convertHitCircle((HitCircle) object, hand, ball);
 
         if (object instanceof Slider)
-            return convertSlider((Slider) object, jugglerIdentifierSet, ball);
+            return convertSlider((Slider) object, hand, ball);
 
         if (object instanceof Spinner)
-            return convertSpinner((Spinner) object, jugglerIdentifierSet, ball);
+            return convertSpinner((Spinner) object, hand, ball);
 
         return null;
     }
 
-    public static EventGroup convertHitCircle(HitCircle circle, JugglerIdentifierSet jugglerIdentifierSet, Ball ball) {
+    public static EventGroup convertHitCircle(HitCircle circle, String hand, Ball ball) {
         Event catchEvent = new Event(
                 osuCoordinateToJMLCoordinate(circle.x, circle.y),
                 osuTimeToJMLTime(circle.time),
-                jugglerIdentifierSet
+                JUGGLER_ID,
+                hand
         );
 
         Event throwEvent = catchEvent.clone();
@@ -97,7 +99,7 @@ public class HitObjectConversionFunctions {
         return new EventGroup(Arrays.asList(catchEvent, throwEvent));
     }
 
-    public static EventGroup convertSlider(Slider slider, JugglerIdentifierSet jugglerIdentifierSet, Ball ball) {
+    public static EventGroup convertSlider(Slider slider, String hand, Ball ball) {
         List<Event> sliderEvents = new ArrayList<>();
 
         double singleSliderDuration = slider.endTime - slider.time;
@@ -117,7 +119,8 @@ public class HitObjectConversionFunctions {
             Event sliderEvent = new Event(
                     osuCoordinateToJMLCoordinate(getSliderCoordinateAt(slider, relativePosition, reverse)),
                     osuTimeToJMLTime(slider.time + elapsedMillis),
-                    jugglerIdentifierSet
+                    JUGGLER_ID,
+                    hand
             );
 
             if (ball != null)
@@ -137,7 +140,7 @@ public class HitObjectConversionFunctions {
         return slider.path.getPointAtLength(lengthUntilCoordinate);
     }
 
-    public static EventGroup convertSpinner(Spinner spinner, JugglerIdentifierSet jugglerIdentifierSet, Ball ball) {
+    public static EventGroup convertSpinner(Spinner spinner, String hand, Ball ball) {
         List<Event> spinnerEvents = new ArrayList<>();
         double spinnerDuration = spinner.endTime - spinner.time;
 
@@ -151,7 +154,8 @@ public class HitObjectConversionFunctions {
             Event spinnerEvent = new Event(
                     osuCoordinateToJMLCoordinate(getSpinCoordinateAt(elapsedMillis)),
                     osuTimeToJMLTime(spinner.time + elapsedMillis),
-                    jugglerIdentifierSet
+                    JUGGLER_ID,
+                    hand
             );
 
             if (ball != null)
