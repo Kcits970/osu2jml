@@ -41,10 +41,10 @@ public class Event implements Cloneable {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append(String.format("<event x=\"%.4f\" y=\"%.4f\" z=\"%.4f\" t=\"%.4f\" hand=\"%s:%s\">", x, y, z, t, juggler, hand));
+        builder.append(String.format("<event x=\"%.4f\" y=\"%.4f\" z=\"%.4f\" t=\"%.4f\" hand=\"%s:%s\"\n>", x, y, z, t, juggler, hand));
 
         for (Manipulation m : manipulations)
-            builder.append(m.toString());
+            builder.append(m.toString()).append('\n');
 
         builder.append("</event>");
 

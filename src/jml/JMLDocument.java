@@ -48,17 +48,17 @@ public class JMLDocument {
         StringBuilder jmlBuilder = new StringBuilder();
 
         jmlBuilder.append(JMLTagFunctions.generateDefaultTags());
-        jmlBuilder.append("<jml>");
-        jmlBuilder.append("<pattern>");
+        jmlBuilder.append("<jml>\n");
+        jmlBuilder.append("<pattern>\n");
 
-        jmlBuilder.append(JMLTagFunctions.generatePropTag(paths, rainbowRendering));
-        jmlBuilder.append(JMLTagFunctions.generateSetupTag(paths, rainbowRendering));
-        jmlBuilder.append(JMLTagFunctions.generateSymmetryTag(paths, delay));
+        jmlBuilder.append(JMLTagFunctions.generatePropTag(paths, rainbowRendering)).append('\n');
+        jmlBuilder.append(JMLTagFunctions.generateSetupTag(paths, rainbowRendering)).append('\n');
+        jmlBuilder.append(JMLTagFunctions.generateSymmetryTag(paths, delay)).append('\n');
 
         for (Event e : universalEvents)
-            jmlBuilder.append(e.toString());
+            jmlBuilder.append(e.toString()).append('\n');
 
-        jmlBuilder.append("</pattern>");
+        jmlBuilder.append("</pattern>\n");
         jmlBuilder.append("</jml>");
 
         return jmlBuilder.toString();
