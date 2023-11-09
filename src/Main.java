@@ -1,6 +1,5 @@
 import jml.EmptyThresholdSet;
 import jml.JMLDocument;
-import jml.siteswap.JugglerHandSequence;
 import osu.Beatmap;
 import jml.siteswap.VanillaSiteswap;
 
@@ -56,7 +55,7 @@ public class Main {
         JMLDocument convertedPattern = new JMLDocument(
                 beatmap,
                 new VanillaSiteswap(siteswapString),
-                new JugglerHandSequence(1, handSequenceString),
+                handSequenceString,
                 new EmptyThresholdSet(filler, HOLD_THRESHOLD, RESET_THRESHOLD),
                 rainbow
         );

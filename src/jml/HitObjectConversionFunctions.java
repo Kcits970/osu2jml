@@ -24,9 +24,9 @@ public class HitObjectConversionFunctions {
     static final double SPIN_DIRECTION = -1; //-1: clockwise spin, 1: counterclockwise spin
     static final int JUGGLER_ID = 1;
 
-    public static List<EventGroup> convertHitObjects(List<HitObject> objects, VanillaSiteswap siteswap, JugglerHandSequence sequence) {
+    public static List<EventGroup> convertHitObjects(List<HitObject> objects, VanillaSiteswap siteswap, String handSequence) {
         List<EventGroup> conversions = new ArrayList<>();
-        SiteswapStateTracker stateTracker = new SiteswapStateTracker(siteswap, sequence);
+        SiteswapStateTracker stateTracker = new SiteswapStateTracker(siteswap, handSequence);
 
         for (HitObject object : objects) {
             stateTracker.advanceState();

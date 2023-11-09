@@ -4,15 +4,15 @@ import java.util.*;
 
 public class SiteswapStateTracker {
     VanillaSiteswap siteswap;
-    JugglerHandSequence sequence;
+    String handSequence;
     int currentSiteswapPosition;
 
     Map<Integer,Integer> propStatus;
     int lastThrownProp;
 
-    public SiteswapStateTracker(VanillaSiteswap s, JugglerHandSequence seq) {
+    public SiteswapStateTracker(VanillaSiteswap s, String handSequence) {
         siteswap = s;
-        sequence = seq;
+        this.handSequence = handSequence.toLowerCase();
         propStatus = new HashMap<>();
         setupProps();
     }
@@ -47,6 +47,7 @@ public class SiteswapStateTracker {
     }
 
     public String getLastAssignedHand() {
-        return sequence.handAt(currentSiteswapPosition);
+        char handSequenceCharacter = handSequence.charAt((currentSiteswapPosition - 1) % handSequence.length());
+        return handSequenceCharacter == 'l' ? "left" : "right";
     }
 }

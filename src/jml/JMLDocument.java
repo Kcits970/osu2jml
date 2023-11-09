@@ -1,6 +1,5 @@
 package jml;
 
-import jml.siteswap.JugglerHandSequence;
 import osu.Beatmap;
 import jml.siteswap.VanillaSiteswap;
 import osu.HitObject;
@@ -16,7 +15,7 @@ public class JMLDocument {
 
     List<Event> universalEvents;
 
-    public JMLDocument(Beatmap beatmap, VanillaSiteswap siteswap, JugglerHandSequence sequence, EmptyThresholdSet emptyThresholdSet, boolean rainbow) {
+    public JMLDocument(Beatmap beatmap, VanillaSiteswap siteswap, String handSequence, EmptyThresholdSet emptyThresholdSet, boolean rainbow) {
         Point2D.Double shiftUnit = new Point2D.Double(beatmap.hitObjectRadius() / 10, beatmap.hitObjectRadius() / 10);
 
         for (HitObject hitObject : beatmap.hitObjects)
@@ -25,7 +24,7 @@ public class JMLDocument {
         List<EventGroup> conversions = HitObjectConversionFunctions.convertHitObjects(
                 beatmap.hitObjects,
                 siteswap,
-                sequence
+                handSequence
         );
 
         paths = siteswap.getNumOfBalls();
