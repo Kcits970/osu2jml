@@ -1,4 +1,4 @@
-package osu.math;
+package math;
 
 public class AlgebraFunctions {
     public static double nonstandardMult(double a, double b) {

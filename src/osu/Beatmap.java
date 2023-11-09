@@ -1,6 +1,6 @@
 package osu;
 
-import osu.math.GeometryFunctions;
+import math.GeometryFunctions;
 
 import java.io.*;
 import java.util.*;

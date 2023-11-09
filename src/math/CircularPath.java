@@ -1,8 +1,8 @@
-package osu.math;
+package math;
 
 import java.awt.geom.Point2D;
 import static java.lang.Math.PI;
-import static osu.math.GeometryFunctions.*;
+import static math.GeometryFunctions.*;
 
 public class CircularPath extends SliderPath {
     Point2D.Double center;

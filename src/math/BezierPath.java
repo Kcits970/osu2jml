@@ -1,8 +1,8 @@
-package osu.math;
+package math;
 
 import java.awt.geom.Point2D;
 import java.util.List;
-import static osu.math.AlgebraFunctions.*;
+import static math.AlgebraFunctions.*;
 
 public class BezierPath extends SliderPath {
     static final double STANDARD_SUBINTERVAL_LENGTH = 0.01;
