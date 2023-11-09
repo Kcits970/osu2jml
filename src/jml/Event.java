@@ -2,6 +2,7 @@ package jml;
 
 import jml.siteswap.Hand;
 import jml.siteswap.Juggler;
+import math.Point3D;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class Event implements Cloneable {
         manipulations = new ArrayList<>();
     }
 
-    public Event(JMLCoordinate point, double t, JugglerIdentifierSet jugglerIdentifierSet) {
+    public Event(Point3D point, double t, JugglerIdentifierSet jugglerIdentifierSet) {
         this(point.x, point.y, point.z, t, jugglerIdentifierSet.juggler, jugglerIdentifierSet.hand);
     }
 

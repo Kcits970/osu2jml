@@ -1,6 +1,7 @@
 package jml;
 
 import jml.siteswap.*;
+import math.Point3D;
 import osu.*;
 import math.GeometryFunctions;
 import math.PolarCoordinate;
@@ -187,11 +188,11 @@ public class HitObjectConversionFunctions {
         return osuTime / 1000;
     }
 
-    public static JMLCoordinate osuCoordinateToJMLCoordinate(double x, double y) {
-        return new JMLCoordinate(-x, 0, -y);
+    public static Point3D osuCoordinateToJMLCoordinate(double x, double y) {
+        return new Point3D(-x, 0, -y);
     }
 
-    public static JMLCoordinate osuCoordinateToJMLCoordinate(Point2D.Double point) {
+    public static Point3D osuCoordinateToJMLCoordinate(Point2D.Double point) {
         return osuCoordinateToJMLCoordinate(point.x, point.y);
     }
 }
