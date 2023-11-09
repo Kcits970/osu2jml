@@ -54,7 +54,7 @@ public class SiteswapStateTracker {
         return lastThrownBall;
     }
 
-    public Juggler getAssignedJuggler() {
+    public int getAssignedJuggler() {
         return sequence.juggler;
     }
 

@@ -84,6 +84,6 @@ public class Stablizer {
     }
 
     public static Event getDefaultEmptyEvent(Hand hand) {
-        return new Event((hand == Hand.LEFT_HAND) ? -25 : 25, 0, 0, 0, null, hand);
+        return new Event((hand == Hand.LEFT_HAND) ? -25 : 25, 0, 0, 0, 1, hand);
     }
 }

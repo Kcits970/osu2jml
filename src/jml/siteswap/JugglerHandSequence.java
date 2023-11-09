@@ -1,10 +1,10 @@
 package jml.siteswap;
 
 public class JugglerHandSequence {
-    public Juggler juggler;
+    public int juggler;
     String jugglerHandSequenceString;
 
-    public JugglerHandSequence(Juggler juggler, String jugglerHandSequenceString) {
+    public JugglerHandSequence(int juggler, String jugglerHandSequenceString) {
         this.juggler = juggler;
         this.jugglerHandSequenceString = jugglerHandSequenceString.toLowerCase();
     }
