@@ -1,4 +1,3 @@
-import jml.EmptyThresholdSet;
 import jml.JMLDocument;
 import osu.Beatmap;
 import jml.siteswap.VanillaSiteswap;
@@ -9,9 +8,6 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 public class Main {
-    static final double HOLD_THRESHOLD = 0.2;
-    static final double RESET_THRESHOLD = 0.6;
-
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Beatmap File Location: \n>> ");
@@ -56,7 +52,7 @@ public class Main {
                 beatmap,
                 new VanillaSiteswap(siteswapString),
                 handSequenceString,
-                new EmptyThresholdSet(filler, HOLD_THRESHOLD, RESET_THRESHOLD),
+                filler,
                 rainbow
         );
 

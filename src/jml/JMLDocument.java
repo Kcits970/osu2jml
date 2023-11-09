@@ -15,7 +15,7 @@ public class JMLDocument {
 
     List<Event> universalEvents;
 
-    public JMLDocument(Beatmap beatmap, VanillaSiteswap siteswap, String handSequence, EmptyThresholdSet emptyThresholdSet, boolean rainbow) {
+    public JMLDocument(Beatmap beatmap, VanillaSiteswap siteswap, String handSequence, double filler, boolean rainbow) {
         Point2D.Double shiftUnit = new Point2D.Double(beatmap.hitObjectRadius() / 10, beatmap.hitObjectRadius() / 10);
 
         for (HitObject hitObject : beatmap.hitObjects)
@@ -28,11 +28,11 @@ public class JMLDocument {
         );
 
         paths = siteswap.getNumOfBalls();
-        delay = conversions.getLast().getEndTime() + emptyThresholdSet.filler;
+        delay = conversions.getLast().getEndTime() + filler;
         universalEvents = new ArrayList<>();
         rainbowRendering = rainbow;
 
-        List<Stablizer> stablizers = HitObjectConversionFunctions.getStablizers(conversions, emptyThresholdSet, delay);
+        List<Stablizer> stablizers = HitObjectConversionFunctions.getStablizers(conversions, delay);
 
         for (EventGroup eventGroup : conversions)
             universalEvents.addAll(eventGroup.events);

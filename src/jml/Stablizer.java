@@ -6,16 +6,17 @@ import java.util.List;
 import static jml.HitObjectConversionFunctions.FRAME_DISTANCE_SECONDS;
 
 public class Stablizer {
+    static final double HOLD_THRESHOLD = 0.2;
+    static final double RESET_THRESHOLD = 0.6;
+
     public EventGroup previousGroup;
     public EventGroup nextGroup;
-    public EmptyThresholdSet emptyThresholdSet;
     public double cycleDuration;
     List<Event> emptyEvents;
 
-    public Stablizer(EventGroup previousGroup, EventGroup nextGroup, EmptyThresholdSet emptyThresholdSet, double cycleDuration) {
+    public Stablizer(EventGroup previousGroup, EventGroup nextGroup, double cycleDuration) {
         this.previousGroup = previousGroup;
         this.nextGroup = nextGroup;
-        this.emptyThresholdSet = emptyThresholdSet;
         this.cycleDuration = cycleDuration;
         emptyEvents = new ArrayList<>();
 
@@ -32,9 +33,9 @@ public class Stablizer {
     }
 
     public void generateEmptyEvents() {
-        if (secondsBetweenTwoGroups() <= emptyThresholdSet.holdThreshold)
+        if (secondsBetweenTwoGroups() <= HOLD_THRESHOLD)
             return;
-        else if (secondsBetweenTwoGroups() <= emptyThresholdSet.resetThreshold)
+        else if (secondsBetweenTwoGroups() <= RESET_THRESHOLD)
             generateEmptyEventsHoldingAt(previousGroup.events.getLast());
         else
             generateEmptyEventsResetAt(previousGroup.events.getLast());
@@ -47,7 +48,7 @@ public class Stablizer {
     }
 
     public void generateEmptyEventsHoldingAt(Event reference) {
-        double duration = secondsBetweenTwoGroups() - emptyThresholdSet.holdThreshold;
+        double duration = secondsBetweenTwoGroups() - HOLD_THRESHOLD;
 
         boolean terminate = false;
         for (double elapsedSeconds = FRAME_DISTANCE_SECONDS; !terminate; elapsedSeconds += FRAME_DISTANCE_SECONDS) {
@@ -63,8 +64,8 @@ public class Stablizer {
     }
 
     public void generateEmptyEventsResetAt(Event reference) {
-        double resetStartSeconds = reference.t + emptyThresholdSet.holdThreshold;
-        double resetEndSeconds = reference.t + secondsBetweenTwoGroups() - emptyThresholdSet.holdThreshold;
+        double resetStartSeconds = reference.t + HOLD_THRESHOLD;
+        double resetEndSeconds = reference.t + secondsBetweenTwoGroups() - HOLD_THRESHOLD;
 
         boolean terminate = false;
         for (double currentSeconds = resetStartSeconds; !terminate; currentSeconds += FRAME_DISTANCE_SECONDS) {
