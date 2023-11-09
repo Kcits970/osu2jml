@@ -24,8 +24,8 @@ public class HitObjectConversionFunctions {
     static final double SPIN_DIRECTION = -1; //-1: clockwise spin, 1: counterclockwise spin
     static final int JUGGLER_ID = 1;
 
-    public static List<EventGroup> convertHitObjects(List<HitObject> objects, VanillaSiteswap siteswap, String handSequence) {
-        List<EventGroup> conversions = new ArrayList<>();
+    public static List<List<Event>> convertHitObjects(List<HitObject> objects, VanillaSiteswap siteswap, String handSequence) {
+        List<List<Event>> conversions = new ArrayList<>();
         SiteswapStateTracker stateTracker = new SiteswapStateTracker(siteswap, handSequence);
 
         for (HitObject object : objects) {
@@ -43,20 +43,19 @@ public class HitObjectConversionFunctions {
         return conversions;
     }
 
-    public static void polishConvertedHitObjects(List<EventGroup> conversions) {
-        double startTime = conversions.get(0).getStartTime();
+    public static void polishConvertedHitObjects(List<List<Event>> conversions) {
+        double startTime = conversions.getFirst().getFirst().t;
 
-        for (EventGroup eventGroup : conversions) {
-            eventGroup.translate(BeatmapConstants.SCREEN_WIDTH/2, 0, BeatmapConstants.SCREEN_HEIGHT);
-            eventGroup.scale(0.5);
-            eventGroup.shiftTime(-startTime);
-        }
+        Point3D translationVector = new Point3D(BeatmapConstants.SCREEN_WIDTH/2, 0, BeatmapConstants.SCREEN_HEIGHT);
+        for (List<Event> conversion : conversions)
+            for (Event event : conversion)
+                event.translate(translationVector).scale(0.5).shiftTime(-startTime);
     }
 
-    public static List<Stablizer> getStablizers(List<EventGroup> conversions, double cycleDuration) {
+    public static List<Stablizer> getStablizers(List<List<Event>> conversions, double cycleDuration) {
         List<Stablizer> stablizers = new ArrayList<>();
-        List<EventGroup> leftHandEventGroups = conversions.stream().filter(eventGroup -> eventGroup.getHand().equals("left")).collect(Collectors.toList());
-        List<EventGroup> rightHandEventGroups = conversions.stream().filter(eventGroup -> eventGroup.getHand().equals("right")).collect(Collectors.toList());
+        List<List<Event>> leftHandEventGroups = conversions.stream().filter(conversion -> conversion.getFirst().hand.equals("left")).toList();
+        List<List<Event>> rightHandEventGroups = conversions.stream().filter(conversion -> conversion.getFirst().hand.equals("right")).toList();
 
         for (int i = 0; i < leftHandEventGroups.size(); i++)
             stablizers.add(new Stablizer(leftHandEventGroups.get(i), leftHandEventGroups.get((i+1) % leftHandEventGroups.size()), cycleDuration));
@@ -67,7 +66,7 @@ public class HitObjectConversionFunctions {
         return stablizers;
     }
 
-    public static EventGroup convertHitObject(HitObject object, String hand, int path) {
+    public static List<Event> convertHitObject(HitObject object, String hand, int path) {
         if (object instanceof HitCircle)
             return convertHitCircle((HitCircle) object, hand, path);
 
@@ -80,7 +79,7 @@ public class HitObjectConversionFunctions {
         return null;
     }
 
-    public static EventGroup convertHitCircle(HitCircle circle, String hand, int path) {
+    public static List<Event> convertHitCircle(HitCircle circle, String hand, int path) {
         Event catchEvent = new Event(
                 osuCoordinateToJMLCoordinate(circle.x, circle.y),
                 osuTimeToJMLTime(circle.time),
@@ -88,7 +87,7 @@ public class HitObjectConversionFunctions {
                 hand
         );
 
-        Event throwEvent = catchEvent.clone();
+        Event throwEvent = catchEvent.copyFrame();
         throwEvent.t += 0.001;
 
         if (path != 0) {
@@ -96,10 +95,10 @@ public class HitObjectConversionFunctions {
             throwEvent.addManipulation(new Manipulation("throw", path));
         }
 
-        return new EventGroup(Arrays.asList(catchEvent, throwEvent));
+        return List.of(catchEvent, throwEvent);
     }
 
-    public static EventGroup convertSlider(Slider slider, String hand, int path) {
+    public static List<Event> convertSlider(Slider slider, String hand, int path) {
         List<Event> sliderEvents = new ArrayList<>();
 
         double singleSliderDuration = slider.endTime - slider.time;
@@ -129,7 +128,7 @@ public class HitObjectConversionFunctions {
             sliderEvents.add(sliderEvent);
         }
 
-        return new EventGroup(sliderEvents);
+        return sliderEvents;
     }
 
     public static Point2D.Double getSliderCoordinateAt(Slider slider, double relativePosition, boolean reverse) {
@@ -140,7 +139,7 @@ public class HitObjectConversionFunctions {
         return slider.path.getPointAtLength(lengthUntilCoordinate);
     }
 
-    public static EventGroup convertSpinner(Spinner spinner, String hand, int path) {
+    public static List<Event> convertSpinner(Spinner spinner, String hand, int path) {
         List<Event> spinnerEvents = new ArrayList<>();
         double spinnerDuration = spinner.endTime - spinner.time;
 
@@ -164,7 +163,7 @@ public class HitObjectConversionFunctions {
             spinnerEvents.add(spinnerEvent);
         }
 
-        return new EventGroup(spinnerEvents);
+        return spinnerEvents;
     }
 
     public static Point2D.Double getSpinCoordinateAt(double elapsedMillis) {

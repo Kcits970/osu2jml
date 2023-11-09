@@ -21,21 +21,21 @@ public class JMLDocument {
         for (HitObject hitObject : beatmap.hitObjects)
             hitObject.shift(shiftUnit);
 
-        List<EventGroup> conversions = HitObjectConversionFunctions.convertHitObjects(
+        List<List<Event>> conversions = HitObjectConversionFunctions.convertHitObjects(
                 beatmap.hitObjects,
                 siteswap,
                 handSequence
         );
 
         paths = siteswap.getNumOfBalls();
-        delay = conversions.getLast().getEndTime() + filler;
+        delay = conversions.getLast().getLast().t + filler;
         universalEvents = new ArrayList<>();
         rainbowRendering = rainbow;
 
         List<Stablizer> stablizers = HitObjectConversionFunctions.getStablizers(conversions, delay);
 
-        for (EventGroup eventGroup : conversions)
-            universalEvents.addAll(eventGroup.events);
+        for (List<Event> conversion : conversions)
+            universalEvents.addAll(conversion);
 
         for (Stablizer stablizer : stablizers)
             universalEvents.addAll(stablizer.emptyEvents);

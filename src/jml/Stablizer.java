@@ -9,12 +9,12 @@ public class Stablizer {
     static final double HOLD_THRESHOLD = 0.2;
     static final double RESET_THRESHOLD = 0.6;
 
-    public EventGroup previousGroup;
-    public EventGroup nextGroup;
+    public List<Event> previousGroup;
+    public List<Event> nextGroup;
     public double cycleDuration;
     List<Event> emptyEvents;
 
-    public Stablizer(EventGroup previousGroup, EventGroup nextGroup, double cycleDuration) {
+    public Stablizer(List<Event> previousGroup, List<Event> nextGroup, double cycleDuration) {
         this.previousGroup = previousGroup;
         this.nextGroup = nextGroup;
         this.cycleDuration = cycleDuration;
@@ -25,7 +25,7 @@ public class Stablizer {
     }
 
     public double secondsBetweenTwoGroups() {
-        double timeBetweenTwoGroups = nextGroup.getStartTime() - previousGroup.getEndTime();
+        double timeBetweenTwoGroups = nextGroup.getFirst().t - previousGroup.getLast().t;
         if (timeBetweenTwoGroups < 0)
             timeBetweenTwoGroups += cycleDuration;
 
@@ -36,9 +36,9 @@ public class Stablizer {
         if (secondsBetweenTwoGroups() <= HOLD_THRESHOLD)
             return;
         else if (secondsBetweenTwoGroups() <= RESET_THRESHOLD)
-            generateEmptyEventsHoldingAt(previousGroup.events.getLast());
+            generateEmptyEventsHoldingAt(previousGroup.getLast());
         else
-            generateEmptyEventsResetAt(previousGroup.events.getLast());
+            generateEmptyEventsResetAt(previousGroup.getLast());
     }
 
     public void cycleOvertimedEvents() {
@@ -57,7 +57,7 @@ public class Stablizer {
                 terminate = true;
             }
 
-            Event emptyEvent = reference.clone();
+            Event emptyEvent = reference.copyFrame();
             emptyEvent.t += elapsedSeconds;
             emptyEvents.add(emptyEvent);
         }
