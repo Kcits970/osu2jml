@@ -1,13 +1,12 @@
 package jml;
 
 public class Manipulation {
-    private static final double GRAVITY = 0.1; //for some reason, setting gravity=0 causes juggling lab to crash.
-    String type;
-    int path;
+    public final String type;
+    public final int path;
 
     public Manipulation(String type, int path) {
         if (!"throw".equals(type) && !"catch".equals(type) && !"holding".equals(type))
-            throw new RuntimeException("Manipulation type must be either throw, catch, or holding (case sensitive)");
+            throw new RuntimeException(String.format("invalid manipulation type: '%s'", type));
 
         this.type = type;
         this.path = path;
@@ -16,7 +15,8 @@ public class Manipulation {
     @Override
     public String toString() {
         if (type.equals("throw"))
-            return String.format("<%s path=\"%d\" type=\"toss\" mod=\"g=%.2f\"/>", type, path, GRAVITY);
+            //mod="g=0.0" causes Juggling Lab to crash, somehow...
+            return String.format("<%s path=\"%d\" mod=\"g=0.1\"/>", type, path);
 
         return String.format("<%s path=\"%d\"/>", type, path);
     }
