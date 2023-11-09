@@ -40,7 +40,7 @@ public abstract class HitObject {
     }
 
     public void flip() {
-        y = osuConstants.SCREEN_HEIGHT - y;
+        y = BeatmapConstants.SCREEN_HEIGHT - y;
         position = new Point2D.Double(x, y);
         endPosition = position;
     }

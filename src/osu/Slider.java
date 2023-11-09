@@ -79,7 +79,7 @@ public class Slider extends HitObject {
         super.flip();
 
         for (Point2D.Double curvePoint : curvePoints)
-            curvePoint.y = osuConstants.SCREEN_HEIGHT - curvePoint.y;
+            curvePoint.y = BeatmapConstants.SCREEN_HEIGHT - curvePoint.y;
 
         setPath();
     }

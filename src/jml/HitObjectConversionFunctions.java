@@ -49,7 +49,7 @@ public class HitObjectConversionFunctions {
         double startTime = conversions.get(0).getStartTime();
 
         for (EventGroup eventGroup : conversions) {
-            eventGroup.translate(osuConstants.SCREEN_WIDTH/2, 0, osuConstants.SCREEN_HEIGHT);
+            eventGroup.translate(BeatmapConstants.SCREEN_WIDTH/2, 0, BeatmapConstants.SCREEN_HEIGHT);
             eventGroup.scale(0.5);
             eventGroup.shiftTime(-startTime);
         }
@@ -179,7 +179,7 @@ public class HitObjectConversionFunctions {
         double spinAngle = 2*PI * elapsedMillis / (60000/MAX_RPM);
         return GeometryFunctions.add2Points(
                 new PolarCoordinate(SPIN_ORIGIN.r, SPIN_ORIGIN.theta + SPIN_DIRECTION*spinAngle).toCartesian(),
-                osuConstants.DEFAULT_CENTER
+                BeatmapConstants.DEFAULT_CENTER
         );
     }
 
