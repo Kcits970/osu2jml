@@ -1,8 +1,8 @@
 package jml;
 
 public class Manipulation {
-    public final String type;
-    public final int path;
+    String type;
+    int path;
 
     public Manipulation(String type, int path) {
         if (!"throw".equals(type) && !"catch".equals(type) && !"holding".equals(type))
