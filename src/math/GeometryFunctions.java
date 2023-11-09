@@ -74,6 +74,6 @@ public class GeometryFunctions {
     }
 
     public static boolean are3PointsInALine(Point2D.Double p1, Point2D.Double p2, Point2D.Double p3) {
-        return are2VectorsParallel(new Vector2D(p1, p2).pointRepresentation(), new Vector2D(p1, p3).pointRepresentation());
+        return are2VectorsParallel(new Vector2D(p1, p2).toPoint(), new Vector2D(p1, p3).toPoint());
     }
 }

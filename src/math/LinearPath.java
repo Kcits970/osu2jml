@@ -11,9 +11,8 @@ public class LinearPath extends SliderPath {
 
     @Override
     public Point2D.Double getPointAtLength(double l) {
-        Vector2D pathVector = new Vector2D(startPoint, endPoint);
-        pathVector.scale(l/length);
+        Vector2D pathVector = new Vector2D(startPoint, endPoint).scale(l/length);
 
-        return GeometryFunctions.add2Points(startPoint, pathVector.pointRepresentation());
+        return GeometryFunctions.add2Points(startPoint, pathVector.toPoint());
     }
 }
