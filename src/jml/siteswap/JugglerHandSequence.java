@@ -6,11 +6,11 @@ public class JugglerHandSequence {
 
     public JugglerHandSequence(Juggler juggler, String jugglerHandSequenceString) {
         this.juggler = juggler;
-        this.jugglerHandSequenceString = jugglerHandSequenceString;
+        this.jugglerHandSequenceString = jugglerHandSequenceString.toLowerCase();
     }
 
     public Hand handAt(int nthBeat) {
         char handSequenceCharacter = jugglerHandSequenceString.charAt((nthBeat - 1) % jugglerHandSequenceString.length());
-        return handSequenceCharacter == 'L' ? Hand.LEFT_HAND : Hand.RIGHT_HAND;
+        return handSequenceCharacter == 'l' ? Hand.LEFT_HAND : Hand.RIGHT_HAND;
     }
 }
