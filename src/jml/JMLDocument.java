@@ -2,7 +2,6 @@ package jml;
 
 import jml.siteswap.JugglerHandSequence;
 import osu.Beatmap;
-import list.Lists;
 import jml.siteswap.VanillaSiteswap;
 import osu.HitObject;
 
@@ -30,7 +29,7 @@ public class JMLDocument {
         );
 
         paths = siteswap.getNumOfBalls();
-        delay = Lists.lastElement(conversions).getEndTime() + emptyThresholdSet.filler;
+        delay = conversions.getLast().getEndTime() + emptyThresholdSet.filler;
         universalEvents = new ArrayList<>();
         rainbowRendering = rainbow;
 

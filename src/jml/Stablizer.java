@@ -1,7 +1,5 @@
 package jml;
 
-import list.Lists;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,9 +35,9 @@ public class Stablizer {
         if (secondsBetweenTwoGroups() <= emptyThresholdSet.holdThreshold)
             return;
         else if (secondsBetweenTwoGroups() <= emptyThresholdSet.resetThreshold)
-            generateEmptyEventsHoldingAt(Lists.lastElement(previousGroup.events));
+            generateEmptyEventsHoldingAt(previousGroup.events.getLast());
         else
-            generateEmptyEventsResetAt(Lists.lastElement(previousGroup.events));
+            generateEmptyEventsResetAt(previousGroup.events.getLast());
     }
 
     public void cycleOvertimedEvents() {
