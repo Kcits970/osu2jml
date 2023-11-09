@@ -4,21 +4,24 @@ import jml.siteswap.Ball;
 
 public class Manipulation {
     private static final double GRAVITY = 0.1; //for some reason, setting gravity=0 causes juggling lab to crash.
-    ManipulationType type;
+    String type;
     int path;
 
-    public Manipulation(ManipulationType type, int path) {
+    public Manipulation(String type, int path) {
+        if (!"throw".equals(type) && !"catch".equals(type) && !"holding".equals(type))
+            throw new RuntimeException("Manipulation type must be either throw, catch, or holding (case sensitive)");
+
         this.type = type;
         this.path = path;
     }
 
-    public Manipulation(ManipulationType type, Ball ball) {
+    public Manipulation(String type, Ball ball) {
         this(type, ball.getBallNumber());
     }
 
     @Override
     public String toString() {
-        if (type == ManipulationType.THROW)
+        if (type.equals("throw"))
             return String.format("<%s path=\"%d\" type=\"toss\" mod=\"g=%.2f\"/>", type, path, GRAVITY);
 
         return String.format("<%s path=\"%d\"/>", type, path);

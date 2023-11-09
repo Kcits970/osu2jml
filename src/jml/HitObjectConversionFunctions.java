@@ -13,9 +13,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static java.lang.Math.*;
-import static jml.ManipulationType.CATCH;
-import static jml.ManipulationType.HOLDING;
-import static jml.ManipulationType.THROW;
 
 public class HitObjectConversionFunctions {
     static final double FPS = 30;
@@ -93,8 +90,8 @@ public class HitObjectConversionFunctions {
         throwEvent.t += 0.001;
 
         if (ball != null) {
-            catchEvent.addManipulation(new Manipulation(CATCH, ball));
-            throwEvent.addManipulation(new Manipulation(THROW, ball));
+            catchEvent.addManipulation(new Manipulation("catch", ball));
+            throwEvent.addManipulation(new Manipulation("throw", ball));
         }
 
         return new EventGroup(Arrays.asList(catchEvent, throwEvent));
@@ -124,7 +121,7 @@ public class HitObjectConversionFunctions {
             );
 
             if (ball != null)
-                sliderEvent.addManipulation(new Manipulation(elapsedMillis == 0 ? CATCH : terminate ? THROW : HOLDING, ball));
+                sliderEvent.addManipulation(new Manipulation(elapsedMillis == 0 ? "catch" : terminate ? "throw" : "holding", ball));
 
             sliderEvents.add(sliderEvent);
         }
@@ -158,7 +155,7 @@ public class HitObjectConversionFunctions {
             );
 
             if (ball != null)
-                spinnerEvent.addManipulation(new Manipulation(elapsedMillis == 0 ? CATCH : terminate ? THROW : HOLDING, ball));
+                spinnerEvent.addManipulation(new Manipulation(elapsedMillis == 0 ? "catch" : terminate ? "throw" : "holding", ball));
 
             spinnerEvents.add(spinnerEvent);
         }
