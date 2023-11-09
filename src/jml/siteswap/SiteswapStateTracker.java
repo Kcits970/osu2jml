@@ -7,55 +7,43 @@ public class SiteswapStateTracker {
     JugglerHandSequence sequence;
     int currentSiteswapPosition;
 
-    Stack<Ball> ballsOnTheGround;
-    Set<Ball> ballsInTheAir;
-    Ball lastThrownBall;
+    Map<Integer,Integer> propStatus;
+    int lastThrownProp;
 
     public SiteswapStateTracker(VanillaSiteswap s, JugglerHandSequence seq) {
         siteswap = s;
         sequence = seq;
-        currentSiteswapPosition = 0;
-        setupBalls();
+        propStatus = new HashMap<>();
+        setupProps();
     }
 
-    private void setupBalls() {
-        ballsOnTheGround = new Stack<>();
-        for (int i = siteswap.getNumOfBalls(); i > 0; i--)
-            ballsOnTheGround.push(new Ball(i));
-
-        ballsInTheAir = new HashSet<>();
-    }
-    
-    private void throwAvailableBall() {
-        int throwHeight = siteswap.beatAt(currentSiteswapPosition);
-        Ball ballToThrow = (throwHeight == 0) ? null : ballsOnTheGround.pop();
-        lastThrownBall = ballToThrow;
-
-        if (ballToThrow != null) {
-            ballToThrow.flyInTheAir(throwHeight);
-            ballsInTheAir.add(ballToThrow);
-        }
+    private void setupProps() {
+        for (int i = 1; i <= siteswap.getNumOfBalls(); i++)
+            propStatus.put(i, 0);
     }
 
     public void advanceState() {
-        currentSiteswapPosition++;
-        ballsInTheAir.forEach(ball -> ball.continueFlying());
+        int currentSiteswapElement = siteswap.beatAt(currentSiteswapPosition++);
+        int droppedProp = propStatus.entrySet()
+                .stream()
+                .filter(entry -> entry.getValue() == 0)
+                .mapToInt(Map.Entry::getKey)
+                .sorted()
+                .findFirst()
+                .orElse(0);
 
-        Optional<Ball> droppedBall = ballsInTheAir.stream().filter(ball -> ball.isDropped()).findFirst();
-        if (droppedBall.isPresent()) {
-            ballsOnTheGround.push(droppedBall.get());
-            ballsInTheAir.remove(droppedBall.get());
-        }
+        if (droppedProp != 0)
+            propStatus.put(droppedProp, currentSiteswapElement);
+        lastThrownProp = droppedProp;
 
-        throwAvailableBall();
+        propStatus.entrySet()
+                .stream()
+                .filter(entry -> entry.getValue() != 0)
+                .forEach(entry -> entry.setValue(entry.getValue() - 1));
     }
 
-    public Ball getThrownBall() {
-        return lastThrownBall;
-    }
-
-    public int getAssignedJuggler() {
-        return sequence.juggler;
+    public int getThrownBall() {
+        return lastThrownProp;
     }
 
     public String getLastAssignedHand() {

@@ -67,20 +67,20 @@ public class HitObjectConversionFunctions {
         return stablizers;
     }
 
-    public static EventGroup convertHitObject(HitObject object, String hand, Ball ball) {
+    public static EventGroup convertHitObject(HitObject object, String hand, int path) {
         if (object instanceof HitCircle)
-            return convertHitCircle((HitCircle) object, hand, ball);
+            return convertHitCircle((HitCircle) object, hand, path);
 
         if (object instanceof Slider)
-            return convertSlider((Slider) object, hand, ball);
+            return convertSlider((Slider) object, hand, path);
 
         if (object instanceof Spinner)
-            return convertSpinner((Spinner) object, hand, ball);
+            return convertSpinner((Spinner) object, hand, path);
 
         return null;
     }
 
-    public static EventGroup convertHitCircle(HitCircle circle, String hand, Ball ball) {
+    public static EventGroup convertHitCircle(HitCircle circle, String hand, int path) {
         Event catchEvent = new Event(
                 osuCoordinateToJMLCoordinate(circle.x, circle.y),
                 osuTimeToJMLTime(circle.time),
@@ -91,15 +91,15 @@ public class HitObjectConversionFunctions {
         Event throwEvent = catchEvent.clone();
         throwEvent.t += 0.001;
 
-        if (ball != null) {
-            catchEvent.addManipulation(new Manipulation("catch", ball));
-            throwEvent.addManipulation(new Manipulation("throw", ball));
+        if (path != 0) {
+            catchEvent.addManipulation(new Manipulation("catch", path));
+            throwEvent.addManipulation(new Manipulation("throw", path));
         }
 
         return new EventGroup(Arrays.asList(catchEvent, throwEvent));
     }
 
-    public static EventGroup convertSlider(Slider slider, String hand, Ball ball) {
+    public static EventGroup convertSlider(Slider slider, String hand, int path) {
         List<Event> sliderEvents = new ArrayList<>();
 
         double singleSliderDuration = slider.endTime - slider.time;
@@ -123,8 +123,8 @@ public class HitObjectConversionFunctions {
                     hand
             );
 
-            if (ball != null)
-                sliderEvent.addManipulation(new Manipulation(elapsedMillis == 0 ? "catch" : terminate ? "throw" : "holding", ball));
+            if (path != 0)
+                sliderEvent.addManipulation(new Manipulation(elapsedMillis == 0 ? "catch" : terminate ? "throw" : "holding", path));
 
             sliderEvents.add(sliderEvent);
         }
@@ -140,7 +140,7 @@ public class HitObjectConversionFunctions {
         return slider.path.getPointAtLength(lengthUntilCoordinate);
     }
 
-    public static EventGroup convertSpinner(Spinner spinner, String hand, Ball ball) {
+    public static EventGroup convertSpinner(Spinner spinner, String hand, int path) {
         List<Event> spinnerEvents = new ArrayList<>();
         double spinnerDuration = spinner.endTime - spinner.time;
 
@@ -158,8 +158,8 @@ public class HitObjectConversionFunctions {
                     hand
             );
 
-            if (ball != null)
-                spinnerEvent.addManipulation(new Manipulation(elapsedMillis == 0 ? "catch" : terminate ? "throw" : "holding", ball));
+            if (path != 0)
+                spinnerEvent.addManipulation(new Manipulation(elapsedMillis == 0 ? "catch" : terminate ? "throw" : "holding", path));
 
             spinnerEvents.add(spinnerEvent);
         }

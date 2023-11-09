@@ -1,7 +1,5 @@
 package jml;
 
-import jml.siteswap.Ball;
-
 public class Manipulation {
     private static final double GRAVITY = 0.1; //for some reason, setting gravity=0 causes juggling lab to crash.
     String type;
@@ -13,10 +11,6 @@ public class Manipulation {
 
         this.type = type;
         this.path = path;
-    }
-
-    public Manipulation(String type, Ball ball) {
-        this(type, ball.getBallNumber());
     }
 
     @Override
