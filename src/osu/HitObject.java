@@ -1,7 +1,5 @@
 package osu;
 
-import osu.geometry.GeometryFunctions;
-
 import java.awt.geom.Point2D;
 
 public abstract class HitObject {

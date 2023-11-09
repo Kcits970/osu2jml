@@ -1,4 +1,4 @@
-package osu.geometry;
+package osu.math;
 
 import java.awt.geom.Point2D;
 import static java.lang.Math.*;

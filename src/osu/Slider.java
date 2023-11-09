@@ -1,6 +1,6 @@
 package osu;
 
-import osu.geometry.*;
+import osu.math.*;
 
 import java.util.ArrayList;
 import java.util.List;

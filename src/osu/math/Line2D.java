@@ -1,4 +1,4 @@
-package osu.geometry;
+package osu.math;
 
 public class Line2D {
     //represents the line ax + by + c = 0

@@ -2,8 +2,8 @@ package jml;
 
 import jml.siteswap.*;
 import osu.*;
-import osu.geometry.GeometryFunctions;
-import osu.geometry.PolarCoordinate;
+import osu.math.GeometryFunctions;
+import osu.math.PolarCoordinate;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
