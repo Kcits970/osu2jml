@@ -1,16 +1,11 @@
 package jml;
 
 import jml.siteswap.*;
-import math.Point3D;
+import math.*;
 import osu.*;
-import math.GeometryFunctions;
-import math.PolarCoordinate;
 
 import java.awt.geom.Point2D;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static java.lang.Math.*;
 
