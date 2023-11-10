@@ -30,25 +30,17 @@ public class HitObjectConversionFunctions {
         Iterator<String> handStateTracker = new HandSequence(handSequence).iterator();
 
         for (HitObject object : objects)
-            conversions.add(
-                    convertHitObject(
-                            object,
-                            handStateTracker.next(),
-                            stateTracker.advanceState()
-                    )
-            );
+            conversions.add(convertHitObject(object, handStateTracker.next(), stateTracker.advanceState()));
 
-        polishConvertedHitObjects(conversions);
-        return conversions;
-    }
-
-    public static void polishConvertedHitObjects(List<List<Event>> conversions) {
         double startTime = conversions.getFirst().getFirst().t;
-
-        Point3D translationVector = new Point3D(BeatmapConstants.SCREEN_WIDTH/2, 0, BeatmapConstants.SCREEN_HEIGHT);
         for (List<Event> conversion : conversions)
-            for (Event event : conversion)
-                event.translate(translationVector).scale(0.5).shiftTime(-startTime);
+            for (Event event : conversion) {
+                event.translate(BeatmapConstants.SCREEN_WIDTH/2, 0, BeatmapConstants.SCREEN_HEIGHT);
+                event.scale(0.5);
+                event.shiftTime(-startTime);
+            }
+
+        return conversions;
     }
 
     public static List<List<Event>> getStablizers(List<List<Event>> conversions, double cycleDuration) {
