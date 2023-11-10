@@ -1,9 +1,8 @@
 package osu.path;
 
-import math.GeometryFunctions;
+import math.*;
 import osu.BeatmapConstants;
 
-import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
 import static math.AlgebraFunctions.*;
@@ -11,10 +10,10 @@ import static math.AlgebraFunctions.*;
 public class BezierPath implements SliderPath {
     static final double STANDARD_SUBINTERVAL_LENGTH = 0.01;
 
-    List<Point2D.Double> controlPoints;
+    List<Point2D> controlPoints;
     private double cacheLength = -1;
 
-    public BezierPath(List<Point2D.Double> controlPoints) {
+    public BezierPath(List<Point2D> controlPoints) {
         this.controlPoints = controlPoints;
     }
 
@@ -27,7 +26,7 @@ public class BezierPath implements SliderPath {
     }
 
     @Override
-    public Point2D.Double pointAtLength(double l) {
+    public Point2D pointAtLength(double l) {
         if (l == 0)
             return controlPoints.getFirst();
 
@@ -41,34 +40,36 @@ public class BezierPath implements SliderPath {
         }
     }
 
-    private Point2D.Double getPointAt(double t) {
-        Point2D.Double point = new Point2D.Double();
+    private Point2D getPointAt(double t) {
+        double x = 0;
+        double y = 0;
         int lastControlPointIndex = controlPoints.size() - 1;
 
         for (int k = 0; k < controlPoints.size(); k++) {
             double bernsteinValue = bernstein(lastControlPointIndex,k,t);
-            point.x += bernsteinValue * controlPoints.get(k).x;
-            point.y += bernsteinValue * controlPoints.get(k).y;
+            x += bernsteinValue * controlPoints.get(k).x;
+            y += bernsteinValue * controlPoints.get(k).y;
         }
 
-        return point;
+        return new Point2D(x,y);
     }
 
-    private Point2D.Double getDifferentiatedPointAt(double t) {
-        Point2D.Double differentiatedPoint = new Point2D.Double();
+    private Point2D getDifferentiatedPointAt(double t) {
+        double x = 0;
+        double y = 0;
         int lastControlPointIndex = controlPoints.size() - 1;
 
         for (int k = 0; k < controlPoints.size(); k++) {
             double bernsteinPrimeValue = bernsteinPrime(lastControlPointIndex,k,t);
-            differentiatedPoint.x += bernsteinPrimeValue * controlPoints.get(k).x;
-            differentiatedPoint.y += bernsteinPrimeValue * controlPoints.get(k).y;
+            x += bernsteinPrimeValue * controlPoints.get(k).x;
+            y += bernsteinPrimeValue * controlPoints.get(k).y;
         }
 
-        return differentiatedPoint;
+        return new Point2D(x,y);
     }
 
     private double curveLengthIntegrand(double t) {
-        Point2D.Double differentiatedPoint = getDifferentiatedPointAt(t);
+        Point2D differentiatedPoint = getDifferentiatedPointAt(t);
         return Math.hypot(differentiatedPoint.x, differentiatedPoint.y);
     }
 
@@ -93,7 +94,7 @@ public class BezierPath implements SliderPath {
 
     @Override
     public BezierPath translate(double dx, double dy) {
-        List<Point2D.Double> newControlPoints = new ArrayList<>(controlPoints);
+        List<Point2D> newControlPoints = new ArrayList<>(controlPoints);
         newControlPoints.replaceAll(point -> GeometryFunctions.shiftPoint(point, dx, dy));
 
         return new BezierPath(newControlPoints);
@@ -101,8 +102,8 @@ public class BezierPath implements SliderPath {
 
     @Override
     public BezierPath flip() {
-        List<Point2D.Double> newControlPoints = new ArrayList<>(controlPoints);
-        newControlPoints.replaceAll(point -> new Point2D.Double(point.x, BeatmapConstants.SCREEN_HEIGHT - point.y));
+        List<Point2D> newControlPoints = new ArrayList<>(controlPoints);
+        newControlPoints.replaceAll(point -> new Point2D(point.x, BeatmapConstants.SCREEN_HEIGHT - point.y));
 
         return new BezierPath(newControlPoints);
     }

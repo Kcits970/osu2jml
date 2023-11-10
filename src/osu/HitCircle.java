@@ -1,6 +1,6 @@
 package osu;
 
-import java.awt.geom.Point2D;
+import math.Point2D;
 
 public class HitCircle extends HitObject{
     public HitCircle(String circleString) {
@@ -8,7 +8,7 @@ public class HitCircle extends HitObject{
     }
 
     @Override
-    public Point2D.Double endPosition() {
+    public Point2D endPosition() {
         return position();
     }
 

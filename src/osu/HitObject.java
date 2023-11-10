@@ -1,6 +1,6 @@
 package osu;
 
-import java.awt.geom.Point2D;
+import math.Point2D;
 
 public abstract class HitObject {
     //Parsing hit objects follow information from the osu! file format wiki:
@@ -29,11 +29,11 @@ public abstract class HitObject {
         stackLayer = 0;
     }
 
-    public Point2D.Double position() {
-        return new Point2D.Double(x, y);
+    public Point2D position() {
+        return new Point2D(x, y);
     }
 
-    public abstract Point2D.Double endPosition();
+    public abstract Point2D endPosition();
 
     public abstract double endTime();
 

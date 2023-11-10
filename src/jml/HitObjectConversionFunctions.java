@@ -4,7 +4,6 @@ import jml.siteswap.*;
 import math.*;
 import osu.*;
 
-import java.awt.geom.Point2D;
 import java.util.*;
 
 import static java.lang.Math.*;
@@ -116,7 +115,7 @@ public class HitObjectConversionFunctions {
         return sliderEvents;
     }
 
-    public static Point2D.Double getSliderCoordinateAt(Slider slider, double relativePosition, boolean reverse) {
+    public static Point2D getSliderCoordinateAt(Slider slider, double relativePosition, boolean reverse) {
         double lengthUntilCoordinate = (reverse) ?
                 slider.definedLength * (1 - relativePosition) :
                 slider.definedLength * relativePosition;
@@ -150,7 +149,7 @@ public class HitObjectConversionFunctions {
         return spinnerEvents;
     }
 
-    public static Point2D.Double getSpinCoordinate(double elapsedMillis) {
+    public static Point2D getSpinCoordinate(double elapsedMillis) {
         /*
         The fastest possible spin speed in osu! is 477 rpm.
         The cursor needs to spin exactly 477 times in 60000 milliseconds.
@@ -175,7 +174,7 @@ public class HitObjectConversionFunctions {
         return new Point3D(-x, 0, -y);
     }
 
-    public static Point3D toXYZCoordinate(Point2D.Double point) {
+    public static Point3D toXYZCoordinate(Point2D point) {
         return toXYZCoordinate(point.x, point.y);
     }
 }

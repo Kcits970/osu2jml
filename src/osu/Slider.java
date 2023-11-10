@@ -5,7 +5,6 @@ import osu.path.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.awt.geom.Point2D;
 
 public class Slider extends HitObject {
     private static final int CURVEPARAMS_INDEX = 5;
@@ -26,11 +25,11 @@ public class Slider extends HitObject {
         //Parsing the curve points.
         String[] curveParameters = sliderParameters[CURVEPARAMS_INDEX].split("\\|");
         char curveType = curveParameters[0].charAt(0);
-        List<Point2D.Double> curvePoints = new ArrayList<>();
-        curvePoints.add(new Point2D.Double(x,y));
+        List<Point2D> curvePoints = new ArrayList<>();
+        curvePoints.add(new Point2D(x,y));
 
         for (int i = 1; i < curveParameters.length; i++)
-            curvePoints.add(new Point2D.Double(
+            curvePoints.add(new Point2D(
                     Integer.parseInt(curveParameters[i].substring(0, curveParameters[i].indexOf(':'))),
                     Integer.parseInt(curveParameters[i].substring(curveParameters[i].indexOf(':') + 1))
             ));
@@ -66,7 +65,7 @@ public class Slider extends HitObject {
     }
 
     @Override
-    public Point2D.Double endPosition() {
+    public Point2D endPosition() {
         return path.pointAtLength(definedLength);
     }
 

@@ -1,6 +1,6 @@
 package osu;
 
-import java.awt.geom.Point2D;
+import math.Point2D;
 
 public class Spinner extends HitObject {
     private static final int END_TIME_INDEX = 5;
@@ -16,7 +16,7 @@ public class Spinner extends HitObject {
     }
 
     @Override
-    public Point2D.Double endPosition() {
+    public Point2D endPosition() {
         return position();
     }
 

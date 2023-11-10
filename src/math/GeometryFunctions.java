@@ -1,26 +1,24 @@
 package math;
 
-import java.awt.geom.Point2D;
-
 import static java.lang.Math.PI;
 
 public class GeometryFunctions {
     private static final double epsilon = 1e-9;
 
-    public static Point2D.Double add2Points(Point2D.Double pointA, Point2D.Double pointB) {
-        return new Point2D.Double(pointA.x + pointB.x, pointA.y + pointB.y);
+    public static Point2D add2Points(Point2D pointA, Point2D pointB) {
+        return pointA.add(pointB);
     }
 
-    public static Point2D.Double midpoint(Point2D.Double pointA, Point2D.Double pointB) {
-        return new Point2D.Double((pointA.x + pointB.x)/2, (pointA.y + pointB.y)/2);
+    public static Point2D midpoint(Point2D pointA, Point2D pointB) {
+        return new Point2D((pointA.x + pointB.x)/2, (pointA.y + pointB.y)/2);
     }
 
-    public static Point2D.Double shiftPoint(Point2D.Double point, double dx, double dy) {
-        return new Point2D.Double(point.x + dx, point.y + dy);
+    public static Point2D shiftPoint(Point2D point, double dx, double dy) {
+        return point.shift(dx, dy);
     }
 
-    public static double distance(Point2D.Double p1, Point2D.Double p2) {
-        return Math.hypot(p1.x - p2.x, p1.y - p2.y);
+    public static double distance(Point2D p1, Point2D p2) {
+        return p1.distance(p2);
     }
 
     public static double clockwiseAngle(Vector2D vectorA, Vector2D vectorB) {
@@ -34,13 +32,13 @@ public class GeometryFunctions {
         return 2*PI - clockwiseAngle(vectorA, vectorB);
     }
 
-    public static Point2D.Double intersection(Line2D lineA, Line2D lineB) {
+    public static Point2D intersection(Line2D lineA, Line2D lineB) {
         double intersectionX = 1 / (lineA.a * lineB.b - lineA.b * lineB.a) * (lineA.b * lineB.c - lineA.c * lineB.b);
         double intersectionY = 1 / (lineA.a * lineB.b - lineA.b * lineB.a) * (lineA.c * lineB.a - lineA.a * lineB.c);
-        return new Point2D.Double(intersectionX, intersectionY);
+        return new Point2D(intersectionX, intersectionY);
     }
 
-    public static boolean arePointsInALine(Point2D.Double pointA, Point2D.Double pointB, Point2D.Double pointC) {
+    public static boolean arePointsInALine(Point2D pointA, Point2D pointB, Point2D pointC) {
         if (pointA.equals(pointB) || pointB.equals(pointC) || pointC.equals(pointA))
             return true;
 
