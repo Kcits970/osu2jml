@@ -1,12 +1,12 @@
 package osu;
 
 public class HitObjectFactory {
-    static final int TYPE_INDEX = 3;
-    static final byte HITCIRCLE_MASK = 0b00000001;
-    static final byte SLIDER_MASK = 0b00000010;
-    static final byte SPINNER_MASK = 0b00001000;
+    private static final int TYPE_INDEX = 3;
+    private static final byte HITCIRCLE_MASK = 0b00000001;
+    private static final byte SLIDER_MASK = 0b00000010;
+    private static final byte SPINNER_MASK = 0b00001000;
 
-    static HitObject getHitObject(String hitObjectString) {
+    public static HitObject getHitObject(String hitObjectString) {
         byte hitObjectType = Byte.parseByte(hitObjectString.split(",")[TYPE_INDEX]);
 
         if ((hitObjectType & HITCIRCLE_MASK) != 0)

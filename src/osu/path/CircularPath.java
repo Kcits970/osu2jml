@@ -1,15 +1,24 @@
-package math;
+package osu.path;
+
+import math.GeometryFunctions;
+import math.Line2D;
+import math.Vector2D;
+import osu.BeatmapConstants;
 
 import java.awt.geom.Point2D;
 import static java.lang.Math.PI;
 import static math.GeometryFunctions.*;
 
-public class CircularPath extends SliderPath {
-    Point2D.Double center;
+public class CircularPath implements SliderPath {
+    Point2D.Double pointA, pointB, pointC, center;
     double radius;
     double angle;
 
     public CircularPath(Point2D.Double pointA, Point2D.Double pointB, Point2D.Double pointC) {
+        this.pointA = pointA;
+        this.pointB = pointB;
+        this.pointC = pointC;
+
         Line2D lineAB = new Line2D(pointA, pointB);
         Line2D lineBC = new Line2D(pointB, pointC);
 
@@ -18,8 +27,6 @@ public class CircularPath extends SliderPath {
                 new Line2D(midpoint(pointB, pointC), new Vector2D(lineBC.a, lineBC.b))
         );
 
-        startPoint = pointA;
-        endPoint = pointC;
         radius = center.distance(pointA);
 
         double clockwiseAngle =
@@ -30,16 +37,38 @@ public class CircularPath extends SliderPath {
                 counterclockwiseAngle(new Vector2D(center, pointB), new Vector2D(center, pointC));
 
         angle = (clockwiseAngle < 2*PI) ? -clockwiseAngle : counterclockwiseAngle;
-        length = radius * Math.abs(angle);
     }
 
     @Override
-    public Point2D.Double getPointAtLength(double l) {
-        double theta = angle * l/length;
-        double startAngle = new Vector2D(center, startPoint).direction();
+    public double length() {
+        return radius * Math.abs(angle);
+    }
+
+    @Override
+    public Point2D.Double pointAtLength(double l) {
+        double theta = angle * l/length();
+        double startAngle = new Vector2D(center, pointA).direction();
 
         return new Point2D.Double(
                 center.x + radius * Math.cos(startAngle + theta),
                 center.y + radius * Math.sin(startAngle + theta));
+    }
+
+    @Override
+    public CircularPath translate(double dx, double dy) {
+        return new CircularPath(
+                GeometryFunctions.shiftPoint(pointA, dx, dy),
+                GeometryFunctions.shiftPoint(pointB, dx, dy),
+                GeometryFunctions.shiftPoint(pointC, dx, dy)
+        );
+    }
+
+    @Override
+    public CircularPath flip() {
+        return new CircularPath(
+                new Point2D.Double(pointA.x, BeatmapConstants.SCREEN_HEIGHT - pointA.y),
+                new Point2D.Double(pointB.x, BeatmapConstants.SCREEN_HEIGHT - pointB.y),
+                new Point2D.Double(pointC.x, BeatmapConstants.SCREEN_HEIGHT - pointC.y)
+        );
     }
 }

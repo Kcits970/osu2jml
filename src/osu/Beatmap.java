@@ -43,7 +43,6 @@ public class Beatmap {
         setupDifficultyParameters();
         setupTimingPoints();
         setupHitObjects();
-        calculateSliderDurations();
         calculateStackLayers();
     }
 
@@ -117,17 +116,13 @@ public class Beatmap {
 
         for (String s : hitObjectStrings)
             hitObjects.add(HitObjectFactory.getHitObject(s));
-    }
 
-    void calculateSliderDurations() {
-        List<Slider> sliders = hitObjects
-                .stream()
-                .filter(hitObject -> hitObject instanceof Slider)
-                .map(hitObject -> (Slider) hitObject)
-                .collect(Collectors.toList());
-
-        for (Slider s : sliders)
-            s.setEndTime(BeatmapFunctions.findFurthestTimingPointUntil(timingPoints, s.time), sliderMultiplier);
+        for (int i = 0; i < hitObjects.size(); i++) {
+            HitObject currentHitObject = hitObjects.get(i);
+            if (currentHitObject instanceof Slider) {
+                hitObjects.set(i, new Slider((Slider) currentHitObject, sliderMultiplier, BeatmapFunctions.findFurthestTimingPointUntil(timingPoints, currentHitObject.time)));
+            }
+        }
     }
 
     void calculateStackLayers() {
@@ -153,20 +148,20 @@ public class Beatmap {
 
                     HitObject spanN = objectN instanceof Slider ? (Slider) objectN : null;
 
-                    if (objectI.time - (preempt() * stackLeniency) > objectN.endTime)
+                    if (objectI.time - (preempt() * stackLeniency) > objectN.endTime())
                         break;
 
-                    if (spanN != null && GeometryFunctions.distance(spanN.endPosition, objectI.position) < STACK_LENIENCE) {
+                    if (spanN != null && GeometryFunctions.distance(spanN.endPosition(), objectI.position()) < STACK_LENIENCE) {
                         int offset = objectI.stackLayer - objectN.stackLayer + 1;
                         for (int j = n + 1; j <= i; j++) {
-                            if (GeometryFunctions.distance(spanN.endPosition, hitObjects.get(j).position) < STACK_LENIENCE)
+                            if (GeometryFunctions.distance(spanN.endPosition(), hitObjects.get(j).position()) < STACK_LENIENCE)
                                 hitObjects.get(j).stackLayer -= offset;
                         }
 
                         break;
                     }
 
-                    if (GeometryFunctions.distance(objectN.position, objectI.position) < STACK_LENIENCE) {
+                    if (GeometryFunctions.distance(objectN.position(), objectI.position()) < STACK_LENIENCE) {
                         objectN.stackLayer = objectI.stackLayer + 1;
                         objectI = objectN;
                     }
@@ -183,7 +178,7 @@ public class Beatmap {
                     if (objectI.time - (preempt() * stackLeniency) > objectN.time)
                         break;
 
-                    if (GeometryFunctions.distance((spanN != null ? spanN.endPosition : objectN.position), objectI.position) < STACK_LENIENCE) {
+                    if (GeometryFunctions.distance((spanN != null ? spanN.endPosition() : objectN.position()), objectI.position()) < STACK_LENIENCE) {
                         objectN.stackLayer = objectI.stackLayer + 1;
                         objectI = objectN;
                     }
@@ -243,14 +238,14 @@ public class Beatmap {
 
     public Beatmap halfTime() {
         for (HitObject hitObject : hitObjects)
-            hitObject.scaleTime(1 / 0.75);
+            hitObject.adjustSpeed(1 / 0.75);
 
         return this;
     }
 
     public Beatmap doubleTime() {
         for (HitObject hitObject : hitObjects)
-            hitObject.scaleTime(1 / 1.5);
+            hitObject.adjustSpeed(1 / 1.5);
 
         return this;
     }

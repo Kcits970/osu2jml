@@ -21,7 +21,7 @@ public class JMLDocument {
         Point2D.Double shiftUnit = new Point2D.Double(beatmap.hitObjectRadius() / 10, beatmap.hitObjectRadius() / 10);
 
         for (HitObject hitObject : beatmap.hitObjects)
-            hitObject.shift(shiftUnit);
+            hitObject.translate(hitObject.stackLayer * shiftUnit.x, hitObject.stackLayer * shiftUnit.y);
 
         List<List<Event>> conversions = HitObjectConversionFunctions.convertHitObjects(
                 beatmap.hitObjects,

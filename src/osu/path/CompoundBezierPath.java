@@ -1,15 +1,18 @@
-package math;
+package osu.path;
+
+import math.GeometryFunctions;
+import osu.BeatmapConstants;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompoundBezierPath extends SliderPath {
+public class CompoundBezierPath implements SliderPath {
+    private List<Point2D.Double> controlPoints;
     List<SliderPath> sliderPaths;
 
     public CompoundBezierPath(List<Point2D.Double> controlPoints) {
-        startPoint = controlPoints.get(0);
-        endPoint = controlPoints.get(controlPoints.size() - 1);
+        this.controlPoints = controlPoints;
         sliderPaths = new ArrayList<>();
 
         int lastDuplicateIndex = 0;
@@ -24,9 +27,6 @@ public class CompoundBezierPath extends SliderPath {
         }
 
         addPath(controlPoints.subList(lastDuplicateIndex, controlPoints.size()));
-
-        for (SliderPath path : sliderPaths)
-            length += path.length;
     }
 
     private void addPath(List<Point2D.Double> controlPoints) {
@@ -50,17 +50,40 @@ public class CompoundBezierPath extends SliderPath {
     }
 
     @Override
-    public Point2D.Double getPointAtLength(double l) {
+    public double length() {
+        return sliderPaths.stream()
+                .mapToDouble(SliderPath::length)
+                .sum();
+    }
+
+    @Override
+    public Point2D.Double pointAtLength(double l) {
         double lengthAccumulation = 0;
 
         for (SliderPath currentPath : sliderPaths) {
-            lengthAccumulation += currentPath.length;
+            lengthAccumulation += currentPath.length();
 
             if (l < lengthAccumulation)
-                return currentPath.getPointAtLength(l - (lengthAccumulation - currentPath.length));
+                return currentPath.pointAtLength(l - (lengthAccumulation - currentPath.length()));
         }
 
         SliderPath lastPath = sliderPaths.get(sliderPaths.size() - 1);
-        return lastPath.getPointAtLength(lastPath.length + l - length);
+        return lastPath.pointAtLength(lastPath.length() + l - length());
+    }
+
+    @Override
+    public CompoundBezierPath translate(double dx, double dy) {
+        List<Point2D.Double> newControlPoints = new ArrayList<>(controlPoints);
+        newControlPoints.replaceAll(point -> GeometryFunctions.shiftPoint(point, dx, dy));
+
+        return new CompoundBezierPath(newControlPoints);
+    }
+
+    @Override
+    public CompoundBezierPath flip() {
+        List<Point2D.Double> newControlPoints = new ArrayList<>(controlPoints);
+        newControlPoints.replaceAll(point -> new Point2D.Double(point.x, BeatmapConstants.SCREEN_HEIGHT - point.y));
+
+        return new CompoundBezierPath(newControlPoints);
     }
 }

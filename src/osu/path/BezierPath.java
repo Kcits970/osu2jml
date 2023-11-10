@@ -1,28 +1,35 @@
-package math;
+package osu.path;
+
+import math.GeometryFunctions;
+import osu.BeatmapConstants;
 
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
 import java.util.List;
 import static math.AlgebraFunctions.*;
 
-public class BezierPath extends SliderPath {
+public class BezierPath implements SliderPath {
     static final double STANDARD_SUBINTERVAL_LENGTH = 0.01;
 
     List<Point2D.Double> controlPoints;
+    private double cacheLength = -1;
 
     public BezierPath(List<Point2D.Double> controlPoints) {
         this.controlPoints = controlPoints;
-        this.startPoint = controlPoints.get(0);
-        this.endPoint = controlPoints.get(controlPoints.size() - 1);
-        this.length = approximateLengthInRange(0, 1);
     }
 
     @Override
-    public Point2D.Double getPointAtLength(double l) {
-        if (l == 0)
-            return startPoint;
+    public double length() {
+        if (cacheLength < 0)
+            cacheLength = approximateLengthInRange(0, 1);
 
-        if (l == length)
-            return endPoint;
+        return cacheLength;
+    }
+
+    @Override
+    public Point2D.Double pointAtLength(double l) {
+        if (l == 0)
+            return controlPoints.getFirst();
 
         for (double t = 0; ; t += STANDARD_SUBINTERVAL_LENGTH) {
             double lengthToCompare = approximateLengthInRange(0, t);
@@ -82,5 +89,21 @@ public class BezierPath extends SliderPath {
         }
 
         return adjustedSubintervalLength/3 * accumulation;
+    }
+
+    @Override
+    public BezierPath translate(double dx, double dy) {
+        List<Point2D.Double> newControlPoints = new ArrayList<>(controlPoints);
+        newControlPoints.replaceAll(point -> GeometryFunctions.shiftPoint(point, dx, dy));
+
+        return new BezierPath(newControlPoints);
+    }
+
+    @Override
+    public BezierPath flip() {
+        List<Point2D.Double> newControlPoints = new ArrayList<>(controlPoints);
+        newControlPoints.replaceAll(point -> new Point2D.Double(point.x, BeatmapConstants.SCREEN_HEIGHT - point.y));
+
+        return new BezierPath(newControlPoints);
     }
 }

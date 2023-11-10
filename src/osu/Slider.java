@@ -1,101 +1,95 @@
 package osu;
 
 import math.*;
+import osu.path.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.awt.geom.Point2D;
 
 public class Slider extends HitObject {
-    static final int CURVEPARAMS_INDEX = 5;
-    static final int SLIDES_INDEX = 6;
-    static final int LENGTH_INDEX = 7;
-    static final int CURVE_TYPE_INDEX = 0;
-    static final int CURVE_POINT_INDEX = 1;
+    private static final int CURVEPARAMS_INDEX = 5;
+    private static final int SLIDES_INDEX = 6;
+    private static final int LENGTH_INDEX = 7;
 
-    public char curveType;
-    public List<Point2D.Double> curvePoints;
     public int slides;
-    public double length;
+    public double definedLength;
+    public double endTime;
     public SliderPath path;
 
     public Slider(String sliderString) {
+        //This constructor creates a 'raw' slider.
         super(sliderString);
 
         String[] sliderParameters = sliderString.split(",");
-        setupCurveParams(sliderParameters[CURVEPARAMS_INDEX]);
-        setPath();
 
+        //Parsing the curve points.
+        String[] curveParameters = sliderParameters[CURVEPARAMS_INDEX].split("\\|");
+        char curveType = curveParameters[0].charAt(0);
+        List<Point2D.Double> curvePoints = new ArrayList<>();
+        curvePoints.add(new Point2D.Double(x,y));
+
+        for (int i = 1; i < curveParameters.length; i++)
+            curvePoints.add(new Point2D.Double(
+                    Integer.parseInt(curveParameters[i].substring(0, curveParameters[i].indexOf(':'))),
+                    Integer.parseInt(curveParameters[i].substring(curveParameters[i].indexOf(':') + 1))
+            ));
+
+        //Parsing the remaining fields.
         slides = Integer.parseInt(sliderParameters[SLIDES_INDEX]);
-        length = Double.parseDouble(sliderParameters[LENGTH_INDEX]);
-        endPosition = path.getPointAtLength(length);
+        definedLength = Double.parseDouble(sliderParameters[LENGTH_INDEX]);
+
+        //Construction of the slider's actual path.
+        if (curveType == 'L')
+            path = new LinearPath(curvePoints.get(0), curvePoints.get(1));
+        else if (curveType == 'P')
+            if (GeometryFunctions.arePointsInALine(curvePoints.get(0), curvePoints.get(1), curvePoints.get(2)))
+                path = new LinearPath(curvePoints.get(0), curvePoints.get(2));
+            else
+                path = new CircularPath(curvePoints.get(0), curvePoints.get(1), curvePoints.get(2));
+        else if (curveType == 'B')
+            path = (CompoundBezierPath.isCompound(curvePoints)) ?
+                    new CompoundBezierPath(curvePoints) :
+                    new BezierPath(curvePoints);
+        else
+            throw new RuntimeException("invalid slider path specifier");
     }
 
-    private void setupCurveParams(String curveParams) {
-        String[] curveParameters = curveParams.split("\\|");
+    public Slider(Slider rawSlider, double sliderMultiplier, TimingPoint timingPoint) {
+        super(rawSlider.x, rawSlider.y, rawSlider.time);
+        path = rawSlider.path;
+        definedLength = rawSlider.definedLength;
+        slides = rawSlider.slides;
 
-        curveType = curveParameters[CURVE_TYPE_INDEX].charAt(0);
-        curvePoints = new ArrayList<>();
-        curvePoints.add(new Point2D.Double(x, y));
-
-        for (int i = CURVE_POINT_INDEX; i < curveParameters.length; i++) {
-            String[] curvePointParameters = curveParameters[i].split(":");
-            int curvePointX = Integer.parseInt(curvePointParameters[0]);
-            int curvePointY = Integer.parseInt(curvePointParameters[1]);
-
-            curvePoints.add(new Point2D.Double(curvePointX, curvePointY));
-        }
-    }
-
-    private void setPath() {
-        switch (curveType) {
-            case 'L': //linear slider
-                path = new LinearPath(curvePoints.get(0), curvePoints.get(1));
-                break;
-            case 'P': //perfect circle slider
-                if (GeometryFunctions.arePointsInALine(curvePoints.get(0), curvePoints.get(1), curvePoints.get(2)))
-                    path = new LinearPath(curvePoints.get(0), curvePoints.get(2));
-                else
-                    path = new CircularPath(curvePoints.get(0), curvePoints.get(1), curvePoints.get(2));
-                break;
-            case 'B': //bezier slider
-                path = (CompoundBezierPath.isCompound(curvePoints)) ?
-                        new CompoundBezierPath(curvePoints) :
-                        new BezierPath(curvePoints);
-        }
-    }
-
-    public void setEndTime(TimingPoint timingPoint, double sliderMultiplier) {
-        /*
-            based on 'https://osu.ppy.sh/wiki/en/Client/File_formats/osu_%28file_format%29#sliders'
-            "duration = length / (sliderMultiplier * 100 * SV) * beatLength"
-        */
-        double duration = length / (sliderMultiplier * 100 * timingPoint.sliderVelocityMultiplier) * timingPoint.beatLength;
+        double duration = definedLength / (sliderMultiplier * 100 * timingPoint.sliderVelocityMultiplier) * timingPoint.beatLength;
         endTime = time + duration;
+    }
+
+    @Override
+    public Point2D.Double endPosition() {
+        return path.pointAtLength(definedLength);
+    }
+
+    @Override
+    public double endTime() {
+        return endTime;
+    }
+
+    @Override
+    public void adjustSpeed(double percentage) {
+        time *= 1/percentage;
+        endTime *= 1/percentage;
+    }
+
+    @Override
+    public void translate(double dx, double dy) {
+        super.translate(dx, dy);
+        path = path.translate(dx, dy);
     }
 
     @Override
     public void flip() {
         super.flip();
-
-        for (Point2D.Double curvePoint : curvePoints)
-            curvePoint.y = BeatmapConstants.SCREEN_HEIGHT - curvePoint.y;
-
-        setPath();
-    }
-
-    @Override
-    public void shift(Point2D.Double unit) {
-        super.shift(unit);
-
-        Point2D.Double shiftingVector = new Point2D.Double(unit.x * -stackLayer, unit.y * -stackLayer);
-
-        for (Point2D.Double curvePoint : curvePoints) {
-            curvePoint.x += shiftingVector.x;
-            curvePoint.y += shiftingVector.y;
-        }
-
-        setPath();
-        endPosition = path.getPointAtLength(length);
+        path = path.flip();
     }
 }

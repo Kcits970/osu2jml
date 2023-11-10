@@ -15,6 +15,10 @@ public class GeometryFunctions {
         return new Point2D.Double((pointA.x + pointB.x)/2, (pointA.y + pointB.y)/2);
     }
 
+    public static Point2D.Double shiftPoint(Point2D.Double point, double dx, double dy) {
+        return new Point2D.Double(point.x + dx, point.y + dy);
+    }
+
     public static double distance(Point2D.Double p1, Point2D.Double p2) {
         return Math.hypot(p1.x - p2.x, p1.y - p2.y);
     }

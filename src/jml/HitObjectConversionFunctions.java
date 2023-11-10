@@ -118,10 +118,10 @@ public class HitObjectConversionFunctions {
 
     public static Point2D.Double getSliderCoordinateAt(Slider slider, double relativePosition, boolean reverse) {
         double lengthUntilCoordinate = (reverse) ?
-                slider.length * (1 - relativePosition) :
-                slider.length * relativePosition;
+                slider.definedLength * (1 - relativePosition) :
+                slider.definedLength * relativePosition;
 
-        return slider.path.getPointAtLength(lengthUntilCoordinate);
+        return slider.path.pointAtLength(lengthUntilCoordinate);
     }
 
     public static List<Event> convertSpinner(Spinner spinner, String hand, Set<Integer> paths) {
