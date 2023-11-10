@@ -10,6 +10,7 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import static java.lang.Math.*;
 
@@ -23,7 +24,7 @@ public class HitObjectConversionFunctions {
     static final double SPIN_DIRECTION = -1; //-1: clockwise spin, 1: counterclockwise spin
     static final int JUGGLER_ID = 1;
 
-    public static List<List<Event>> convertHitObjects(List<HitObject> objects, VanillaSiteswap siteswap, String handSequence) {
+    public static List<List<Event>> convertHitObjects(List<HitObject> objects, String siteswap, String handSequence) {
         List<List<Event>> conversions = new ArrayList<>();
         SiteswapStateTracker stateTracker = new SiteswapStateTracker(siteswap);
         Iterator<String> handStateTracker = new HandSequence(handSequence).iterator();
@@ -64,39 +65,36 @@ public class HitObjectConversionFunctions {
         return stabilizers;
     }
 
-    public static List<Event> convertHitObject(HitObject object, String hand, int path) {
+    public static List<Event> convertHitObject(HitObject object, String hand, Set<Integer> paths) {
         if (object instanceof HitCircle)
-            return convertHitCircle((HitCircle) object, hand, path);
+            return convertHitCircle((HitCircle) object, hand, paths);
 
         if (object instanceof Slider)
-            return convertSlider((Slider) object, hand, path);
+            return convertSlider((Slider) object, hand, paths);
 
         if (object instanceof Spinner)
-            return convertSpinner((Spinner) object, hand, path);
+            return convertSpinner((Spinner) object, hand, paths);
 
         return null;
     }
 
-    public static List<Event> convertHitCircle(HitCircle circle, String hand, int path) {
+    public static List<Event> convertHitCircle(HitCircle circle, String hand, Set<Integer> paths) {
         Event catchEvent = new Event(
                 osuCoordinateToJMLCoordinate(circle.x, circle.y),
                 osuTimeToJMLTime(circle.time),
                 JUGGLER_ID,
                 hand
         );
+        paths.forEach(path -> catchEvent.addManipulation(new Manipulation("catch", path)));
 
-        Event throwEvent = catchEvent.copyFrame();
-        throwEvent.t += 0.001;
+        Event releaseEvent = catchEvent.copyFrame();
+        releaseEvent.t += 0.001;
+        paths.forEach(path -> releaseEvent.addManipulation(new Manipulation("throw", path)));
 
-        if (path != 0) {
-            catchEvent.addManipulation(new Manipulation("catch", path));
-            throwEvent.addManipulation(new Manipulation("throw", path));
-        }
-
-        return List.of(catchEvent, throwEvent);
+        return List.of(catchEvent, releaseEvent);
     }
 
-    public static List<Event> convertSlider(Slider slider, String hand, int path) {
+    public static List<Event> convertSlider(Slider slider, String hand, Set<Integer> paths) {
         List<Event> sliderEvents = new ArrayList<>();
 
         double singleSliderDuration = slider.endTime - slider.time;
@@ -120,9 +118,8 @@ public class HitObjectConversionFunctions {
                     hand
             );
 
-            if (path != 0)
-                sliderEvent.addManipulation(new Manipulation(elapsedMillis == 0 ? "catch" : terminate ? "throw" : "holding", path));
-
+            String manipulationType = elapsedMillis == 0 ? "catch" : terminate ? "throw" : "holding";
+            paths.forEach(path -> sliderEvent.addManipulation(new Manipulation(manipulationType, path)));
             sliderEvents.add(sliderEvent);
         }
 
@@ -137,7 +134,7 @@ public class HitObjectConversionFunctions {
         return slider.path.getPointAtLength(lengthUntilCoordinate);
     }
 
-    public static List<Event> convertSpinner(Spinner spinner, String hand, int path) {
+    public static List<Event> convertSpinner(Spinner spinner, String hand, Set<Integer> paths) {
         List<Event> spinnerEvents = new ArrayList<>();
         double spinnerDuration = spinner.endTime - spinner.time;
 
@@ -155,9 +152,8 @@ public class HitObjectConversionFunctions {
                     hand
             );
 
-            if (path != 0)
-                spinnerEvent.addManipulation(new Manipulation(elapsedMillis == 0 ? "catch" : terminate ? "throw" : "holding", path));
-
+            String manipulationType = elapsedMillis == 0 ? "catch" : terminate ? "throw" : "holding";
+            paths.forEach(path -> spinnerEvent.addManipulation(new Manipulation(manipulationType, path)));
             spinnerEvents.add(spinnerEvent);
         }
 

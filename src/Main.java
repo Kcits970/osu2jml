@@ -1,6 +1,5 @@
 import jml.JMLDocument;
 import osu.Beatmap;
-import jml.siteswap.VanillaSiteswap;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -50,7 +49,7 @@ public class Main {
 
         JMLDocument convertedPattern = new JMLDocument(
                 beatmap,
-                new VanillaSiteswap(siteswapString),
+                siteswapString,
                 handSequenceString,
                 filler,
                 rainbow

@@ -1,7 +1,8 @@
 package jml;
 
+import jml.siteswap.SiteswapFunctions;
+import jml.siteswap.SiteswapParser;
 import osu.Beatmap;
-import jml.siteswap.VanillaSiteswap;
 import osu.HitObject;
 
 import java.awt.geom.Point2D;
@@ -15,7 +16,7 @@ public class JMLDocument {
 
     List<Event> universalEvents;
 
-    public JMLDocument(Beatmap beatmap, VanillaSiteswap siteswap, String handSequence, double filler, boolean rainbow) {
+    public JMLDocument(Beatmap beatmap, String siteswap, String handSequence, double filler, boolean rainbow) {
         Point2D.Double shiftUnit = new Point2D.Double(beatmap.hitObjectRadius() / 10, beatmap.hitObjectRadius() / 10);
 
         for (HitObject hitObject : beatmap.hitObjects)
@@ -27,7 +28,7 @@ public class JMLDocument {
                 handSequence
         );
 
-        paths = siteswap.getNumOfBalls();
+        paths = SiteswapFunctions.averageBeat(new SiteswapParser(siteswap).parse());
         delay = conversions.getLast().getLast().t + filler;
         universalEvents = new ArrayList<>();
         rainbowRendering = rainbow;

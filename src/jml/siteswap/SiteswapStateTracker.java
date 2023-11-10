@@ -3,42 +3,37 @@ package jml.siteswap;
 import java.util.*;
 
 public class SiteswapStateTracker {
-    VanillaSiteswap siteswap;
+    List<List<Integer>> siteswap;
     int currentSiteswapPosition;
 
     Map<Integer,Integer> propStatus;
-    int lastThrownProp;
 
-    public SiteswapStateTracker(VanillaSiteswap s) {
-        siteswap = s;
+    public SiteswapStateTracker(String siteswapString) {
+        siteswap = new SiteswapParser(siteswapString).parse();
         propStatus = new HashMap<>();
-        setupProps();
-    }
-
-    private void setupProps() {
-        for (int i = 1; i <= siteswap.getNumOfBalls(); i++)
+        for (int i = 1; i <= SiteswapFunctions.averageBeat(siteswap); i++)
             propStatus.put(i, 0);
     }
 
-    public int advanceState() {
-        int currentSiteswapElement = siteswap.beatAt(currentSiteswapPosition++);
-        int droppedProp = propStatus.entrySet()
+    public Set<Integer> advanceState() {
+        List<Integer> currentSiteswapElement = siteswap.get(currentSiteswapPosition++ % siteswap.size());
+        List<Integer> propsToThrow = propStatus.entrySet()
                 .stream()
                 .filter(entry -> entry.getValue() == 0)
                 .mapToInt(Map.Entry::getKey)
                 .sorted()
-                .findFirst()
-                .orElse(0);
+                .limit(currentSiteswapElement.size())
+                .boxed()
+                .toList();
 
-        if (droppedProp != 0)
-            propStatus.put(droppedProp, currentSiteswapElement);
-        lastThrownProp = droppedProp;
+        for (int i = 0; i < currentSiteswapElement.size(); i++)
+            propStatus.put(propsToThrow.get(i), currentSiteswapElement.get(i));
 
         propStatus.entrySet()
                 .stream()
                 .filter(entry -> entry.getValue() != 0)
                 .forEach(entry -> entry.setValue(entry.getValue() - 1));
 
-        return lastThrownProp;
+        return new HashSet<>(propsToThrow);
     }
 }
