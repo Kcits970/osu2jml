@@ -136,7 +136,7 @@ public class HitObjectConversionFunctions {
             }
 
             Event spinnerEvent = new Event(
-                    toXYZCoordinate(getSpinCoordinateAt(elapsedMillis)),
+                    toXYZCoordinate(getSpinCoordinate(elapsedMillis)),
                     toSeconds(spinner.time + elapsedMillis),
                     JUGGLER_ID,
                     hand
@@ -150,7 +150,7 @@ public class HitObjectConversionFunctions {
         return spinnerEvents;
     }
 
-    public static Point2D.Double getSpinCoordinateAt(double elapsedMillis) {
+    public static Point2D.Double getSpinCoordinate(double elapsedMillis) {
         /*
         The fastest possible spin speed in osu! is 477 rpm.
         The cursor needs to spin exactly 477 times in 60000 milliseconds.
