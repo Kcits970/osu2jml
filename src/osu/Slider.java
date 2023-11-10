@@ -18,7 +18,7 @@ public class Slider extends HitObject {
     public SliderPath path;
 
     public Slider(String sliderString) {
-        //This constructor creates a 'raw' slider.
+        //This constructor creates a 'raw' slider. Raw sliders must be 'refreshed' by the second constructor before use.
         super(sliderString);
 
         String[] sliderParameters = sliderString.split(",");
