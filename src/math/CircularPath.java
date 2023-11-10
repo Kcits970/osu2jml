@@ -10,12 +10,12 @@ public class CircularPath extends SliderPath {
     double angle;
 
     public CircularPath(Point2D.Double pointA, Point2D.Double pointB, Point2D.Double pointC) {
-        Line2D lineAB = GeometryFunctions.lineFrom2Points(pointA, pointB);
-        Line2D lineBC = GeometryFunctions.lineFrom2Points(pointB, pointC);
+        Line2D lineAB = new Line2D(pointA, pointB);
+        Line2D lineBC = new Line2D(pointB, pointC);
 
         center = intersection(
-                lineFromPointAndVector(midpoint(pointA, pointB), new Vector2D(lineAB.a, lineAB.b)),
-                lineFromPointAndVector(midpoint(pointB, pointC), new Vector2D(lineBC.a, lineBC.b))
+                new Line2D(midpoint(pointA, pointB), new Vector2D(lineAB.a, lineAB.b)),
+                new Line2D(midpoint(pointB, pointC), new Vector2D(lineBC.a, lineBC.b))
         );
 
         startPoint = pointA;

@@ -7,13 +7,6 @@ import static java.lang.Math.PI;
 public class GeometryFunctions {
     private static final double epsilon = 1e-10;
 
-    public static Line2D lineFrom2Points(Point2D.Double pointA, Point2D.Double pointB) {
-        return lineFromPointAndVector(pointA, new Vector2D(pointA, pointB));
-    }
-    public static Line2D lineFromPointAndVector(Point2D.Double point, Vector2D vector) {
-        return new Line2D(vector.y, -vector.x, vector.x*point.y - vector.y*point.getX());
-    }
-
     public static Point2D.Double intersection(Line2D lineA, Line2D lineB) {
         double intersectionX = 1 / (lineA.a * lineB.b - lineA.b * lineB.a) * (lineA.b * lineB.c - lineA.c * lineB.b);
         double intersectionY = 1 / (lineA.a * lineB.b - lineA.b * lineB.a) * (lineA.c * lineB.a - lineA.a * lineB.c);
