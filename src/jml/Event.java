@@ -13,6 +13,9 @@ public class Event {
     List<Manipulation> manipulations;
 
     public Event(double x, double y, double z, double t, int juggler, String hand) {
+        if (!"left".equals(hand) && !"right".equals(hand))
+            throw new RuntimeException(String.format("invalid hand specification: '%s'", hand));
+
         this.x = x;
         this.y = y;
         this.z = z;
@@ -25,6 +28,20 @@ public class Event {
 
     public Event(Point3D point, double t, int juggler, String hand) {
         this(point.x, point.y, point.z, t, juggler, hand);
+    }
+
+    public static Event createDefaultEvent(String hand) {
+        Event defaultEvent = new Event(0, 0, 0, 0, 1, hand);
+        if (defaultEvent.hand.equals("left"))
+            defaultEvent.x = -25;
+        else
+            defaultEvent.x = 25;
+
+        return defaultEvent;
+    }
+
+    public Point3D getPosition() {
+        return new Point3D(x, y, z);
     }
 
     public Event translate(double dx, double dy, double dz) {

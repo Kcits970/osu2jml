@@ -32,13 +32,13 @@ public class JMLDocument {
         universalEvents = new ArrayList<>();
         rainbowRendering = rainbow;
 
-        List<Stablizer> stablizers = HitObjectConversionFunctions.getStablizers(conversions, delay);
+        List<List<Event>> stabilizers = HitObjectConversionFunctions.getStablizers(conversions, delay);
 
         for (List<Event> conversion : conversions)
             universalEvents.addAll(conversion);
 
-        for (Stablizer stablizer : stablizers)
-            universalEvents.addAll(stablizer.emptyEvents);
+        for (List<Event> stabilizer : stabilizers)
+            universalEvents.addAll(stabilizer);
     }
 
     @Override

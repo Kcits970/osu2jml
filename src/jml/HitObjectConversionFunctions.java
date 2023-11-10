@@ -8,9 +8,7 @@ import math.PolarCoordinate;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.lang.Math.*;
 
@@ -52,18 +50,18 @@ public class HitObjectConversionFunctions {
                 event.translate(translationVector).scale(0.5).shiftTime(-startTime);
     }
 
-    public static List<Stablizer> getStablizers(List<List<Event>> conversions, double cycleDuration) {
-        List<Stablizer> stablizers = new ArrayList<>();
+    public static List<List<Event>> getStablizers(List<List<Event>> conversions, double cycleDuration) {
+        List<List<Event>> stabilizers = new ArrayList<>();
         List<List<Event>> leftHandEventGroups = conversions.stream().filter(conversion -> conversion.getFirst().hand.equals("left")).toList();
         List<List<Event>> rightHandEventGroups = conversions.stream().filter(conversion -> conversion.getFirst().hand.equals("right")).toList();
 
         for (int i = 0; i < leftHandEventGroups.size(); i++)
-            stablizers.add(new Stablizer(leftHandEventGroups.get(i), leftHandEventGroups.get((i+1) % leftHandEventGroups.size()), cycleDuration));
+            stabilizers.add(Stabilizers.getStabilizer(leftHandEventGroups.get(i), leftHandEventGroups.get((i+1) % leftHandEventGroups.size()), cycleDuration));
 
         for (int i = 0; i < rightHandEventGroups.size(); i++)
-            stablizers.add(new Stablizer(rightHandEventGroups.get(i), rightHandEventGroups.get((i+1) % rightHandEventGroups.size()), cycleDuration));
+            stabilizers.add(Stabilizers.getStabilizer(rightHandEventGroups.get(i), rightHandEventGroups.get((i+1) % rightHandEventGroups.size()), cycleDuration));
 
-        return stablizers;
+        return stabilizers;
     }
 
     public static List<Event> convertHitObject(HitObject object, String hand, int path) {
