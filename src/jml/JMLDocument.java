@@ -7,6 +7,7 @@ import osu.HitObject;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class JMLDocument {
@@ -25,21 +26,19 @@ public class JMLDocument {
         List<List<Event>> conversions = HitObjectConversionFunctions.convertHitObjects(
                 beatmap.hitObjects,
                 siteswap,
-                handSequence
+                handSequence,
+                filler
         );
 
-        paths = SiteswapFunctions.averageBeat(new SiteswapParser(siteswap).parse());
-        delay = conversions.getLast().getLast().t + filler;
         universalEvents = new ArrayList<>();
-        rainbowRendering = rainbow;
-
-        List<List<Event>> stabilizers = HitObjectConversionFunctions.getStablizers(conversions, delay);
-
         for (List<Event> conversion : conversions)
             universalEvents.addAll(conversion);
 
-        for (List<Event> stabilizer : stabilizers)
-            universalEvents.addAll(stabilizer);
+        universalEvents.sort(Comparator.comparingDouble(event -> event.t));
+
+        paths = SiteswapFunctions.averageBeat(new SiteswapParser(siteswap).parse());
+        delay = universalEvents.getLast().t + HitObjectConversionFunctions.FRAME_DISTANCE_SECONDS;
+        rainbowRendering = rainbow;
     }
 
     @Override

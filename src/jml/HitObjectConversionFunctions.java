@@ -19,14 +19,16 @@ public class HitObjectConversionFunctions {
     static final double SPIN_DIRECTION = -1; //-1: clockwise spin, 1: counterclockwise spin
     static final int JUGGLER_ID = 1;
 
-    public static List<List<Event>> convertHitObjects(List<HitObject> objects, String siteswap, String handSequence) {
+    public static List<List<Event>> convertHitObjects(List<HitObject> objects, String siteswap, String handSequence, double filler) {
         List<List<Event>> conversions = new ArrayList<>();
         PropStateTracker stateTracker = new PropStateTracker(siteswap);
         Iterator<String> handStateTracker = new HandSequence(handSequence).iterator();
 
+        //Conversion of each osu hit object
         for (HitObject object : objects)
             conversions.add(convertHitObject(object, handStateTracker.next(), stateTracker.advanceState()));
 
+        //Shifting the position and time of the events to make them appear more centered.
         double startTime = conversions.getFirst().getFirst().t;
         for (List<Event> conversion : conversions)
             for (Event event : conversion) {
@@ -35,10 +37,9 @@ public class HitObjectConversionFunctions {
                 event.shiftTime(-startTime);
             }
 
-        return conversions;
-    }
-
-    public static List<List<Event>> getStablizers(List<List<Event>> conversions, double cycleDuration) {
+        //If two events in a jml ladder diagram are "far" apart, the juggler's hands will "stride" far away.
+        //We add "stabilizers" to keep the juggler's hands in position.
+        double cycleDuration = conversions.getLast().getLast().t + filler;
         List<List<Event>> stabilizers = new ArrayList<>();
         List<List<Event>> leftHandEventGroups = conversions.stream().filter(conversion -> conversion.getFirst().hand.equals("left")).toList();
         List<List<Event>> rightHandEventGroups = conversions.stream().filter(conversion -> conversion.getFirst().hand.equals("right")).toList();
@@ -49,7 +50,9 @@ public class HitObjectConversionFunctions {
         for (int i = 0; i < rightHandEventGroups.size(); i++)
             stabilizers.add(Stabilizers.getStabilizer(rightHandEventGroups.get(i), rightHandEventGroups.get((i+1) % rightHandEventGroups.size()), cycleDuration));
 
-        return stabilizers;
+        conversions.addAll(stabilizers);
+
+        return conversions;
     }
 
     public static List<Event> convertHitObject(HitObject object, String hand, Set<Integer> paths) {
@@ -67,8 +70,8 @@ public class HitObjectConversionFunctions {
 
     public static List<Event> convertHitCircle(HitCircle circle, String hand, Set<Integer> paths) {
         Event catchEvent = new Event(
-                osuCoordinateToJMLCoordinate(circle.x, circle.y),
-                osuTimeToJMLTime(circle.time),
+                toXYZCoordinate(circle.x, circle.y),
+                toSeconds(circle.time),
                 JUGGLER_ID,
                 hand
         );
@@ -99,8 +102,8 @@ public class HitObjectConversionFunctions {
             boolean reverse = nthSlide % 2 != 0;
 
             Event sliderEvent = new Event(
-                    osuCoordinateToJMLCoordinate(getSliderCoordinateAt(slider, relativePosition, reverse)),
-                    osuTimeToJMLTime(slider.time + elapsedMillis),
+                    toXYZCoordinate(getSliderCoordinateAt(slider, relativePosition, reverse)),
+                    toSeconds(slider.time + elapsedMillis),
                     JUGGLER_ID,
                     hand
             );
@@ -133,8 +136,8 @@ public class HitObjectConversionFunctions {
             }
 
             Event spinnerEvent = new Event(
-                    osuCoordinateToJMLCoordinate(getSpinCoordinateAt(elapsedMillis)),
-                    osuTimeToJMLTime(spinner.time + elapsedMillis),
+                    toXYZCoordinate(getSpinCoordinateAt(elapsedMillis)),
+                    toSeconds(spinner.time + elapsedMillis),
                     JUGGLER_ID,
                     hand
             );
@@ -164,16 +167,15 @@ public class HitObjectConversionFunctions {
         );
     }
 
-    public static double osuTimeToJMLTime(double osuTime) {
-        //time in osu is in terms of milliseconds, time in jml is in terms of seconds.
-        return osuTime / 1000;
+    public static double toSeconds(double milliseconds) {
+        return milliseconds / 1000;
     }
 
-    public static Point3D osuCoordinateToJMLCoordinate(double x, double y) {
+    public static Point3D toXYZCoordinate(double x, double y) {
         return new Point3D(-x, 0, -y);
     }
 
-    public static Point3D osuCoordinateToJMLCoordinate(Point2D.Double point) {
-        return osuCoordinateToJMLCoordinate(point.x, point.y);
+    public static Point3D toXYZCoordinate(Point2D.Double point) {
+        return toXYZCoordinate(point.x, point.y);
     }
 }
