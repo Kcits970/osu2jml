@@ -98,16 +98,17 @@ public class Beatmap {
 
     void setupTimingPoints() {
         List<String> timingPointStrings = sections.get("[TimingPoints]");
+        List<TimingPoint> rawTimingPoints = timingPointStrings.stream().map(TimingPoint::new).toList();
 
-        TimingPoint lastUninheritedTimingPoint = null;
-        for (String s : timingPointStrings) {
-            TimingPoint currentTimingPoint = new TimingPoint(s);
-            timingPoints.add(currentTimingPoint);
+        TimingPoint currentParent = null;
+        for (TimingPoint rawTimingPoint : rawTimingPoints) {
+            if (!rawTimingPoint.inherited)
+                currentParent = rawTimingPoint;
 
-            if (currentTimingPoint.uninherited)
-                lastUninheritedTimingPoint = currentTimingPoint;
+            if (rawTimingPoint.inherited)
+                timingPoints.add(new TimingPoint(rawTimingPoint, currentParent));
             else
-                currentTimingPoint.inheritFields(lastUninheritedTimingPoint);
+                timingPoints.add(new TimingPoint(rawTimingPoint, null));
         }
     }
 
