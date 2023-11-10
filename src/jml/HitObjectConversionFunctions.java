@@ -8,6 +8,7 @@ import math.PolarCoordinate;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import static java.lang.Math.*;
@@ -24,18 +25,17 @@ public class HitObjectConversionFunctions {
 
     public static List<List<Event>> convertHitObjects(List<HitObject> objects, VanillaSiteswap siteswap, String handSequence) {
         List<List<Event>> conversions = new ArrayList<>();
-        SiteswapStateTracker stateTracker = new SiteswapStateTracker(siteswap, handSequence);
+        SiteswapStateTracker stateTracker = new SiteswapStateTracker(siteswap);
+        Iterator<String> handStateTracker = new HandSequence(handSequence).iterator();
 
-        for (HitObject object : objects) {
-            stateTracker.advanceState();
+        for (HitObject object : objects)
             conversions.add(
                     convertHitObject(
                             object,
-                            stateTracker.getLastAssignedHand(),
-                            stateTracker.getThrownBall()
+                            handStateTracker.next(),
+                            stateTracker.advanceState()
                     )
             );
-        }
 
         polishConvertedHitObjects(conversions);
         return conversions;

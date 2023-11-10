@@ -4,15 +4,13 @@ import java.util.*;
 
 public class SiteswapStateTracker {
     VanillaSiteswap siteswap;
-    String handSequence;
     int currentSiteswapPosition;
 
     Map<Integer,Integer> propStatus;
     int lastThrownProp;
 
-    public SiteswapStateTracker(VanillaSiteswap s, String handSequence) {
+    public SiteswapStateTracker(VanillaSiteswap s) {
         siteswap = s;
-        this.handSequence = handSequence.toLowerCase();
         propStatus = new HashMap<>();
         setupProps();
     }
@@ -22,7 +20,7 @@ public class SiteswapStateTracker {
             propStatus.put(i, 0);
     }
 
-    public void advanceState() {
+    public int advanceState() {
         int currentSiteswapElement = siteswap.beatAt(currentSiteswapPosition++);
         int droppedProp = propStatus.entrySet()
                 .stream()
@@ -40,14 +38,7 @@ public class SiteswapStateTracker {
                 .stream()
                 .filter(entry -> entry.getValue() != 0)
                 .forEach(entry -> entry.setValue(entry.getValue() - 1));
-    }
 
-    public int getThrownBall() {
         return lastThrownProp;
-    }
-
-    public String getLastAssignedHand() {
-        char handSequenceCharacter = handSequence.charAt((currentSiteswapPosition - 1) % handSequence.length());
-        return handSequenceCharacter == 'l' ? "left" : "right";
     }
 }
