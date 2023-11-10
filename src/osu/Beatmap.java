@@ -95,6 +95,21 @@ public class Beatmap {
         return possibleValue.get();
     }
 
+    public void applyStackLayers() {
+        /*
+        This method shifts all the hit objects based on their stack layers.
+        It effectively sets the beatmap ready for "rendering".
+        Call to this method should be done AFTER applying the beatmap modifiers.
+        */
+
+        //The value of 'stackOffset' is taken from https://gist.github.com/peppy/1167470. (Line 6)
+        double stackOffset = BeatmapFunctions.hitObjectRadius(circleSize) / 10;
+        Map<HitObject,Integer> stackLayerMap = BeatmapFunctions.calculateStackLayers(hitObjects, approachRate, stackLeniency);
+
+        for (HitObject hitObject : hitObjects)
+            hitObject.translate(stackLayerMap.get(hitObject) * stackOffset, stackLayerMap.get(hitObject) * stackOffset);
+    }
+
     public Beatmap easy() {
         approachRate *= 0.5;
         circleSize *= 0.5;

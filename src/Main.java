@@ -43,6 +43,8 @@ public class Main {
                 throw new Exception();
         }
 
+        beatmap.applyStackLayers();
+
         System.out.println("Apply Rainbow Colors to Props? (Y/N):");
         System.out.print(">> ");
         boolean rainbow = scanner.nextLine().equalsIgnoreCase("y");
