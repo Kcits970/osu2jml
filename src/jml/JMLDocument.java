@@ -3,14 +3,10 @@ package jml;
 import jml.siteswap.SiteswapFunctions;
 import jml.siteswap.SiteswapParser;
 import osu.Beatmap;
-import osu.BeatmapFunctions;
-import osu.HitObject;
 
-import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 
 public class JMLDocument {
     int paths;
