@@ -22,19 +22,23 @@ public class AlgebraFunctions {
         return (a + b)/2;
     }
     
-    public static int binomialCoefficient(int n, int k) {
-        int[] pascalArray = new int[n+1];
-        pascalArray[0] = 1;
+    public static long binomialCoefficient(int n, int k) {
+        /*
+        Given nCk, nC(k+1) is equal to nCk * (n-k) / (k+1)
+        We iterate from nC0 = 1.
 
-        for (int currentRow = 1; currentRow <= n; currentRow++) {
-            pascalArray[currentRow] = 1;
+        nC0 = 1
+        nC1 = nC0 * (n-0) / (0+1) = n
+        nC2 = nC1 * (n-1) / (1+1) = n(n-1)/2
+        nC3 = nC2 * (n-2) / (2+1) = n(n-1)(n-2)/6
+        ...
+         */
 
-            for (int sample = currentRow - 1; sample > 0; sample--) {
-                pascalArray[sample] = pascalArray[sample] + pascalArray[sample-1];
-            }
-        }
+        long nChooseI = 1;
+        for (int i = 0; i < k; i++)
+            nChooseI = nChooseI * (n-i) / (i+1);
 
-        return pascalArray[k];
+        return nChooseI;
     }
 
     public static double bernstein(int n, int k, double t) {
