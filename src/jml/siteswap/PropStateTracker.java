@@ -2,13 +2,13 @@ package jml.siteswap;
 
 import java.util.*;
 
-public class SiteswapStateTracker {
+public class PropStateTracker {
     List<List<Integer>> siteswap;
     int currentSiteswapPosition;
 
     Map<Integer,Integer> propStatus;
 
-    public SiteswapStateTracker(String siteswapString) {
+    public PropStateTracker(String siteswapString) {
         siteswap = new SiteswapParser(siteswapString).parse();
         propStatus = new HashMap<>();
         for (int i = 1; i <= SiteswapFunctions.averageBeat(siteswap); i++)

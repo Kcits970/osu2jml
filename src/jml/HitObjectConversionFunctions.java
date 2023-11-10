@@ -26,7 +26,7 @@ public class HitObjectConversionFunctions {
 
     public static List<List<Event>> convertHitObjects(List<HitObject> objects, String siteswap, String handSequence) {
         List<List<Event>> conversions = new ArrayList<>();
-        SiteswapStateTracker stateTracker = new SiteswapStateTracker(siteswap);
+        PropStateTracker stateTracker = new PropStateTracker(siteswap);
         Iterator<String> handStateTracker = new HandSequence(handSequence).iterator();
 
         for (HitObject object : objects)
