@@ -53,7 +53,7 @@ public class Slider extends HitObject {
                 path = new LinearPath(curvePoints.get(0), curvePoints.get(1));
                 break;
             case 'P': //perfect circle slider
-                if (GeometryFunctions.are3PointsInALine(curvePoints.get(0), curvePoints.get(1), curvePoints.get(2)))
+                if (GeometryFunctions.arePointsInALine(curvePoints.get(0), curvePoints.get(1), curvePoints.get(2)))
                     path = new LinearPath(curvePoints.get(0), curvePoints.get(2));
                 else
                     path = new CircularPath(curvePoints.get(0), curvePoints.get(1), curvePoints.get(2));

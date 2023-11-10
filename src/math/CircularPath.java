@@ -23,11 +23,11 @@ public class CircularPath extends SliderPath {
         radius = center.distance(pointA);
 
         double clockwiseAngle =
-                clockwiseAngleOf2Vectors(new Vector2D(center, pointA), new Vector2D(center, pointB)) +
-                clockwiseAngleOf2Vectors(new Vector2D(center, pointB), new Vector2D(center, pointC));
+                clockwiseAngle(new Vector2D(center, pointA), new Vector2D(center, pointB)) +
+                clockwiseAngle(new Vector2D(center, pointB), new Vector2D(center, pointC));
         double counterclockwiseAngle =
-                counterclockwiseAngleOf2Vectors(new Vector2D(center, pointA), new Vector2D(center, pointB)) +
-                counterclockwiseAngleOf2Vectors(new Vector2D(center, pointB), new Vector2D(center, pointC));
+                counterclockwiseAngle(new Vector2D(center, pointA), new Vector2D(center, pointB)) +
+                counterclockwiseAngle(new Vector2D(center, pointB), new Vector2D(center, pointC));
 
         angle = (clockwiseAngle < 2*PI) ? -clockwiseAngle : counterclockwiseAngle;
         length = radius * Math.abs(angle);
