@@ -1,7 +1,5 @@
 package osu;
 
-import math.GeometryFunctions;
-
 import java.io.*;
 import java.util.*;
 import java.util.function.Function;
@@ -55,8 +53,6 @@ public class Beatmap {
             else
                 hitObjects.add(rawHitObject);
         }
-
-        calculateStackLayers();
     }
 
     private static Map<String,List<String>> readRawBeatmapData(File f) throws Exception {
@@ -99,127 +95,33 @@ public class Beatmap {
         return possibleValue.get();
     }
 
-    void calculateStackLayers() {
-        /*
-        The code here is entirely taken from https://gist.github.com/peppy/1167470.
-        Some of the syntax has been modified from C# to Java, but the algorithm is entirely the same.
-        */
-
-        final int STACK_LENIENCE = 3;
-
-        for (int i = hitObjects.size() - 1; i > 0; i--) {
-            int n = i;
-
-            HitObject objectI = hitObjects.get(i);
-
-            if (objectI.stackLayer != 0 || objectI instanceof Spinner) continue;
-
-            if (objectI instanceof HitCircle) {
-                while (--n >= 0) {
-                    HitObject objectN = hitObjects.get(n);
-
-                    if (objectN instanceof Spinner) continue;
-
-                    HitObject spanN = objectN instanceof Slider ? (Slider) objectN : null;
-
-                    if (objectI.time - (preempt() * stackLeniency) > objectN.endTime())
-                        break;
-
-                    if (spanN != null && GeometryFunctions.distance(spanN.endPosition(), objectI.position()) < STACK_LENIENCE) {
-                        int offset = objectI.stackLayer - objectN.stackLayer + 1;
-                        for (int j = n + 1; j <= i; j++) {
-                            if (GeometryFunctions.distance(spanN.endPosition(), hitObjects.get(j).position()) < STACK_LENIENCE)
-                                hitObjects.get(j).stackLayer -= offset;
-                        }
-
-                        break;
-                    }
-
-                    if (GeometryFunctions.distance(objectN.position(), objectI.position()) < STACK_LENIENCE) {
-                        objectN.stackLayer = objectI.stackLayer + 1;
-                        objectI = objectN;
-                    }
-                }
-            }
-            else if (objectI instanceof Slider) {
-                while (--n >= 0) {
-                    HitObject objectN = hitObjects.get(n);
-
-                    if (objectN instanceof Spinner) continue;
-
-                    HitObject spanN = objectN instanceof Slider ? (Slider) objectN : null;
-
-                    if (objectI.time - (preempt() * stackLeniency) > objectN.time)
-                        break;
-
-                    if (GeometryFunctions.distance((spanN != null ? spanN.endPosition() : objectN.position()), objectI.position()) < STACK_LENIENCE) {
-                        objectN.stackLayer = objectI.stackLayer + 1;
-                        objectI = objectN;
-                    }
-                }
-            }
-        }
-    }
-
-    void resetAllStackLayers() {
-        for (HitObject hitObject : hitObjects)
-            hitObject.resetStackProperties();
-    }
-
-    void recalculateStackLayers() {
-        resetAllStackLayers();
-        calculateStackLayers();
-    }
-
-    public double preempt() {
-        if (approachRate < 5)
-            return 1200 + (double) 600 * (5 - approachRate) / 5;
-        else if (approachRate > 5)
-            return 1200 - (double) 750 * (approachRate - 5) / 5;
-        else
-            return 1200;
-    }
-
-    public double hitObjectRadius() {
-        return 54.5 - 4.48 * circleSize;
-    }
-
     public Beatmap easy() {
         approachRate *= 0.5;
         circleSize *= 0.5;
-        recalculateStackLayers();
 
         return this;
     }
 
     public Beatmap hardRock() {
-        approachRate *= 1.4;
-        circleSize *= 1.3;
-
-        if (approachRate > 10)
-            approachRate = 10;
-
-        if (circleSize > 10)
-            circleSize = 10;
+        approachRate = Math.min(10, approachRate * 1.4);
+        circleSize *= Math.min(10, circleSize * 1.3);
 
         for (HitObject hitObject : hitObjects)
             hitObject.flip();
-
-        recalculateStackLayers();
 
         return this;
     }
 
     public Beatmap halfTime() {
         for (HitObject hitObject : hitObjects)
-            hitObject.adjustSpeed(1 / 0.75);
+            hitObject.adjustSpeed(0.75);
 
         return this;
     }
 
     public Beatmap doubleTime() {
         for (HitObject hitObject : hitObjects)
-            hitObject.adjustSpeed(1 / 1.5);
+            hitObject.adjustSpeed(1.5);
 
         return this;
     }
