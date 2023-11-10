@@ -1,9 +1,9 @@
 package osu;
 
 public class TimingPoint {
-    static final int TIME_INDEX = 0;
-    static final int BEATLENGTH_INDEX = 1;
-    static final int UNINHERITED_INDEX = 6;
+    private static final int TIME_INDEX = 0;
+    private static final int BEATLENGTH_INDEX = 1;
+    private static final int UNINHERITED_INDEX = 6;
 
     public final int time;
     public final double beatLength;
