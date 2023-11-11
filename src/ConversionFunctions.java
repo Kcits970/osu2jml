@@ -10,6 +10,9 @@ public class ConversionFunctions {
     static final double FRAME_DISTANCE_MILLIS = 1000 / FPS;
     static final double FRAME_DISTANCE_SECONDS = 1 / FPS;
 
+    static final double SHORT_THRESHOLD = 0.2;
+    static final double LONG_THRESHOLD = 0.6;
+
     static final double MAX_RPM = 477;
     static final PolarCoordinate SPIN_ORIGIN = new PolarCoordinate(50, -Math.PI/2);
     static final double SPIN_DIRECTION = -1; //-1: clockwise spin, 1: counterclockwise spin
@@ -41,10 +44,10 @@ public class ConversionFunctions {
         List<List<Event>> rightHandEventGroups = conversions.stream().filter(conversion -> conversion.getFirst().hand.equals("right")).toList();
 
         for (int i = 0; i < leftHandEventGroups.size(); i++)
-            stabilizers.add(Stabilizers.getStabilizer(leftHandEventGroups.get(i), leftHandEventGroups.get((i+1) % leftHandEventGroups.size()), cycleDuration));
+            stabilizers.add(getStabilizer(leftHandEventGroups.get(i), leftHandEventGroups.get((i+1) % leftHandEventGroups.size()), cycleDuration));
 
         for (int i = 0; i < rightHandEventGroups.size(); i++)
-            stabilizers.add(Stabilizers.getStabilizer(rightHandEventGroups.get(i), rightHandEventGroups.get((i+1) % rightHandEventGroups.size()), cycleDuration));
+            stabilizers.add(getStabilizer(rightHandEventGroups.get(i), rightHandEventGroups.get((i+1) % rightHandEventGroups.size()), cycleDuration));
 
         conversions.addAll(stabilizers);
 
@@ -178,5 +181,54 @@ public class ConversionFunctions {
 
     public static Point3D toXYZCoordinate(Point2D point) {
         return toXYZCoordinate(point.x, point.y);
+    }
+
+    public static List<Event> getStabilizer(List<Event> group1, List<Event> group2, double jmlDuration) {
+        double seconds = secondsBetweenTwoGroups(group1, group2, jmlDuration);
+
+        if (seconds <= SHORT_THRESHOLD)
+            return Collections.emptyList();
+        else if (seconds <= LONG_THRESHOLD)
+            return getEmptyEvents(
+                    group1.getLast().getPosition(),
+                    group1.getLast().hand,
+                    group1.getLast().t + FRAME_DISTANCE_SECONDS,
+                    secondsBetweenTwoGroups(group1, group2, jmlDuration) - SHORT_THRESHOLD - FRAME_DISTANCE_SECONDS,
+                    jmlDuration
+            );
+        else
+            return getEmptyEvents(
+                    Event.createDefaultEvent(group1.getLast().hand).getPosition(),
+                    group1.getLast().hand,
+                    group1.getLast().t + SHORT_THRESHOLD,
+                    secondsBetweenTwoGroups(group1, group2, jmlDuration) - 2*SHORT_THRESHOLD,
+                    jmlDuration
+            );
+    }
+
+    private static double secondsBetweenTwoGroups(List<Event> group1, List<Event> group2, double jmlDuration) {
+        return (group2.getFirst().t > group1.getLast().t) ?
+                group2.getFirst().t - group1.getLast().t :
+                group2.getFirst().t - group1.getLast().t + jmlDuration;
+    }
+
+    private static List<Event> getEmptyEvents(Point3D position, String hand, double start, double duration, double jmlDuration) {
+        List<Event> emptyEvents = new ArrayList<>();
+
+        boolean terminate = false;
+        for (double elapsedSeconds = 0; !terminate; elapsedSeconds += FRAME_DISTANCE_SECONDS) {
+            if (elapsedSeconds >= duration) {
+                elapsedSeconds = duration;
+                terminate = true;
+            }
+
+            emptyEvents.add(new Event(position, start + elapsedSeconds, 1, hand));
+        }
+
+        if (start + duration >= jmlDuration)
+            emptyEvents.stream()
+                    .filter(event -> event.t >= jmlDuration)
+                    .forEach(event -> event.t -= jmlDuration);
+        return emptyEvents;
     }
 }
