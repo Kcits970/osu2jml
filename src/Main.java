@@ -61,6 +61,7 @@ public class Main {
         }
 
         String siteswapString = optionalArguments.getOrDefault("-ss", "3");
+        String modifierString = optionalArguments.getOrDefault("-m", "");
         String handSequenceString = optionalArguments.getOrDefault("-h", "LR");
         String fillerString = optionalArguments.getOrDefault("-f", "1.0");
         String colorString = optionalArguments.getOrDefault("-c", "white");
@@ -78,6 +79,10 @@ public class Main {
 
         if (saturation < 0.0f || saturation > 1.0f)
             throw new RuntimeException("saturation values must be within [0,1]");
+
+        //Get the beatmap ready for conversion!!
+        beatmap.applyModifier(modifierString);
+        beatmap.applyStackLayers();
 
         List<Event> convertedHitObjects = ConversionFunctions.convertHitObjects(
                 beatmap.hitObjects,

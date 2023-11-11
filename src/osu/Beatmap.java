@@ -125,8 +125,8 @@ public class Beatmap {
         return 54.5 - 4.48 * circleSize;
     }
 
-    //DO NOT ALTER ANY CODE IN THIS METHOD!! IT WORKS, SO IT'S PROBABLY BEST TO NOT TOUCH ANYTHING!
     public static Map<HitObject,Integer> calculateStackLayers(List<HitObject> hitObjects, double approachRate, double stackLeniency) {
+        //DO NOT ALTER ANY CODE IN THIS METHOD!! IT WORKS, SO IT'S PROBABLY BEST TO NOT TOUCH ANYTHING!
         //The algorithm here is entirely taken from https://gist.github.com/peppy/1167470.
         //Planning to de-nest some logic here if possible, but it works, so I'm not going to really mess with it.
 
@@ -192,34 +192,45 @@ public class Beatmap {
         return stackLayerMap;
     }
 
-    public Beatmap easy() {
+    public void easy() {
         approachRate *= 0.5;
         circleSize *= 0.5;
-
-        return this;
     }
 
-    public Beatmap hardRock() {
+    public void hardRock() {
         approachRate = Math.min(10, approachRate * 1.4);
         circleSize *= Math.min(10, circleSize * 1.3);
 
         for (HitObject hitObject : hitObjects)
             hitObject.flip();
-
-        return this;
     }
 
-    public Beatmap halfTime() {
+    public void halfTime() {
         for (HitObject hitObject : hitObjects)
             hitObject.adjustSpeed(0.75);
-
-        return this;
     }
 
-    public Beatmap doubleTime() {
+    public void doubleTime() {
         for (HitObject hitObject : hitObjects)
             hitObject.adjustSpeed(1.5);
+    }
 
-        return this;
+    public void applyModifier(String modifier) {
+        List<String> modifierList = new ArrayList<>();
+        for (int i = 0; i < modifier.length(); i+=2)
+            modifierList.add(modifier.substring(i, Math.min(modifier.length(), i+2)));
+
+        for (String subModifier : modifierList) {
+            if ("ez".equalsIgnoreCase(subModifier))
+                easy();
+            else if ("hr".equalsIgnoreCase(subModifier))
+                hardRock();
+            else if ("ht".equalsIgnoreCase(subModifier))
+                halfTime();
+            else if ("dt".equalsIgnoreCase(subModifier))
+                doubleTime();
+            else
+                throw new RuntimeException(String.format("'%s' is not a recognized combination of beatmap modifiers", modifier));
+        }
     }
 }
