@@ -11,14 +11,14 @@ import static java.lang.Math.*;
 public class HitObjectConversionFunctions {
     static final double FPS = 30;
     static final double FRAME_DISTANCE_MILLIS = 1000 / FPS;
-    static final double FRAME_DISTANCE_SECONDS = 1 / FPS;
+    public static final double FRAME_DISTANCE_SECONDS = 1 / FPS;
 
     static final double MAX_RPM = 477;
     static final PolarCoordinate SPIN_ORIGIN = new PolarCoordinate(50, -PI/2);
     static final double SPIN_DIRECTION = -1; //-1: clockwise spin, 1: counterclockwise spin
     static final int JUGGLER_ID = 1;
 
-    public static List<List<Event>> convertHitObjects(List<HitObject> objects, String siteswap, String handSequence, double filler) {
+    public static List<Event> convertHitObjects(List<HitObject> objects, String siteswap, String handSequence, double filler) {
         List<List<Event>> conversions = new ArrayList<>();
         PropStateTracker stateTracker = new PropStateTracker(siteswap);
         Iterator<String> handStateTracker = new HandSequence(handSequence).iterator();
@@ -51,7 +51,12 @@ public class HitObjectConversionFunctions {
 
         conversions.addAll(stabilizers);
 
-        return conversions;
+        //flatten the conversions to individual events, and sort them by time!
+        List<Event> flattenedAndSorted = new ArrayList<>();
+        conversions.forEach(flattenedAndSorted::addAll);
+        flattenedAndSorted.sort(Comparator.comparingDouble(event -> event.t));
+
+        return flattenedAndSorted;
     }
 
     public static List<Event> convertHitObject(HitObject object, String hand, Set<Integer> paths) {

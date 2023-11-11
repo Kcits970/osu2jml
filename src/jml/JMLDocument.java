@@ -1,52 +1,75 @@
 package jml;
 
-import jml.siteswap.SiteswapFunctions;
-import jml.siteswap.SiteswapParser;
-import osu.Beatmap;
+import math.Pair;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.awt.Color;
+import java.util.*;
+import java.util.stream.IntStream;
 
 public class JMLDocument {
-    int paths;
+    int jugglers, paths;
+    Map<Integer,Pair<Color,Double>> propAssignments;
     double delay;
-    boolean rainbowRendering;
+    String pperm;
 
-    List<Event> universalEvents;
+    List<Event> events;
 
-    public JMLDocument(Beatmap beatmap, String siteswap, String handSequence, double filler, boolean rainbow) {
-        List<List<Event>> conversions = HitObjectConversionFunctions.convertHitObjects(
-                beatmap.hitObjects,
-                siteswap,
-                handSequence,
-                filler
-        );
+    public JMLDocument() {
+        propAssignments = new HashMap<>();
+        events = new ArrayList<>();
+    }
 
-        universalEvents = new ArrayList<>();
-        for (List<Event> conversion : conversions)
-            universalEvents.addAll(conversion);
+    public void setJugglers(int jugglers) {
+        this.jugglers = jugglers;
+    }
 
-        universalEvents.sort(Comparator.comparingDouble(event -> event.t));
+    public void setPaths(int paths) {
+        this.paths = paths;
+    }
 
-        paths = SiteswapFunctions.averageBeat(new SiteswapParser(siteswap).parse());
-        delay = universalEvents.getLast().t + HitObjectConversionFunctions.FRAME_DISTANCE_SECONDS;
-        rainbowRendering = rainbow;
+    public void setPPerm(String pperm) {
+        this.pperm = pperm;
+    }
+
+    public void setDelay(double delay) {
+        this.delay = delay;
+    }
+
+    public void assignProp(int path, Color color, double diameter) {
+        propAssignments.put(path, new Pair<>(color, diameter));
+    }
+
+    public void addEvents(Collection<? extends Event> eventsToAdd) {
+        events.addAll(eventsToAdd);
     }
 
     @Override
     public String toString() {
         StringBuilder jmlBuilder = new StringBuilder();
 
-        jmlBuilder.append(JMLTagFunctions.generateDefaultTags());
+        jmlBuilder.append("<?xml version=\"1.0\"?>\n");
+        jmlBuilder.append("<!DOCTYPE jml SYSTEM \"file://jml.dtd\">\n");
         jmlBuilder.append("<jml>\n");
         jmlBuilder.append("<pattern>\n");
 
-        jmlBuilder.append(JMLTagFunctions.generatePropTag(paths, rainbowRendering)).append('\n');
-        jmlBuilder.append(JMLTagFunctions.generateSetupTag(paths, rainbowRendering)).append('\n');
-        jmlBuilder.append(JMLTagFunctions.generateSymmetryTag(paths, delay)).append('\n');
+        for (int i = 1; i <= paths; i++)
+            jmlBuilder.append(
+                    String.format("<prop type=\"ball\" mod=\"color=%s,%s,%s\"/>\n",
+                            255 - propAssignments.get(i).element1.getRed(),
+                            255 - propAssignments.get(i).element1.getGreen(),
+                            255 - propAssignments.get(i).element1.getBlue()
+                    )
+            );
 
-        for (Event e : universalEvents)
+        jmlBuilder.append(String.format("<setup jugglers=\"%d\" paths=\"%d\" props=\"%s\"/>\n",
+                jugglers,
+                paths,
+                String.join(",", IntStream.rangeClosed(1, paths).mapToObj(String::valueOf).toList())
+        ));
+
+        jmlBuilder.append(String.format("<symmetry type=\"delay\" pperm=\"%s\" delay=\"%.4f\"/>\n", pperm, delay));
+
+        for (Event e : events)
             jmlBuilder.append(e.toString()).append('\n');
 
         jmlBuilder.append("</pattern>\n");

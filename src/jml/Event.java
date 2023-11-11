@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Event {
-    double x, y, z, t;
-    int juggler;
-    String hand;
+    public double x, y, z, t;
+    public int juggler;
+    public String hand;
 
     List<Manipulation> manipulations;
 

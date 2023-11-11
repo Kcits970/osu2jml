@@ -1,10 +1,17 @@
+import jml.Event;
+import jml.HitObjectConversionFunctions;
 import jml.JMLDocument;
+import jml.siteswap.SiteswapFunctions;
+import jml.siteswap.SiteswapParser;
 import osu.Beatmap;
 
+import java.awt.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -49,16 +56,37 @@ public class Main {
         System.out.print(">> ");
         boolean rainbow = scanner.nextLine().equalsIgnoreCase("y");
 
-        JMLDocument convertedPattern = new JMLDocument(
-                beatmap,
+        List<Event> convertedHitObjects = HitObjectConversionFunctions.convertHitObjects(
+                beatmap.hitObjects,
                 siteswapString,
                 handSequenceString,
-                filler,
-                rainbow
+                filler
         );
 
+        int numOfPaths = SiteswapFunctions.averageBeat(new SiteswapParser(siteswapString).parse());
+        JMLDocument testJML = new JMLDocument();
+        testJML.setPaths(numOfPaths);
+        testJML.setJugglers(1);
+        testJML.setDelay(convertedHitObjects.getLast().t + HitObjectConversionFunctions.FRAME_DISTANCE_SECONDS);
+        testJML.addEvents(convertedHitObjects);
+        testJML.setPPerm(
+                String.join(
+                        "",
+                        IntStream.rangeClosed(1, numOfPaths)
+                        .mapToObj(i -> String.format("(%d)", i))
+                        .toList()
+                )
+        );
+
+        for (int i = 1; i <= numOfPaths; i++) {
+            if (rainbow)
+                testJML.assignProp(i, Color.getHSBColor((1.0f / numOfPaths * i), 1.0f, 1.0f), 10);
+            else
+                testJML.assignProp(i, Color.WHITE, 10);
+        }
+
         BufferedWriter writer = new BufferedWriter(new FileWriter("output.jml"));
-        writer.write(convertedPattern.toString());
+        writer.write(testJML.toString());
         writer.flush();
     }
 }
