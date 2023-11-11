@@ -8,8 +8,8 @@ public class PropStateTracker {
 
     Map<Integer,Integer> propStatus;
 
-    public PropStateTracker(String siteswapString) {
-        siteswap = new SiteswapParser(siteswapString).parse();
+    public PropStateTracker(List<List<Integer>> siteswap) {
+        this.siteswap = siteswap;
         propStatus = new HashMap<>();
         for (int i = 1; i <= SiteswapFunctions.averageBeat(siteswap); i++)
             propStatus.put(i, 0);

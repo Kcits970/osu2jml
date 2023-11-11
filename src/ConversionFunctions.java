@@ -18,10 +18,10 @@ public class ConversionFunctions {
     static final double SPIN_DIRECTION = -1; //-1: clockwise spin, 1: counterclockwise spin
     static final int JUGGLER_ID = 1;
 
-    public static List<Event> convertHitObjects(List<HitObject> objects, String siteswap, String handSequence, double filler) {
+    public static List<Event> convertHitObjects(List<HitObject> objects, List<List<Integer>> siteswap, HandSequence handSequence, double filler) {
         List<List<Event>> conversions = new ArrayList<>();
         PropStateTracker stateTracker = new PropStateTracker(siteswap);
-        Iterator<String> handStateTracker = new HandSequence(handSequence).iterator();
+        Iterator<String> handStateTracker =handSequence.iterator();
 
         //Conversion of each osu hit object
         for (HitObject object : objects)
