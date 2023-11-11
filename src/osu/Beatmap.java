@@ -46,7 +46,7 @@ public class Beatmap {
         Function<HitObject,TimingPoint> timingPointFinder = hitObject ->
                 timingPoints.stream()
                         .filter(timingPoint -> timingPoint.time <= hitObject.time)
-                        .max(Comparator.comparingDouble(timingPoint -> timingPoint.time))
+                        .reduce((first,second) -> second)
                         .get();
 
         for (HitObject rawHitObject : rawHitObjects) {
@@ -105,7 +105,7 @@ public class Beatmap {
         */
 
         //The value of 'stackOffset' is taken from https://gist.github.com/peppy/1167470. (Line 6)
-        double stackOffset = hitObjectRadius(circleSize) / 10;
+        double stackOffset = -hitObjectRadius(circleSize)/10;
         Map<HitObject,Integer> stackLayerMap = calculateStackLayers(hitObjects, approachRate, stackLeniency);
 
         for (HitObject hitObject : hitObjects)

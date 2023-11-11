@@ -45,8 +45,6 @@ public class Main {
                 throw new RuntimeException(String.format("'%s' is not a recognized command here", input));
         }
 
-        outputFile.createNewFile();
-
         //Parsing optional arguments. (Each argument takes exactly one parameter. (only if it exists))
         Map<String,String> optionalArguments = new HashMap<>();
 
@@ -106,11 +104,12 @@ public class Main {
                 )
         );
 
+        double propDiameter = 10 * Beatmap.hitObjectRadius(beatmap.circleSize) / Beatmap.hitObjectRadius(6);
         for (int i = 1; i <= numOfPaths; i++) {
             if (propColor == rainbowColor)
-                testJML.assignProp(i, Color.getHSBColor((1.0f / numOfPaths * i), 1.0f, 1.0f), 10);
+                testJML.assignProp(i, Color.getHSBColor((1.0f / numOfPaths * i), 1.0f, 1.0f), propDiameter);
             else
-                testJML.assignProp(i, Color.WHITE, 10);
+                testJML.assignProp(i, Color.WHITE, propDiameter);
         }
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
