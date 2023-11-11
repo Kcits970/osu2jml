@@ -1,16 +1,10 @@
-import jml.Event;
-import jml.HitObjectConversionFunctions;
-import jml.JMLDocument;
-import jml.siteswap.SiteswapFunctions;
-import jml.siteswap.SiteswapParser;
+import jml.*;
+import jml.siteswap.*;
 import osu.Beatmap;
 
-import java.awt.*;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.util.List;
-import java.util.Scanner;
+import java.awt.Color;
+import java.io.*;
+import java.util.*;
 import java.util.stream.IntStream;
 
 public class Main {

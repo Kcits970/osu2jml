@@ -1,5 +1,5 @@
-package jml;
-
+import jml.Event;
+import jml.Manipulation;
 import jml.siteswap.*;
 import math.*;
 import osu.*;

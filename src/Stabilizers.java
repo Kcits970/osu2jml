@@ -1,9 +1,7 @@
-package jml;
-
 import java.util.*;
-import math.Point3D;
 
-import static jml.HitObjectConversionFunctions.FRAME_DISTANCE_SECONDS;
+import jml.Event;
+import math.Point3D;
 
 public class Stabilizers {
     static final double SHORT_THRESHOLD = 0.2;
@@ -18,8 +16,8 @@ public class Stabilizers {
             return getEmptyEvents(
                     group1.getLast().getPosition(),
                     group1.getLast().hand,
-                    group1.getLast().t + FRAME_DISTANCE_SECONDS,
-                    secondsBetweenTwoGroups(group1, group2, jmlDuration) - SHORT_THRESHOLD - FRAME_DISTANCE_SECONDS,
+                    group1.getLast().t + HitObjectConversionFunctions.FRAME_DISTANCE_SECONDS,
+                    secondsBetweenTwoGroups(group1, group2, jmlDuration) - SHORT_THRESHOLD - HitObjectConversionFunctions.FRAME_DISTANCE_SECONDS,
                     jmlDuration
             );
         else
@@ -42,7 +40,7 @@ public class Stabilizers {
         List<Event> emptyEvents = new ArrayList<>();
 
         boolean terminate = false;
-        for (double elapsedSeconds = 0; !terminate; elapsedSeconds += FRAME_DISTANCE_SECONDS) {
+        for (double elapsedSeconds = 0; !terminate; elapsedSeconds += HitObjectConversionFunctions.FRAME_DISTANCE_SECONDS) {
             if (elapsedSeconds >= duration) {
                 elapsedSeconds = duration;
                 terminate = true;
