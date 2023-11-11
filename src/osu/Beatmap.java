@@ -199,7 +199,7 @@ public class Beatmap {
 
     public void hardRock() {
         approachRate = Math.min(10, approachRate * 1.4);
-        circleSize *= Math.min(10, circleSize * 1.3);
+        circleSize = Math.min(10, circleSize * 1.3);
 
         for (HitObject hitObject : hitObjects)
             hitObject.flip();
