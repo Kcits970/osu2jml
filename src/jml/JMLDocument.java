@@ -54,10 +54,11 @@ public class JMLDocument {
 
         for (int i = 1; i <= paths; i++)
             jmlBuilder.append(
-                    String.format("<prop type=\"ball\" mod=\"color=%s,%s,%s\"/>\n",
+                    String.format("<prop type=\"ball\" mod=\"color=%d,%d,%d;diam=%.4f\"/>\n",
                             255 - propAssignments.get(i).element1.getRed(),
                             255 - propAssignments.get(i).element1.getGreen(),
-                            255 - propAssignments.get(i).element1.getBlue()
+                            255 - propAssignments.get(i).element1.getBlue(),
+                            propAssignments.get(i).element2
                     )
             );
 
