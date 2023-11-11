@@ -4,8 +4,8 @@ import math.Point2D;
 
 public class Spinner extends HitObject {
     private static final int END_TIME_INDEX = 5;
-    private static final int DEFAULT_X = BeatmapConstants.SCREEN_WIDTH/2;
-    private static final int DEFAULT_Y = BeatmapConstants.SCREEN_HEIGHT/2;
+    public static final int DEFAULT_X = BeatmapConstants.SCREEN_WIDTH/2;
+    public static final int DEFAULT_Y = BeatmapConstants.SCREEN_HEIGHT/2;
     public double endTime;
 
     public Spinner(String spinnerString) {

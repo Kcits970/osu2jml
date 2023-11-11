@@ -1,20 +1,17 @@
-import jml.Event;
-import jml.Manipulation;
+import jml.*;
 import jml.siteswap.*;
 import math.*;
 import osu.*;
 
 import java.util.*;
 
-import static java.lang.Math.*;
-
-public class HitObjectConversionFunctions {
+public class ConversionFunctions {
     static final double FPS = 30;
     static final double FRAME_DISTANCE_MILLIS = 1000 / FPS;
-    public static final double FRAME_DISTANCE_SECONDS = 1 / FPS;
+    static final double FRAME_DISTANCE_SECONDS = 1 / FPS;
 
     static final double MAX_RPM = 477;
-    static final PolarCoordinate SPIN_ORIGIN = new PolarCoordinate(50, -PI/2);
+    static final PolarCoordinate SPIN_ORIGIN = new PolarCoordinate(50, -Math.PI/2);
     static final double SPIN_DIRECTION = -1; //-1: clockwise spin, 1: counterclockwise spin
     static final int JUGGLER_ID = 1;
 
@@ -90,7 +87,6 @@ public class HitObjectConversionFunctions {
 
     public static List<Event> convertSlider(Slider slider, String hand, Set<Integer> paths) {
         List<Event> sliderEvents = new ArrayList<>();
-
         double singleSliderDuration = slider.endTime - slider.time;
         double completeSliderDuration = singleSliderDuration * slider.slides;
 
@@ -101,12 +97,8 @@ public class HitObjectConversionFunctions {
                 terminate = true;
             }
 
-            int nthSlide = (int) floor(elapsedMillis/singleSliderDuration);
-            double relativePosition = elapsedMillis/singleSliderDuration - nthSlide;
-            boolean reverse = nthSlide % 2 != 0;
-
             Event sliderEvent = new Event(
-                    toXYZCoordinate(getSliderCoordinateAt(slider, relativePosition, reverse)),
+                    toXYZCoordinate(slideCoordinate(slider, elapsedMillis)),
                     toSeconds(slider.time + elapsedMillis),
                     JUGGLER_ID,
                     hand
@@ -120,7 +112,13 @@ public class HitObjectConversionFunctions {
         return sliderEvents;
     }
 
-    public static Point2D getSliderCoordinateAt(Slider slider, double relativePosition, boolean reverse) {
+    private static Point2D slideCoordinate(Slider slider, double elapsedMillis) {
+        double singleSliderDuration = slider.endTime - slider.time;
+
+        int nthSlide = (int) Math.floor(elapsedMillis/singleSliderDuration);
+        double relativePosition = elapsedMillis/singleSliderDuration - nthSlide;
+        boolean reverse = nthSlide % 2 != 0;
+
         double lengthUntilCoordinate = (reverse) ?
                 slider.definedLength * (1 - relativePosition) :
                 slider.definedLength * relativePosition;
@@ -140,7 +138,7 @@ public class HitObjectConversionFunctions {
             }
 
             Event spinnerEvent = new Event(
-                    toXYZCoordinate(getSpinCoordinate(elapsedMillis)),
+                    toXYZCoordinate(spinCoordinate(elapsedMillis)),
                     toSeconds(spinner.time + elapsedMillis),
                     JUGGLER_ID,
                     hand
@@ -154,7 +152,7 @@ public class HitObjectConversionFunctions {
         return spinnerEvents;
     }
 
-    public static Point2D getSpinCoordinate(double elapsedMillis) {
+    private static Point2D spinCoordinate(double elapsedMillis) {
         /*
         The fastest possible spin speed in osu! is 477 rpm.
         The cursor needs to spin exactly 477 times in 60000 milliseconds.
@@ -164,11 +162,10 @@ public class HitObjectConversionFunctions {
         Solving for theta, we get theta = 2PI * t / (60000/477)
         */
 
-        double spinAngle = 2*PI * elapsedMillis / (60000/MAX_RPM);
-        return GeometryFunctions.add2Points(
-                new PolarCoordinate(SPIN_ORIGIN.r, SPIN_ORIGIN.theta + SPIN_DIRECTION*spinAngle).toCartesian(),
-                BeatmapConstants.DEFAULT_CENTER
-        );
+        double spinAngle = 2*Math.PI * elapsedMillis / (60000/MAX_RPM);
+        return new PolarCoordinate(SPIN_ORIGIN.r, SPIN_ORIGIN.theta + SPIN_DIRECTION*spinAngle)
+                .toCartesian()
+                .shift(Spinner.DEFAULT_X, Spinner.DEFAULT_Y);
     }
 
     public static double toSeconds(double milliseconds) {

@@ -50,7 +50,7 @@ public class Main {
         System.out.print(">> ");
         boolean rainbow = scanner.nextLine().equalsIgnoreCase("y");
 
-        List<Event> convertedHitObjects = HitObjectConversionFunctions.convertHitObjects(
+        List<Event> convertedHitObjects = ConversionFunctions.convertHitObjects(
                 beatmap.hitObjects,
                 siteswapString,
                 handSequenceString,
@@ -61,7 +61,7 @@ public class Main {
         JMLDocument testJML = new JMLDocument();
         testJML.setPaths(numOfPaths);
         testJML.setJugglers(1);
-        testJML.setDelay(convertedHitObjects.getLast().t + HitObjectConversionFunctions.FRAME_DISTANCE_SECONDS);
+        testJML.setDelay(convertedHitObjects.getLast().t + ConversionFunctions.FRAME_DISTANCE_SECONDS);
         testJML.addEvents(convertedHitObjects);
         testJML.setPPerm(
                 String.join(
