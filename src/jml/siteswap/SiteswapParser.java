@@ -3,91 +3,101 @@ package jml.siteswap;
 import java.util.*;
 
 public class SiteswapParser {
-    Queue<Character> tokens;
+    private String siteswapString;
+    private int position;
 
-    public SiteswapParser(String siteswapString) {
-        tokens = new LinkedList<>();
-        for (char c : siteswapString.replaceAll("\\s", "").toLowerCase().toCharArray())
-            tokens.add(c);
+    public static List<List<Integer>> parse(String siteswapString) {
+        return new SiteswapParser(siteswapString).parse();
+    }
+
+    private SiteswapParser(String siteswapString) {
+        this.siteswapString = siteswapString.replaceAll("\\s","").toLowerCase();
     }
 
     /*
     Siteswap grammar:
 
-    Siteswap -> (Beat)+
-    Beat -> Multiplex | AtomicBeat
-    Multiplex -> '[' (AtomicBeat)+ ']'
-    AtomicBeat -> [0-9] | [a-z] | '{' [0-9]+ '}'
+    Siteswap -> (Element)+
+    Element -> Multiplex | AtomicNumber
+    Multiplex -> '[' (AtomicNumber)+ ']'
+    AtomicNumber -> [0-9] | [a-z] | '{' [0-9]+ '}'
     */
 
-    public List<List<Integer>> parse() {
-        //This method can only be used once.
-        //Once the tokens are all consumed, the method will merely return an empty list.
+    private boolean reachedEnd() {
+        return position == siteswapString.length();
+    }
+
+    private char currentChar() {
+        return siteswapString.charAt(position);
+    }
+
+    private boolean requestDiscard(char charToDiscard) {
+        if (!reachedEnd() && charToDiscard == currentChar()) {
+            position++;
+            return true;
+        } else
+            return false;
+    }
+
+    private void forceDiscard(char charToDiscard) {
+        if (!reachedEnd() && charToDiscard == currentChar())
+            position++;
+        else
+            throw new InvalidSiteswapException();
+    }
+
+    private boolean foresee(char charToForesee) {
+        return siteswapString.substring(position).contains(String.valueOf(charToForesee));
+    }
+
+    private List<List<Integer>> parse() {
         List<List<Integer>> siteswap = new ArrayList<>();
 
-        while (!tokens.isEmpty())
-            siteswap.add(nextBeat());
+        while (!reachedEnd())
+            siteswap.add(nextElement());
 
         return siteswap;
     }
 
-    private List<Integer> nextBeat() {
-        if ('[' == tokens.peek())
+    private List<Integer> nextElement() {
+        if ('[' == currentChar())
             return nextMultiplex();
         else
-            return List.of(nextAtomicBeat());
+            return List.of(nextAtomicNumber());
     }
 
     private List<Integer> nextMultiplex() {
         List<Integer> multiplex = new ArrayList<>();
 
         forceDiscard('[');
+        if (!foresee(']'))
+            throw new InvalidSiteswapException();
+
         while (!requestDiscard(']'))
-            multiplex.add(nextAtomicBeat());
+            multiplex.add(nextAtomicNumber());
 
         return multiplex;
     }
 
-    private Integer nextAtomicBeat() {
+    private Integer nextAtomicNumber() {
         if (requestDiscard('{')) {
-            int atomicBeat = nextGreedyNumber();
+            int numberStartPos = position;
+            while (currentChar() >= '0' && currentChar() <= '9')
+                position++;
             forceDiscard('}');
-            return atomicBeat;
+
+            return Integer.parseInt(siteswapString.substring(numberStartPos, position));
         }
 
-        if ('0' <= tokens.peek() && '9' >= tokens.peek())
-            return tokens.poll() - '0';
+        if ('0' <= currentChar() && '9' >= currentChar()) {
+            return siteswapString.charAt(position++) - '0';
+        }
 
-        if ('a' <= tokens.peek() && 'z' >= tokens.peek())
-            return tokens.poll() - 'a' + 10;
+        if ('a' <= currentChar() && 'z' >= currentChar()) {
+            return siteswapString.charAt(position++) - 'a' + 10;
+        }
 
-        throw new RuntimeException(String.format("unknown character %c", tokens.peek()));
-    }
-
-    private Integer nextGreedyNumber() {
-        StringBuilder numberBuilder = new StringBuilder();
-        while ('0' <= tokens.peek() && '9' >= tokens.peek())
-            numberBuilder.append(tokens.poll());
-
-        return Integer.parseInt(numberBuilder.toString());
-    }
-
-    private boolean requestDiscard(char character) {
-        if (character == tokens.peek()) {
-            tokens.poll();
-            return true;
-        } else
-            return false;
-    }
-
-    private void forceDiscard(char character) {
-        if (character == tokens.peek())
-            tokens.poll();
-        else
-            throw new RuntimeException(String.format("%c expected", character));
-    }
-
-    public static boolean validate(String siteswapString) {
-        return false;
+        System.out.println(currentChar());
+        throw new InvalidSiteswapException();
     }
 }

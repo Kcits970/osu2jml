@@ -26,24 +26,9 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
 
-        //Parsing mandatory arguments. (The first 2 arguments should specify input and output file paths.)
+        //Checking mandatory arguments. (The first 2 arguments should specify input and output file paths.)
         if (args.length < 2)
             throw new RuntimeException("missing input source/output destination argument");
-
-        Beatmap beatmap = new Beatmap(new File(args[0]));
-        File outputFile = new File(args[1]);
-
-        if (outputFile.exists() && outputFile.isFile()) {
-            System.out.printf("specified output location \"%s\" already exists, continue? (Y/N)\n", outputFile.getAbsolutePath());
-            System.out.print(">> ");
-
-            String input = scanner.nextLine();
-
-            if ("N".equalsIgnoreCase(input))
-                return;
-            else if (!"Y".equalsIgnoreCase(input))
-                throw new RuntimeException(String.format("'%s' is not a recognized command here", input));
-        }
 
         //Parsing optional arguments. (Each argument takes exactly one parameter. (only if it exists))
         Map<String,String> optionalArguments = new HashMap<>();
@@ -58,30 +43,40 @@ public class Main {
                 throw new RuntimeException(String.format("'%s' is not a recognized argument", args[i]));
         }
 
-        String siteswapString = optionalArguments.getOrDefault("-ss", "3");
-        String modifierString = optionalArguments.getOrDefault("-m", "");
-        String handSequenceString = optionalArguments.getOrDefault("-h", "LR");
-        String fillerString = optionalArguments.getOrDefault("-f", "1.0");
-        String colorString = optionalArguments.getOrDefault("-c", "white");
-        String saturationString = optionalArguments.getOrDefault("-s", "1.0");
+        //Required variables for beatmap conversion. (The parameters for '-m', '-ss', '-h' get validated here.)
+        Beatmap beatmap = new Beatmap(new File(args[0]));
+        beatmap.applyModifier(optionalArguments.getOrDefault("-m", ""));
+        beatmap.applyStackLayers();
+        File outputFile = new File(args[1]);
+        List<List<Integer>> siteswap = SiteswapParser.parse(optionalArguments.getOrDefault("-ss", "3"));
+        HandSequence handSequence = new HandSequence(optionalArguments.getOrDefault("-h", "LR"));
+        double filler = Double.parseDouble(optionalArguments.getOrDefault("-f", "1.0"));
+        Color propColor = colorMap.get(optionalArguments.getOrDefault("-c", "white"));
+        float saturation = (float) Double.parseDouble(optionalArguments.getOrDefault("-s", "1.0"));
 
-        List<List<Integer>> siteswap = new SiteswapParser(siteswapString).parse();
-        HandSequence handSequence = new HandSequence(handSequenceString);
-        double filler = Double.parseDouble(fillerString);
+        if (outputFile.exists() && outputFile.isFile()) {
+            System.out.printf("specified output location \"%s\" already exists, continue? (Y/N)\n", outputFile.getAbsolutePath());
+            System.out.print(">> ");
 
-        if (!colorMap.containsKey(colorString.toLowerCase()))
-            throw new RuntimeException(String.format("'%s' is not a recognized color", colorString));
+            String input = scanner.nextLine();
 
-        Color propColor = colorMap.get(colorString.toLowerCase());
-        float saturation = (float) Double.parseDouble(saturationString);
+            if ("N".equalsIgnoreCase(input))
+                return;
+            else if (!"Y".equalsIgnoreCase(input))
+                throw new RuntimeException(String.format("'%s' is not a recognized command here", input));
+        }
+
+        //Validation of remaining optional parameters.
+        if (filler < 0)
+            throw new RuntimeException("filler duration cannot be negative");
+
+        if (propColor == null)
+            throw new RuntimeException(String.format("'%s' is not a recognized color", optionalArguments.get("-c")));
 
         if (saturation < 0.0f || saturation > 1.0f)
             throw new RuntimeException("saturation values must be within [0,1]");
 
-        //Get the beatmap ready for conversion!!
-        beatmap.applyModifier(modifierString);
-        beatmap.applyStackLayers();
-
+        //Construction of the full JML.
         List<Event> convertedHitObjects = ConversionFunctions.convertHitObjects(
                 beatmap.hitObjects,
                 siteswap,
