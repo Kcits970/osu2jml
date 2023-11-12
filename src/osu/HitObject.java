@@ -9,7 +9,6 @@ public abstract class HitObject {
     protected static final int Y_INDEX = 1;
     protected static final int TIME_INDEX = 2;
 
-    public int stackLayer;
     public double x, y, time;
 
     public HitObject(double x, double y, double time) {
@@ -23,10 +22,6 @@ public abstract class HitObject {
         x = Integer.parseInt(circleParameters[X_INDEX]);
         y = Integer.parseInt(circleParameters[Y_INDEX]);
         time = Integer.parseInt(circleParameters[TIME_INDEX]);
-    }
-
-    public void resetStackProperties() {
-        stackLayer = 0;
     }
 
     public Point2D position() {
