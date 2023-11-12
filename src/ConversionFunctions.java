@@ -49,6 +49,12 @@ public class ConversionFunctions {
         for (int i = 0; i < rightHandEventGroups.size(); i++)
             stabilizers.add(getStabilizer(rightHandEventGroups.get(i), rightHandEventGroups.get((i+1) % rightHandEventGroups.size()), cycleDuration));
 
+        if (leftHandEventGroups.isEmpty())
+            stabilizers.add(List.of(Event.createDefaultEvent("left")));
+
+        if (rightHandEventGroups.isEmpty())
+            stabilizers.add(List.of(Event.createDefaultEvent("right")));
+
         conversions.addAll(stabilizers);
 
         //flatten the conversions to individual events, and sort them by time!
