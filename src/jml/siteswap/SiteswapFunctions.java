@@ -4,8 +4,10 @@ import java.util.List;
 
 public class SiteswapFunctions {
     public static int averageBeat(List<List<Integer>> siteswap) {
-        return siteswap.stream()
-                .mapToInt(list -> list.stream().mapToInt(Integer::intValue).sum())
-                .sum() / siteswap.size();
+        int sumOfAllElements = 0;
+        for (List<Integer> siteswapElement : siteswap)
+            sumOfAllElements += siteswapElement.stream().mapToInt(Integer::intValue).sum();
+
+        return sumOfAllElements / siteswap.size();
     }
 }
