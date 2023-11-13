@@ -5,11 +5,12 @@ import osu.Beatmap;
 import java.awt.Color;
 import java.io.*;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.IntStream;
 
 public class Main {
-    //List of recognized options: 's'ite's'wap, beatmap 'm'odifier, 'h'and sequence, 'f'iller duration, prop 'c'olor, prop color 's'aturation.
-    static final List<String> recognizedArguments = List.of("-ss", "-m", "-h", "-f", "-c", "-s");
+    //List of recognized options: 's'ite's'wap, beatmap 'm'odifier, 'h'and sequence, 'f'iller duration, prop 'c'olor, prop color 's'aturation, 'i'nvert color.
+    static final List<String> recognizedArguments = List.of("-ss", "-m", "-h", "-f", "-c", "-s", "-i");
     static final Color rainbowColor = new Color(255,255,255,0);
     static final Map<String,Color> colorMap = Map.of(
             "rainbow", rainbowColor,
@@ -34,16 +35,26 @@ public class Main {
         Map<String,String> optionalArguments = new HashMap<>();
 
         for (int i = 2; i < args.length; i++) {
-            if (recognizedArguments.contains(args[i]))
-                if (i+1 < args.length)
-                    optionalArguments.put(args[i], args[++i]);
-                else
+            String argument;
+            String parameter;
+
+            if (args[i].contains("=")) {
+                argument = args[i].substring(0, args[i].indexOf('='));
+                parameter = args[i].substring(args[i].indexOf('=') + 1);
+            } else {
+                if (i+1 >= args.length)
                     throw new RuntimeException(String.format("no parameters provided for argument '%s'", args[i]));
+                argument = args[i];
+                parameter = args[++i];
+            }
+
+            if (recognizedArguments.contains(argument))
+                optionalArguments.put(argument, parameter);
             else
                 throw new RuntimeException(String.format("'%s' is not a recognized argument", args[i]));
         }
 
-        //Required variables for beatmap conversion. (The parameters for '-m', '-ss', '-h' get validated here.)
+        //Required variables for beatmap conversion. (The parameters for '-m', '-ss', '-h', 'i' get validated here.)
         Beatmap beatmap = new Beatmap(new File(args[0]));
         beatmap.applyModifier(optionalArguments.getOrDefault("-m", ""));
         beatmap.applyStackLayers();
@@ -53,6 +64,12 @@ public class Main {
         double filler = Double.parseDouble(optionalArguments.getOrDefault("-f", "1.0"));
         Color propColor = colorMap.get(optionalArguments.getOrDefault("-c", "white"));
         float saturation = (float) Double.parseDouble(optionalArguments.getOrDefault("-s", "1.0"));
+
+        String invertString = optionalArguments.getOrDefault("-i", "false");
+        if (!"true".equalsIgnoreCase(invertString) && !"false".equalsIgnoreCase(invertString))
+            throw new RuntimeException("the '-i' option only accepts \"true\" or \"false\"");
+
+        boolean invertColors = "true".equalsIgnoreCase(invertString);
 
         if (outputFile.exists() && outputFile.isFile()) {
             System.out.printf("specified output location \"%s\" already exists, continue? (Y/N)\n", outputFile.getAbsolutePath());
@@ -75,6 +92,11 @@ public class Main {
 
         if (saturation < 0.0f || saturation > 1.0f)
             throw new RuntimeException("saturation values must be within [0,1]");
+
+        if (propColor != rainbowColor) {
+            float[] hsb = Color.RGBtoHSB(propColor.getRed(), propColor.getGreen(), propColor.getBlue(), null);
+            propColor = Color.getHSBColor(hsb[0], saturation, hsb[2]);
+        }
 
         //Construction of the full JML.
         List<Event> convertedHitObjects = ConversionFunctions.convertHitObjects(
@@ -99,12 +121,18 @@ public class Main {
                 )
         );
 
-        double propDiameter = 10 * Beatmap.hitObjectRadius(beatmap.circleSize) / Beatmap.hitObjectRadius(6);
+        Function<Color,Color> colorInverter = color -> new Color(255 - color.getRed(), 255 - color.getGreen(), 255 - color.getBlue());
+
+        double propDiameter = 10 * Beatmap.hitObjectRadius(beatmap.circleSize) / Beatmap.hitObjectRadius(5.5);
         for (int i = 1; i <= numOfPaths; i++) {
-            if (propColor == rainbowColor)
-                testJML.assignPathToProp(i, new Prop(Color.getHSBColor((1.0f / numOfPaths * i), 1.0f, 1.0f), propDiameter));
-            else
-                testJML.assignPathToProp(i, new Prop(Color.WHITE, propDiameter));
+            Color colorToAssign = propColor == rainbowColor ?
+                    Color.getHSBColor((1.0f / numOfPaths * i), saturation, 1.0f) :
+                    propColor;
+            if (invertColors)
+                colorToAssign = colorInverter.apply(colorToAssign);
+
+
+            testJML.assignPathToProp(i, new Prop(colorToAssign, propDiameter));
         }
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));

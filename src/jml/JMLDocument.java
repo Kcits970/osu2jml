@@ -52,9 +52,9 @@ public class JMLDocument {
         for (int i = 1; i <= paths; i++)
             jmlBuilder.append(
                     String.format("<prop type=\"ball\" mod=\"color=%d,%d,%d;diam=%.4f\"/>\n",
-                            255 - pathAssignments.get(i).color.getRed(),
-                            255 - pathAssignments.get(i).color.getGreen(),
-                            255 - pathAssignments.get(i).color.getBlue(),
+                            pathAssignments.get(i).color.getRed(),
+                            pathAssignments.get(i).color.getGreen(),
+                            pathAssignments.get(i).color.getBlue(),
                             pathAssignments.get(i).diameter
                     )
             );
