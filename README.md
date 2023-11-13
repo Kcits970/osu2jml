@@ -36,6 +36,9 @@ For siteswap parameters, instead of using letters, it is possible to wrap the nu
 For example, `-ss=db97531` is equivalent to `-ss={13}{11}97531`.
 The siteswap argument only accepts asynchronous siteswaps (this includes async multiplex patterns).
 
+### Beatmap Modifier
+This argument only accepts some combination of "ez", "hr", "ht", "dt". Visual mods such as "hd" or "fl" are not accepted.
+
 ### Hand Sequence
 The hand sequence argument specifies which hand will hit the beatmap hit object.
 For example, `-h=LLLR` means that the first, second, and third hit object will be 'hit' by the left hand, and the fourth hit object by the right hand. (fifth, sixth, seventh by the left hand, eighth by the right hand, and so on...)
