@@ -87,6 +87,9 @@ public class SiteswapParser {
 
     private Integer nextAtomicNumber() {
         if (requestDiscard('{')) {
+            if (reachedEnd())
+                throw new InvalidSiteswapException();
+
             int numberStartPos = position;
             while (currentChar() >= '0' && currentChar() <= '9')
                 position++;
@@ -106,7 +109,6 @@ public class SiteswapParser {
             return siteswapString.charAt(position++) - 'a' + 10;
         }
 
-        System.out.println(currentChar());
         throw new InvalidSiteswapException();
     }
 }
