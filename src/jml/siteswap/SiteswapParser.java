@@ -56,6 +56,9 @@ public class SiteswapParser {
         while (!reachedEnd())
             siteswap.add(nextElement());
 
+        if (siteswap.isEmpty())
+            throw new InvalidSiteswapException();
+
         return siteswap;
     }
 
@@ -76,6 +79,9 @@ public class SiteswapParser {
         while (!requestDiscard(']'))
             multiplex.add(nextAtomicNumber());
 
+        if (multiplex.isEmpty())
+            throw new InvalidSiteswapException();
+
         return multiplex;
     }
 
@@ -85,6 +91,9 @@ public class SiteswapParser {
             while (currentChar() >= '0' && currentChar() <= '9')
                 position++;
             forceDiscard('}');
+
+            if (numberStartPos == position)
+                throw new InvalidSiteswapException();
 
             return Integer.parseInt(siteswapString.substring(numberStartPos, position));
         }
