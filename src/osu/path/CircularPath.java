@@ -1,7 +1,7 @@
 package osu.path;
 
 import math.*;
-import osu.BeatmapConstants;
+import osu.BeatmapFunctions;
 
 import static java.lang.Math.PI;
 import static math.GeometryFunctions.*;
@@ -63,9 +63,9 @@ public class CircularPath implements SliderPath {
     @Override
     public CircularPath flip() {
         return new CircularPath(
-                new Point2D(pointA.x, BeatmapConstants.SCREEN_HEIGHT - pointA.y),
-                new Point2D(pointB.x, BeatmapConstants.SCREEN_HEIGHT - pointB.y),
-                new Point2D(pointC.x, BeatmapConstants.SCREEN_HEIGHT - pointC.y)
+                new Point2D(pointA.x, BeatmapFunctions.SCREEN_HEIGHT - pointA.y),
+                new Point2D(pointB.x, BeatmapFunctions.SCREEN_HEIGHT - pointB.y),
+                new Point2D(pointC.x, BeatmapFunctions.SCREEN_HEIGHT - pointC.y)
         );
     }
 }

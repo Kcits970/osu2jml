@@ -42,6 +42,6 @@ public abstract class HitObject {
     }
 
     public void flip() {
-        y = BeatmapConstants.SCREEN_HEIGHT - y;
+        y = BeatmapFunctions.SCREEN_HEIGHT - y;
     }
 }

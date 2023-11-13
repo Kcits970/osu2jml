@@ -31,7 +31,7 @@ public class ConversionFunctions {
         double startTime = conversions.getFirst().getFirst().t;
         for (List<Event> conversion : conversions)
             for (Event event : conversion) {
-                event.translate(BeatmapConstants.SCREEN_WIDTH/2, 0, BeatmapConstants.SCREEN_HEIGHT);
+                event.translate(BeatmapFunctions.SCREEN_WIDTH/2, 0, BeatmapFunctions.SCREEN_HEIGHT);
                 event.scale(0.5);
                 event.shiftTime(-startTime);
             }

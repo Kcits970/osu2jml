@@ -1,7 +1,7 @@
 package osu.path;
 
 import math.*;
-import osu.BeatmapConstants;
+import osu.BeatmapFunctions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,7 +81,7 @@ public class CompoundBezierPath implements SliderPath {
     @Override
     public CompoundBezierPath flip() {
         List<Point2D> newControlPoints = new ArrayList<>(controlPoints);
-        newControlPoints.replaceAll(point -> new Point2D(point.x, BeatmapConstants.SCREEN_HEIGHT - point.y));
+        newControlPoints.replaceAll(point -> new Point2D(point.x, BeatmapFunctions.SCREEN_HEIGHT - point.y));
 
         return new CompoundBezierPath(newControlPoints);
     }

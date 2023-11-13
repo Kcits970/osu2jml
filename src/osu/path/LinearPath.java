@@ -1,7 +1,7 @@
 package osu.path;
 
 import math.*;
-import osu.BeatmapConstants;
+import osu.BeatmapFunctions;
 
 public class LinearPath implements SliderPath {
     Point2D start;
@@ -33,8 +33,8 @@ public class LinearPath implements SliderPath {
     @Override
     public LinearPath flip() {
         return new LinearPath(
-                new Point2D(start.x, BeatmapConstants.SCREEN_HEIGHT - start.y),
-                new Point2D(end.x, BeatmapConstants.SCREEN_HEIGHT - end.y)
+                new Point2D(start.x, BeatmapFunctions.SCREEN_HEIGHT - start.y),
+                new Point2D(end.x, BeatmapFunctions.SCREEN_HEIGHT - end.y)
         );
     }
 }

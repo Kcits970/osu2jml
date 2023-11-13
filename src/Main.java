@@ -1,6 +1,7 @@
 import jml.*;
 import jml.siteswap.*;
 import osu.Beatmap;
+import osu.BeatmapFunctions;
 
 import java.awt.Color;
 import java.io.*;
@@ -123,7 +124,7 @@ public class Main {
 
         Function<Color,Color> colorInverter = color -> new Color(255 - color.getRed(), 255 - color.getGreen(), 255 - color.getBlue());
 
-        double propDiameter = 10 * Beatmap.hitObjectRadius(beatmap.circleSize) / Beatmap.hitObjectRadius(5.5);
+        double propDiameter = 10 * BeatmapFunctions.hitObjectRadius(beatmap.circleSize) / BeatmapFunctions.hitObjectRadius(5.5);
         for (int i = 1; i <= numOfPaths; i++) {
             Color colorToAssign = propColor == rainbowColor ?
                     Color.getHSBColor((1.0f / numOfPaths * i), saturation, 1.0f) :
