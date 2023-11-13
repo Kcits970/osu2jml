@@ -102,9 +102,9 @@ public class Main {
         double propDiameter = 10 * Beatmap.hitObjectRadius(beatmap.circleSize) / Beatmap.hitObjectRadius(6);
         for (int i = 1; i <= numOfPaths; i++) {
             if (propColor == rainbowColor)
-                testJML.assignProp(i, Color.getHSBColor((1.0f / numOfPaths * i), 1.0f, 1.0f), propDiameter);
+                testJML.assignPathToProp(i, new Prop(Color.getHSBColor((1.0f / numOfPaths * i), 1.0f, 1.0f), propDiameter));
             else
-                testJML.assignProp(i, Color.WHITE, propDiameter);
+                testJML.assignPathToProp(i, new Prop(Color.WHITE, propDiameter));
         }
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));

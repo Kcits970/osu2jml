@@ -1,21 +1,18 @@
 package jml;
 
-import math.Pair;
-
-import java.awt.Color;
 import java.util.*;
 import java.util.stream.IntStream;
 
 public class JMLDocument {
     int jugglers, paths;
-    Map<Integer,Pair<Color,Double>> propAssignments;
+    Map<Integer,Prop> pathAssignments;
     double delay;
     String pperm;
 
     List<Event> events;
 
     public JMLDocument() {
-        propAssignments = new HashMap<>();
+        pathAssignments = new HashMap<>();
         events = new ArrayList<>();
     }
 
@@ -35,8 +32,8 @@ public class JMLDocument {
         this.delay = delay;
     }
 
-    public void assignProp(int path, Color color, double diameter) {
-        propAssignments.put(path, new Pair<>(color, diameter));
+    public void assignPathToProp(int path, Prop prop) {
+        pathAssignments.put(path, prop);
     }
 
     public void addEvents(Collection<? extends Event> eventsToAdd) {
@@ -55,10 +52,10 @@ public class JMLDocument {
         for (int i = 1; i <= paths; i++)
             jmlBuilder.append(
                     String.format("<prop type=\"ball\" mod=\"color=%d,%d,%d;diam=%.4f\"/>\n",
-                            255 - propAssignments.get(i).element1.getRed(),
-                            255 - propAssignments.get(i).element1.getGreen(),
-                            255 - propAssignments.get(i).element1.getBlue(),
-                            propAssignments.get(i).element2
+                            255 - pathAssignments.get(i).color.getRed(),
+                            255 - pathAssignments.get(i).color.getGreen(),
+                            255 - pathAssignments.get(i).color.getBlue(),
+                            pathAssignments.get(i).diameter
                     )
             );
 
