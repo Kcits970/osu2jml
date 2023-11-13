@@ -3,6 +3,10 @@ A small tool to convert osu! beatmaps into juggling patterns.
 
 ![Example_osu2jml](https://github.com/Kcits970/osu2jml/assets/93324991/c5a78bd0-01cd-4cd9-91f3-56b867f019bf)
 
+Example overlay: _(This part is manually done in a video editor.)_
+
+![Comp 1_1](https://github.com/Kcits970/osu2jml/assets/93324991/e42d3445-ccad-4bb5-9b2a-7fbbff4b33bc)
+
 ## Setup
 1. Install the Java 21 Development Kit. (https://www.oracle.com/kr/java/technologies/downloads/)
 2. Download the v1.0 binary release.
