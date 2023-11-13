@@ -96,7 +96,7 @@ public class Main {
 
         if (propColor != rainbowColor) {
             float[] hsb = Color.RGBtoHSB(propColor.getRed(), propColor.getGreen(), propColor.getBlue(), null);
-            propColor = Color.getHSBColor(hsb[0], saturation, hsb[2]);
+            propColor = Color.getHSBColor(hsb[0], hsb[1] == 0.0f ? 0.0f : saturation, hsb[2]);
         }
 
         //Construction of the full JML.
