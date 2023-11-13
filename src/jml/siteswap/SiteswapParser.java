@@ -98,7 +98,7 @@ public class SiteswapParser {
             if (numberStartPos == position)
                 throw new InvalidSiteswapException();
 
-            return Integer.parseInt(siteswapString.substring(numberStartPos, position));
+            return Integer.parseInt(siteswapString.substring(numberStartPos, position-1));
         }
 
         if ('0' <= currentChar() && '9' >= currentChar()) {
