@@ -1,0 +1,3969 @@
+<?xml version="1.0"?>
+<!DOCTYPE jml SYSTEM "file://jml.dtd">
+<jml>
+<pattern>
+<prop type="ball" mod="color=32,0,64;diam=11.6504"/>
+<prop type="ball" mod="color=64,0,0;diam=11.6504"/>
+<prop type="ball" mod="color=32,64,0;diam=11.6504"/>
+<prop type="ball" mod="color=0,64,64;diam=11.6504"/>
+<setup jugglers="1" paths="4" props="1,2,3,4"/>
+<symmetry type="delay" pperm="(1)(2)(3)(4)" delay="40.2780"/>
+<event x="-78.0000" y="0.0000" z="159.5000" t="0.0000" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-78.0000" y="0.0000" z="159.5000" t="0.0010" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-78.0000" y="0.0000" z="159.5000" t="0.0220" hand="1:left">
+</event>
+<event x="-106.5000" y="0.0000" z="135.0000" t="0.1113" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-106.5000" y="0.0000" z="135.0000" t="0.1123" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-106.5000" y="0.0000" z="135.0000" t="0.1457" hand="1:right">
+</event>
+<event x="-106.5000" y="0.0000" z="135.0000" t="0.1790" hand="1:right">
+</event>
+<event x="-106.5000" y="0.0000" z="135.0000" t="0.2123" hand="1:right">
+</event>
+<event x="-97.0000" y="0.0000" z="99.5000" t="0.2220" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="-97.0000" y="0.0000" z="99.5000" t="0.2230" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-106.5000" y="0.0000" z="135.0000" t="0.2447" hand="1:right">
+</event>
+<event x="-97.0000" y="0.0000" z="99.5000" t="0.2563" hand="1:left">
+</event>
+<event x="-97.0000" y="0.0000" z="99.5000" t="0.2897" hand="1:left">
+</event>
+<event x="-97.0000" y="0.0000" z="99.5000" t="0.3230" hand="1:left">
+</event>
+<event x="-97.0000" y="0.0000" z="99.5000" t="0.3553" hand="1:left">
+</event>
+<event x="-15.0000" y="0.0000" z="61.5000" t="0.4447" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-15.0000" y="0.0000" z="61.5000" t="0.4457" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-15.0000" y="0.0000" z="61.5000" t="0.4790" hand="1:right">
+</event>
+<event x="-15.0000" y="0.0000" z="61.5000" t="0.5123" hand="1:right">
+</event>
+<event x="-15.0000" y="0.0000" z="61.5000" t="0.5457" hand="1:right">
+</event>
+<event x="-3.7606" y="0.0000" z="27.7394" t="0.5553" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-3.7606" y="0.0000" z="27.7394" t="0.5563" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-15.0000" y="0.0000" z="61.5000" t="0.5780" hand="1:right">
+</event>
+<event x="-3.7606" y="0.0000" z="27.7394" t="0.5897" hand="1:left">
+</event>
+<event x="-3.7606" y="0.0000" z="27.7394" t="0.6230" hand="1:left">
+</event>
+<event x="-3.7606" y="0.0000" z="27.7394" t="0.6563" hand="1:left">
+</event>
+<event x="-3.7606" y="0.0000" z="27.7394" t="0.6897" hand="1:left">
+</event>
+<event x="-3.7606" y="0.0000" z="27.7394" t="0.7230" hand="1:left">
+</event>
+<event x="-3.7606" y="0.0000" z="27.7394" t="0.7563" hand="1:left">
+</event>
+<event x="-5.5000" y="0.0000" z="26.0000" t="0.7780" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-5.5000" y="0.0000" z="26.0000" t="0.7790" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-3.7606" y="0.0000" z="27.7394" t="0.7897" hand="1:left">
+</event>
+<event x="-3.7606" y="0.0000" z="27.7394" t="0.8000" hand="1:left">
+</event>
+<event x="-5.5000" y="0.0000" z="26.0000" t="0.8123" hand="1:right">
+</event>
+<event x="-5.5000" y="0.0000" z="26.0000" t="0.8457" hand="1:right">
+</event>
+<event x="-5.5000" y="0.0000" z="26.0000" t="0.8790" hand="1:right">
+</event>
+<event x="-5.5000" y="0.0000" z="26.0000" t="0.9113" hand="1:right">
+</event>
+<event x="-41.7606" y="0.0000" z="123.2394" t="1.0000" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="-41.7606" y="0.0000" z="123.2394" t="1.0010" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-41.7606" y="0.0000" z="123.2394" t="1.0343" hand="1:left">
+</event>
+<event x="-41.7606" y="0.0000" z="123.2394" t="1.0677" hand="1:left">
+</event>
+<event x="-41.7606" y="0.0000" z="123.2394" t="1.1010" hand="1:left">
+</event>
+<event x="-43.5000" y="0.0000" z="121.5000" t="1.1113" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-43.5000" y="0.0000" z="121.5000" t="1.1123" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-41.7606" y="0.0000" z="123.2394" t="1.1333" hand="1:left">
+</event>
+<event x="-43.5000" y="0.0000" z="121.5000" t="1.1457" hand="1:right">
+</event>
+<event x="-43.5000" y="0.0000" z="121.5000" t="1.1790" hand="1:right">
+</event>
+<event x="-43.5000" y="0.0000" z="121.5000" t="1.2123" hand="1:right">
+</event>
+<event x="-43.5000" y="0.0000" z="121.5000" t="1.2447" hand="1:right">
+</event>
+<event x="59.2394" y="0.0000" z="112.7394" t="1.3333" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="59.2394" y="0.0000" z="112.7394" t="1.3343" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="59.2394" y="0.0000" z="112.7394" t="1.3553" hand="1:left">
+</event>
+<event x="57.5000" y="0.0000" z="111.0000" t="1.4447" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="57.5000" y="0.0000" z="111.0000" t="1.4457" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="57.5000" y="0.0000" z="111.0000" t="1.4667" hand="1:right">
+</event>
+<event x="17.0000" y="0.0000" z="122.0000" t="1.5553" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="17.0000" y="0.0000" z="122.0000" t="1.5563" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="17.0000" y="0.0000" z="122.0000" t="1.5780" hand="1:left">
+</event>
+<event x="28.0000" y="0.0000" z="165.0000" t="1.6667" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="28.0000" y="0.0000" z="165.0000" t="1.6677" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="28.0000" y="0.0000" z="165.0000" t="1.7010" hand="1:right">
+</event>
+<event x="28.0000" y="0.0000" z="165.0000" t="1.7343" hand="1:right">
+</event>
+<event x="28.0000" y="0.0000" z="165.0000" t="1.7677" hand="1:right">
+</event>
+<event x="72.9788" y="0.0000" z="158.4788" t="1.7780" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="72.9788" y="0.0000" z="158.4788" t="1.7790" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="28.0000" y="0.0000" z="165.0000" t="1.8000" hand="1:right">
+</event>
+<event x="72.9788" y="0.0000" z="158.4788" t="1.8123" hand="1:left">
+</event>
+<event x="72.9788" y="0.0000" z="158.4788" t="1.8457" hand="1:left">
+</event>
+<event x="72.9788" y="0.0000" z="158.4788" t="1.8790" hand="1:left">
+</event>
+<event x="72.9788" y="0.0000" z="158.4788" t="1.9123" hand="1:left">
+</event>
+<event x="72.9788" y="0.0000" z="158.4788" t="1.9457" hand="1:left">
+</event>
+<event x="72.9788" y="0.0000" z="158.4788" t="1.9790" hand="1:left">
+</event>
+<event x="71.2394" y="0.0000" z="156.7394" t="2.0000" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="71.2394" y="0.0000" z="156.7394" t="2.0010" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="72.9788" y="0.0000" z="158.4788" t="2.0123" hand="1:left">
+</event>
+<event x="72.9788" y="0.0000" z="158.4788" t="2.0220" hand="1:left">
+</event>
+<event x="71.2394" y="0.0000" z="156.7394" t="2.0343" hand="1:right">
+</event>
+<event x="71.2394" y="0.0000" z="156.7394" t="2.0677" hand="1:right">
+</event>
+<event x="71.2394" y="0.0000" z="156.7394" t="2.1010" hand="1:right">
+</event>
+<event x="71.2394" y="0.0000" z="156.7394" t="2.1333" hand="1:right">
+</event>
+<event x="69.5000" y="0.0000" z="155.0000" t="2.2220" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="69.5000" y="0.0000" z="155.0000" t="2.2230" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="69.5000" y="0.0000" z="155.0000" t="2.2447" hand="1:left">
+</event>
+<event x="28.0000" y="0.0000" z="165.0000" t="2.3333" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="28.0000" y="0.0000" z="165.0000" t="2.3343" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="28.0000" y="0.0000" z="165.0000" t="2.3553" hand="1:right">
+</event>
+<event x="4.5000" y="0.0000" z="128.5000" t="2.4447" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="4.5000" y="0.0000" z="128.5000" t="2.4457" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="4.5000" y="0.0000" z="128.5000" t="2.4790" hand="1:left">
+</event>
+<event x="4.5000" y="0.0000" z="128.5000" t="2.5123" hand="1:left">
+</event>
+<event x="4.5000" y="0.0000" z="128.5000" t="2.5457" hand="1:left">
+</event>
+<event x="32.5000" y="0.0000" z="92.5000" t="2.5553" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="32.5000" y="0.0000" z="92.5000" t="2.5563" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="4.5000" y="0.0000" z="128.5000" t="2.5780" hand="1:left">
+</event>
+<event x="32.5000" y="0.0000" z="92.5000" t="2.5897" hand="1:right">
+</event>
+<event x="32.5000" y="0.0000" z="92.5000" t="2.6230" hand="1:right">
+</event>
+<event x="32.5000" y="0.0000" z="92.5000" t="2.6563" hand="1:right">
+</event>
+<event x="32.5000" y="0.0000" z="92.5000" t="2.6887" hand="1:right">
+</event>
+<event x="-63.0000" y="0.0000" z="22.5000" t="2.7780" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-63.0000" y="0.0000" z="22.5000" t="2.7790" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-63.0000" y="0.0000" z="22.5000" t="2.8123" hand="1:left">
+</event>
+<event x="-63.0000" y="0.0000" z="22.5000" t="2.8457" hand="1:left">
+</event>
+<event x="-63.0000" y="0.0000" z="22.5000" t="2.8790" hand="1:left">
+</event>
+<event x="-45.5000" y="0.0000" z="65.0000" t="2.8887" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-45.5000" y="0.0000" z="65.0000" t="2.8897" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-63.0000" y="0.0000" z="22.5000" t="2.9113" hand="1:left">
+</event>
+<event x="-45.5000" y="0.0000" z="65.0000" t="2.9230" hand="1:right">
+</event>
+<event x="-45.5000" y="0.0000" z="65.0000" t="2.9563" hand="1:right">
+</event>
+<event x="-45.5000" y="0.0000" z="65.0000" t="2.9897" hand="1:right">
+</event>
+<event x="-45.5000" y="0.0000" z="65.0000" t="3.0220" hand="1:right">
+</event>
+<event x="63.0000" y="0.0000" z="17.5000" t="3.1113" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="63.0000" y="0.0000" z="17.5000" t="3.1123" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="63.0000" y="0.0000" z="17.5000" t="3.1333" hand="1:left">
+</event>
+<event x="18.7394" y="0.0000" z="12.7394" t="3.2220" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="18.7394" y="0.0000" z="12.7394" t="3.2230" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="18.7394" y="0.0000" z="12.7394" t="3.2563" hand="1:right">
+</event>
+<event x="18.7394" y="0.0000" z="12.7394" t="3.2897" hand="1:right">
+</event>
+<event x="18.7394" y="0.0000" z="12.7394" t="3.3230" hand="1:right">
+</event>
+<event x="17.0000" y="0.0000" z="11.0000" t="3.3333" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="18.7394" y="0.0000" z="12.7394" t="3.3553" hand="1:right">
+</event>
+<event x="19.9958" y="0.0000" z="33.8097" t="3.3667" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="7.5642" y="0.0000" z="54.3390" t="3.4000" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-4.8675" y="0.0000" z="74.8683" t="3.4333" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-17.2992" y="0.0000" z="95.3977" t="3.4667" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-29.7308" y="0.0000" z="115.9270" t="3.5000" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-29.7308" y="0.0000" z="115.9270" t="3.5000" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-29.7308" y="0.0000" z="115.9270" t="3.5333" hand="1:left">
+</event>
+<event x="-61.0000" y="0.0000" z="134.0000" t="3.5553" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-29.7308" y="0.0000" z="115.9270" t="3.5667" hand="1:left">
+</event>
+<event x="-29.7308" y="0.0000" z="115.9270" t="3.5780" hand="1:left">
+</event>
+<event x="-72.7881" y="0.0000" z="131.7547" t="3.5887" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="-84.5761" y="0.0000" z="129.5093" t="3.6220" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="-96.3642" y="0.0000" z="127.2640" t="3.6553" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="-100.2935" y="0.0000" z="126.5155" t="3.6664" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-100.2935" y="0.0000" z="126.5155" t="3.6998" hand="1:right">
+</event>
+<event x="-100.2935" y="0.0000" z="126.5155" t="3.7331" hand="1:right">
+</event>
+<event x="-100.2935" y="0.0000" z="126.5155" t="3.7664" hand="1:right">
+</event>
+<event x="6.5000" y="0.0000" z="160.0000" t="3.7780" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-100.2935" y="0.0000" z="126.5155" t="3.7998" hand="1:right">
+</event>
+<event x="-100.2935" y="0.0000" z="126.5155" t="3.8000" hand="1:right">
+</event>
+<event x="-5.2841" y="0.0000" z="162.2662" t="3.8113" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-17.0682" y="0.0000" z="164.5323" t="3.8447" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-28.8522" y="0.0000" z="166.7985" t="3.8780" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-32.7803" y="0.0000" z="167.5539" t="3.8891" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-32.7803" y="0.0000" z="167.5539" t="3.9224" hand="1:left">
+</event>
+<event x="-32.7803" y="0.0000" z="167.5539" t="3.9558" hand="1:left">
+</event>
+<event x="-32.7803" y="0.0000" z="167.5539" t="3.9891" hand="1:left">
+</event>
+<event x="82.5000" y="0.0000" z="82.5000" t="4.0000" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-32.7803" y="0.0000" z="167.5539" t="4.0224" hand="1:left">
+</event>
+<event x="-32.7803" y="0.0000" z="167.5539" t="4.0227" hand="1:left">
+</event>
+<event x="70.7119" y="0.0000" z="80.2547" t="4.0333" hand="1:right">
+<holding path="2"/>
+</event>
+<event x="58.9239" y="0.0000" z="78.0093" t="4.0667" hand="1:right">
+<holding path="2"/>
+</event>
+<event x="47.1358" y="0.0000" z="75.7640" t="4.1000" hand="1:right">
+<holding path="2"/>
+</event>
+<event x="43.2065" y="0.0000" z="75.0155" t="4.1111" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="43.2065" y="0.0000" z="75.0155" t="4.1444" hand="1:right">
+</event>
+<event x="43.2065" y="0.0000" z="75.0155" t="4.1778" hand="1:right">
+</event>
+<event x="43.2065" y="0.0000" z="75.0155" t="4.2111" hand="1:right">
+</event>
+<event x="128.0000" y="0.0000" z="171.0000" t="4.2227" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="43.2065" y="0.0000" z="75.0155" t="4.2444" hand="1:right">
+</event>
+<event x="43.2065" y="0.0000" z="75.0155" t="4.2447" hand="1:right">
+</event>
+<event x="116.2159" y="0.0000" z="173.2662" t="4.2560" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="104.4318" y="0.0000" z="175.5323" t="4.2893" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="92.6478" y="0.0000" z="177.7985" t="4.3227" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="88.7197" y="0.0000" z="178.5539" t="4.3338" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="88.7197" y="0.0000" z="178.5539" t="4.3553" hand="1:left">
+</event>
+<event x="50.5000" y="0.0000" z="126.0000" t="4.4447" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="50.5000" y="0.0000" z="126.0000" t="4.4457" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="50.5000" y="0.0000" z="126.0000" t="4.4667" hand="1:right">
+</event>
+<event x="96.0000" y="0.0000" z="130.0000" t="4.5553" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="96.0000" y="0.0000" z="130.0000" t="4.5563" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="96.0000" y="0.0000" z="130.0000" t="4.5773" hand="1:left">
+</event>
+<event x="-3.0000" y="0.0000" z="79.0000" t="4.6667" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-3.0000" y="0.0000" z="79.0000" t="4.6677" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-3.0000" y="0.0000" z="79.0000" t="4.6887" hand="1:right">
+</event>
+<event x="42.5000" y="0.0000" z="75.0000" t="4.7773" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="42.5000" y="0.0000" z="75.0000" t="4.7783" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-50.5000" y="0.0000" z="111.5000" t="4.8887" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-50.5000" y="0.0000" z="111.5000" t="4.8897" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-51.0000" y="0.0000" z="106.5000" t="4.9447" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-51.0000" y="0.0000" z="106.5000" t="4.9457" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-51.5000" y="0.0000" z="102.0000" t="5.0000" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-51.5000" y="0.0000" z="102.0000" t="5.0010" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-52.0000" y="0.0000" z="96.5000" t="5.0553" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="-52.0000" y="0.0000" z="96.5000" t="5.0563" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-61.5000" y="0.0000" z="88.5000" t="5.1113" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-61.5000" y="0.0000" z="88.5000" t="5.1123" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-60.5000" y="0.0000" z="78.0000" t="5.1673" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-60.5000" y="0.0000" z="78.0000" t="5.1683" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-59.5000" y="0.0000" z="68.5000" t="5.2227" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-59.5000" y="0.0000" z="68.5000" t="5.2237" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-58.0000" y="0.0000" z="58.5000" t="5.2780" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-58.0000" y="0.0000" z="58.5000" t="5.2790" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-62.5000" y="0.0000" z="44.5000" t="5.3333" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-62.5000" y="0.0000" z="44.5000" t="5.3343" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-50.0000" y="0.0000" z="52.5000" t="5.3887" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-50.0000" y="0.0000" z="52.5000" t="5.3897" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-36.5000" y="0.0000" z="54.5000" t="5.4447" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="-36.5000" y="0.0000" z="54.5000" t="5.4457" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-16.5000" y="0.0000" z="55.5000" t="5.5000" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-16.5000" y="0.0000" z="55.5000" t="5.5010" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="5.5000" y="0.0000" z="49.0000" t="5.5553" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="5.5000" y="0.0000" z="49.0000" t="5.5563" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="30.0000" y="0.0000" z="44.5000" t="5.6113" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="30.0000" y="0.0000" z="44.5000" t="5.6123" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="57.5000" y="0.0000" z="52.0000" t="5.6667" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="57.5000" y="0.0000" z="52.0000" t="5.6677" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="78.5000" y="0.0000" z="74.0000" t="5.7220" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="78.5000" y="0.0000" z="74.0000" t="5.7230" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="82.0000" y="0.0000" z="103.5000" t="5.7780" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="82.0000" y="0.0000" z="103.5000" t="5.7790" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="65.0000" y="0.0000" z="132.0000" t="5.8333" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="65.0000" y="0.0000" z="132.0000" t="5.8343" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="33.5000" y="0.0000" z="146.5000" t="5.8887" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="33.5000" y="0.0000" z="146.5000" t="5.8897" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-1.0000" y="0.0000" z="144.5000" t="5.9447" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-1.0000" y="0.0000" z="144.5000" t="5.9457" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-31.0000" y="0.0000" z="125.0000" t="6.0000" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-31.0000" y="0.0000" z="125.0000" t="6.0010" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-44.0000" y="0.0000" z="91.5000" t="6.0553" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-44.0000" y="0.0000" z="91.5000" t="6.0563" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-37.5000" y="0.0000" z="53.5000" t="6.1113" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-37.5000" y="0.0000" z="53.5000" t="6.1123" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-10.0000" y="0.0000" z="25.5000" t="6.1667" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-10.0000" y="0.0000" z="25.5000" t="6.1677" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-10.0000" y="0.0000" z="25.5000" t="6.2010" hand="1:left">
+</event>
+<event x="27.0000" y="0.0000" z="16.5000" t="6.2220" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="-10.0000" y="0.0000" z="25.5000" t="6.2343" hand="1:left">
+</event>
+<event x="-10.0000" y="0.0000" z="25.5000" t="6.2447" hand="1:left">
+</event>
+<event x="50.5417" y="0.0000" z="21.1678" t="6.2553" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="74.0834" y="0.0000" z="25.8355" t="6.2887" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="72.5490" y="0.0000" z="31.2610" t="6.3220" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="64.8101" y="0.0000" z="33.2878" t="6.3331" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="64.8101" y="0.0000" z="33.2878" t="6.3664" hand="1:right">
+</event>
+<event x="64.8101" y="0.0000" z="33.2878" t="6.3998" hand="1:right">
+</event>
+<event x="64.8101" y="0.0000" z="33.2878" t="6.4331" hand="1:right">
+</event>
+<event x="-37.5000" y="0.0000" z="53.5000" t="6.4447" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="64.8101" y="0.0000" z="33.2878" t="6.4664" hand="1:right">
+</event>
+<event x="64.8101" y="0.0000" z="33.2878" t="6.4667" hand="1:right">
+</event>
+<event x="-43.3901" y="0.0000" z="30.2340" t="6.4780" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-40.5397" y="0.0000" z="16.0427" t="6.5113" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-17.5110" y="0.0000" z="22.8011" t="6.5447" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-9.8347" y="0.0000" z="25.0539" t="6.5558" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-88.5000" y="0.0000" z="114.0000" t="6.6667" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-88.5000" y="0.0000" z="114.0000" t="6.6677" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-67.0000" y="0.0000" z="103.0000" t="6.7220" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="-67.0000" y="0.0000" z="103.0000" t="6.7230" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-44.0000" y="0.0000" z="92.0000" t="6.7780" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-44.0000" y="0.0000" z="92.0000" t="6.7790" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-19.5000" y="0.0000" z="98.0000" t="6.8333" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-19.5000" y="0.0000" z="98.0000" t="6.8343" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="5.5000" y="0.0000" z="108.0000" t="6.8887" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="5.5000" y="0.0000" z="108.0000" t="6.8897" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="40.5000" y="0.0000" z="93.0000" t="6.9440" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="40.5000" y="0.0000" z="93.0000" t="6.9450" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="71.0000" y="0.0000" z="74.5000" t="6.9993" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="71.0000" y="0.0000" z="74.5000" t="7.0003" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="83.5000" y="0.0000" z="40.5000" t="7.0553" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="83.5000" y="0.0000" z="40.5000" t="7.0563" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="83.5000" y="0.0000" z="40.5000" t="7.0897" hand="1:left">
+</event>
+<event x="93.0000" y="0.0000" z="7.5000" t="7.1113" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="83.5000" y="0.0000" z="40.5000" t="7.1230" hand="1:left">
+</event>
+<event x="83.5000" y="0.0000" z="40.5000" t="7.1333" hand="1:left">
+</event>
+<event x="107.5521" y="0.0000" z="11.1380" t="7.1447" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="112.4029" y="0.0000" z="12.3507" t="7.1780" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="97.8507" y="0.0000" z="8.7127" t="7.2113" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="93.0000" y="0.0000" z="7.5000" t="7.2224" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="93.0000" y="0.0000" z="7.5000" t="7.2558" hand="1:right">
+</event>
+<event x="93.0000" y="0.0000" z="7.5000" t="7.2891" hand="1:right">
+</event>
+<event x="93.0000" y="0.0000" z="7.5000" t="7.3000" hand="1:right">
+</event>
+<event x="5.5000" y="0.0000" z="108.0000" t="7.3333" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-4.8683" y="0.0000" z="118.8396" t="7.3667" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-4.0443" y="0.0000" z="133.5108" t="7.4000" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-2.4942" y="0.0000" z="148.4304" t="7.4333" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-1.9775" y="0.0000" z="153.4037" t="7.4444" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="18.0000" y="0.0000" z="146.0000" t="7.5000" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="18.0000" y="0.0000" z="146.0000" t="7.5010" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="18.0000" y="0.0000" z="146.0000" t="7.5343" hand="1:right">
+</event>
+<event x="36.5000" y="0.0000" z="139.5000" t="7.5553" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="18.0000" y="0.0000" z="146.0000" t="7.5677" hand="1:right">
+</event>
+<event x="18.0000" y="0.0000" z="146.0000" t="7.5780" hand="1:right">
+</event>
+<event x="38.7251" y="0.0000" z="154.3340" t="7.5887" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="40.9502" y="0.0000" z="169.1681" t="7.6220" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="43.1753" y="0.0000" z="184.0021" t="7.6553" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="43.9170" y="0.0000" z="188.9468" t="7.6664" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="43.9170" y="0.0000" z="188.9468" t="7.6893" hand="1:left">
+</event>
+<event x="-40.0000" y="0.0000" z="177.5000" t="7.7780" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="-40.0000" y="0.0000" z="177.5000" t="7.7790" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-40.0000" y="0.0000" z="177.5000" t="7.8000" hand="1:right">
+</event>
+<event x="-83.5000" y="0.0000" z="154.5000" t="7.8893" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-83.5000" y="0.0000" z="154.5000" t="7.8903" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-83.5000" y="0.0000" z="154.5000" t="7.9237" hand="1:left">
+</event>
+<event x="-83.5000" y="0.0000" z="154.5000" t="7.9570" hand="1:left">
+</event>
+<event x="-83.5000" y="0.0000" z="154.5000" t="7.9667" hand="1:left">
+</event>
+<event x="-64.5000" y="0.0000" z="108.5000" t="8.0000" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-66.6982" y="0.0000" z="93.6619" t="8.0333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-68.8965" y="0.0000" z="78.8239" t="8.0667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-71.0947" y="0.0000" z="63.9858" t="8.1000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-71.8274" y="0.0000" z="59.0398" t="8.1111" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-75.5000" y="0.0000" z="37.5000" t="8.1667" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="-75.5000" y="0.0000" z="37.5000" t="8.1677" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-79.0000" y="0.0000" z="16.0000" t="8.2220" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-79.0000" y="0.0000" z="16.0000" t="8.2230" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-79.0000" y="0.0000" z="16.0000" t="8.2447" hand="1:right">
+</event>
+<event x="-113.0000" y="0.0000" z="81.5000" t="8.3333" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-113.0000" y="0.0000" z="81.5000" t="8.3343" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-5.0000" y="0.0000" z="62.5000" t="8.4447" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-5.0000" y="0.0000" z="62.5000" t="8.4457" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="13.0000" y="0.0000" z="47.0000" t="8.5000" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="13.0000" y="0.0000" z="47.0000" t="8.5010" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="17.0000" y="0.0000" z="24.5000" t="8.5553" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="17.0000" y="0.0000" z="24.5000" t="8.5563" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="17.0000" y="0.0000" z="24.5000" t="8.5780" hand="1:right">
+</event>
+<event x="66.5000" y="0.0000" z="74.5000" t="8.6667" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="66.5000" y="0.0000" z="74.5000" t="8.6677" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="66.5000" y="0.0000" z="74.5000" t="8.6887" hand="1:left">
+</event>
+<event x="-31.5000" y="0.0000" z="24.5000" t="8.7780" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-31.5000" y="0.0000" z="24.5000" t="8.7790" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-31.5000" y="0.0000" z="24.5000" t="8.8123" hand="1:right">
+</event>
+<event x="-31.5000" y="0.0000" z="24.5000" t="8.8457" hand="1:right">
+</event>
+<event x="-31.5000" y="0.0000" z="24.5000" t="8.8790" hand="1:right">
+</event>
+<event x="74.0000" y="0.0000" z="78.0000" t="8.8887" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-31.5000" y="0.0000" z="24.5000" t="8.9113" hand="1:right">
+</event>
+<event x="88.5812" y="0.0000" z="74.4804" t="8.9220" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="93.4416" y="0.0000" z="73.3072" t="8.9553" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="78.8604" y="0.0000" z="76.8268" t="8.9887" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="74.0000" y="0.0000" z="78.0000" t="8.9998" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="74.0000" y="0.0000" z="78.0000" t="9.0331" hand="1:left">
+</event>
+<event x="74.0000" y="0.0000" z="78.0000" t="9.0664" hand="1:left">
+</event>
+<event x="74.0000" y="0.0000" z="78.0000" t="9.0998" hand="1:left">
+</event>
+<event x="-19.0000" y="0.0000" z="153.5000" t="9.1113" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="74.0000" y="0.0000" z="78.0000" t="9.1331" hand="1:left">
+</event>
+<event x="74.0000" y="0.0000" z="78.0000" t="9.1333" hand="1:left">
+</event>
+<event x="-23.5606" y="0.0000" z="139.2101" t="9.1447" hand="1:right">
+<holding path="2"/>
+</event>
+<event x="-24.6778" y="0.0000" z="124.9888" t="9.1780" hand="1:right">
+<holding path="2"/>
+</event>
+<event x="-19.5516" y="0.0000" z="110.8919" t="9.2113" hand="1:right">
+<holding path="2"/>
+</event>
+<event x="-17.8429" y="0.0000" z="106.1930" t="9.2224" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-17.8429" y="0.0000" z="106.1930" t="9.2447" hand="1:right">
+</event>
+<event x="-60.5000" y="0.0000" z="175.5000" t="9.3333" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-60.5000" y="0.0000" z="175.5000" t="9.3343" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-60.5000" y="0.0000" z="175.5000" t="9.3553" hand="1:left">
+</event>
+<event x="22.5000" y="0.0000" z="129.5000" t="9.4447" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="22.5000" y="0.0000" z="129.5000" t="9.4457" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-64.0212" y="0.0000" z="97.4788" t="9.5553" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-64.0212" y="0.0000" z="97.4788" t="9.5563" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-65.7606" y="0.0000" z="95.7394" t="9.6113" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-65.7606" y="0.0000" z="95.7394" t="9.6123" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-67.5000" y="0.0000" z="94.0000" t="9.6667" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="-67.5000" y="0.0000" z="94.0000" t="9.6677" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-67.5000" y="0.0000" z="94.0000" t="9.7010" hand="1:left">
+</event>
+<event x="-67.5000" y="0.0000" z="94.0000" t="9.7343" hand="1:left">
+</event>
+<event x="-67.5000" y="0.0000" z="94.0000" t="9.7677" hand="1:left">
+</event>
+<event x="10.0000" y="0.0000" z="49.5000" t="9.7780" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-67.5000" y="0.0000" z="94.0000" t="9.8000" hand="1:left">
+</event>
+<event x="8.2236" y="0.0000" z="34.6056" t="9.8113" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="6.4472" y="0.0000" z="19.7111" t="9.8447" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="4.6708" y="0.0000" z="4.8167" t="9.8780" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="4.0787" y="0.0000" z="-0.1481" t="9.8891" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="4.0787" y="0.0000" z="-0.1481" t="9.9224" hand="1:right">
+</event>
+<event x="4.0787" y="0.0000" z="-0.1481" t="9.9558" hand="1:right">
+</event>
+<event x="4.0787" y="0.0000" z="-0.1481" t="9.9891" hand="1:right">
+</event>
+<event x="98.5000" y="0.0000" z="72.5000" t="10.0000" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="4.0787" y="0.0000" z="-0.1481" t="10.0220" hand="1:right">
+</event>
+<event x="96.8599" y="0.0000" z="87.4101" t="10.0333" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="95.2198" y="0.0000" z="102.3201" t="10.0667" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="93.5797" y="0.0000" z="117.2302" t="10.1000" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="93.0330" y="0.0000" z="122.2002" t="10.1111" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="28.0000" y="0.0000" z="179.0000" t="10.2220" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="28.0000" y="0.0000" z="179.0000" t="10.2230" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="25.5000" y="0.0000" z="154.5000" t="10.2773" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="25.5000" y="0.0000" z="154.5000" t="10.2783" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="22.5000" y="0.0000" z="129.5000" t="10.3327" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="22.5000" y="0.0000" z="129.5000" t="10.3337" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="89.0000" y="0.0000" z="156.5000" t="10.4447" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="89.0000" y="0.0000" z="156.5000" t="10.4457" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="93.0000" y="0.0000" z="122.5000" t="10.5000" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="93.0000" y="0.0000" z="122.5000" t="10.5010" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="97.0000" y="0.0000" z="88.0000" t="10.5553" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="97.0000" y="0.0000" z="88.0000" t="10.5563" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="101.0000" y="0.0000" z="54.0000" t="10.6107" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="101.0000" y="0.0000" z="54.0000" t="10.6117" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="101.0000" y="0.0000" z="54.0000" t="10.6450" hand="1:right">
+</event>
+<event x="104.5000" y="0.0000" z="19.5000" t="10.6667" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="101.0000" y="0.0000" z="54.0000" t="10.6783" hand="1:right">
+</event>
+<event x="101.0000" y="0.0000" z="54.0000" t="10.6887" hand="1:right">
+</event>
+<event x="119.1357" y="0.0000" z="16.2144" t="10.7000" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="124.0143" y="0.0000" z="15.1192" t="10.7333" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="109.3786" y="0.0000" z="18.4048" t="10.7667" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="104.5000" y="0.0000" z="19.5000" t="10.7778" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="104.5000" y="0.0000" z="19.5000" t="10.8111" hand="1:left">
+</event>
+<event x="104.5000" y="0.0000" z="19.5000" t="10.8444" hand="1:left">
+</event>
+<event x="104.5000" y="0.0000" z="19.5000" t="10.8553" hand="1:left">
+</event>
+<event x="-2.5000" y="0.0000" z="59.0000" t="10.8887" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="-17.2386" y="0.0000" z="61.7884" t="10.9220" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="-31.7077" y="0.0000" z="59.3132" t="10.9553" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="-46.0844" y="0.0000" z="55.0344" t="10.9887" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="-50.8767" y="0.0000" z="53.6081" t="10.9998" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-53.5000" y="0.0000" z="32.5000" t="11.0553" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-53.5000" y="0.0000" z="32.5000" t="11.0563" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-57.0000" y="0.0000" z="12.5000" t="11.1113" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-57.0000" y="0.0000" z="12.5000" t="11.1123" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-57.0000" y="0.0000" z="12.5000" t="11.1333" hand="1:right">
+</event>
+<event x="55.0000" y="0.0000" z="34.5000" t="11.2220" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="55.0000" y="0.0000" z="34.5000" t="11.2230" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-9.5000" y="0.0000" z="103.5000" t="11.3333" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-9.5000" y="0.0000" z="103.5000" t="11.3343" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-5.5000" y="0.0000" z="81.5000" t="11.3887" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-5.5000" y="0.0000" z="81.5000" t="11.3897" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-2.5000" y="0.0000" z="59.0000" t="11.4447" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-2.5000" y="0.0000" z="59.0000" t="11.4457" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-2.5000" y="0.0000" z="59.0000" t="11.4790" hand="1:right">
+</event>
+<event x="-2.5000" y="0.0000" z="59.0000" t="11.5123" hand="1:right">
+</event>
+<event x="-2.5000" y="0.0000" z="59.0000" t="11.5220" hand="1:right">
+</event>
+<event x="-85.5000" y="0.0000" z="93.5000" t="11.5553" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="-83.1350" y="0.0000" z="108.3124" t="11.5887" hand="1:left">
+<holding path="4"/>
+</event>
+<event x="-80.7700" y="0.0000" z="123.1248" t="11.6220" hand="1:left">
+<holding path="4"/>
+</event>
+<event x="-78.4050" y="0.0000" z="137.9372" t="11.6553" hand="1:left">
+<holding path="4"/>
+</event>
+<event x="-77.6167" y="0.0000" z="142.8746" t="11.6664" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-82.5000" y="0.0000" z="163.0000" t="11.7220" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-82.5000" y="0.0000" z="163.0000" t="11.7230" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-88.0000" y="0.0000" z="183.5000" t="11.7773" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-88.0000" y="0.0000" z="183.5000" t="11.7783" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-88.0000" y="0.0000" z="183.5000" t="11.8000" hand="1:left">
+</event>
+<event x="-128.0000" y="0.0000" z="124.5000" t="11.8887" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-128.0000" y="0.0000" z="124.5000" t="11.8897" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-35.5000" y="0.0000" z="161.5000" t="12.0000" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-35.5000" y="0.0000" z="161.5000" t="12.0010" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-15.0000" y="0.0000" z="158.0000" t="12.0553" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-15.0000" y="0.0000" z="158.0000" t="12.0563" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="5.5000" y="0.0000" z="154.5000" t="12.1113" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="5.5000" y="0.0000" z="154.5000" t="12.1123" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="5.5000" y="0.0000" z="154.5000" t="12.1333" hand="1:left">
+</event>
+<event x="45.0000" y="0.0000" z="101.0000" t="12.2220" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="45.0000" y="0.0000" z="101.0000" t="12.2230" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="45.0000" y="0.0000" z="101.0000" t="12.2447" hand="1:right">
+</event>
+<event x="59.5000" y="0.0000" z="192.0000" t="12.3333" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="59.5000" y="0.0000" z="192.0000" t="12.3343" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="59.5000" y="0.0000" z="192.0000" t="12.3677" hand="1:left">
+</event>
+<event x="59.5000" y="0.0000" z="192.0000" t="12.4010" hand="1:left">
+</event>
+<event x="59.5000" y="0.0000" z="192.0000" t="12.4343" hand="1:left">
+</event>
+<event x="46.0000" y="0.0000" z="93.5000" t="12.4447" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="59.5000" y="0.0000" z="192.0000" t="12.4667" hand="1:left">
+</event>
+<event x="48.7313" y="0.0000" z="78.7508" t="12.4780" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="49.6418" y="0.0000" z="73.8344" t="12.5113" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="46.9104" y="0.0000" z="88.5836" t="12.5447" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="46.0000" y="0.0000" z="93.5000" t="12.5558" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="46.0000" y="0.0000" z="93.5000" t="12.5891" hand="1:right">
+</event>
+<event x="46.0000" y="0.0000" z="93.5000" t="12.6224" hand="1:right">
+</event>
+<event x="46.0000" y="0.0000" z="93.5000" t="12.6558" hand="1:right">
+</event>
+<event x="-48.0000" y="0.0000" z="60.0000" t="12.6667" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="46.0000" y="0.0000" z="93.5000" t="12.6887" hand="1:right">
+</event>
+<event x="-50.5345" y="0.0000" z="45.2157" t="12.7000" hand="1:left">
+<holding path="2"/>
+</event>
+<event x="-53.0689" y="0.0000" z="30.4313" t="12.7333" hand="1:left">
+<holding path="2"/>
+</event>
+<event x="-55.6034" y="0.0000" z="15.6470" t="12.7667" hand="1:left">
+<holding path="2"/>
+</event>
+<event x="-56.4482" y="0.0000" z="10.7189" t="12.7778" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-56.4482" y="0.0000" z="10.7189" t="12.8000" hand="1:left">
+</event>
+<event x="-4.5000" y="0.0000" z="97.0000" t="12.8887" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-4.5000" y="0.0000" z="97.0000" t="12.8897" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-4.5000" y="0.0000" z="97.0000" t="12.9113" hand="1:right">
+</event>
+<event x="-102.0000" y="0.0000" z="64.0000" t="13.0000" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-102.0000" y="0.0000" z="64.0000" t="13.0010" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="0.4788" y="0.0000" z="15.4788" t="13.1113" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="0.4788" y="0.0000" z="15.4788" t="13.1123" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-1.2606" y="0.0000" z="13.7394" t="13.1667" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="-1.2606" y="0.0000" z="13.7394" t="13.1677" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-3.0000" y="0.0000" z="12.0000" t="13.2220" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-3.0000" y="0.0000" z="12.0000" t="13.2230" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-3.0000" y="0.0000" z="12.0000" t="13.2447" hand="1:right">
+</event>
+<event x="36.5000" y="0.0000" z="58.0000" t="13.3333" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="36.5000" y="0.0000" z="58.0000" t="13.3343" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="84.5000" y="0.0000" z="42.5000" t="13.4447" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="84.5000" y="0.0000" z="42.5000" t="13.4457" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="83.5000" y="0.0000" z="36.0000" t="13.5000" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="83.5000" y="0.0000" z="36.0000" t="13.5010" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="82.0000" y="0.0000" z="30.0000" t="13.5553" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="82.0000" y="0.0000" z="30.0000" t="13.5563" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="123.5000" y="0.0000" z="73.5000" t="13.6667" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="123.5000" y="0.0000" z="73.5000" t="13.6677" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="122.5000" y="0.0000" z="80.0000" t="13.7220" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="122.5000" y="0.0000" z="80.0000" t="13.7230" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="121.0000" y="0.0000" z="86.5000" t="13.7773" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="121.0000" y="0.0000" z="86.5000" t="13.7783" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="115.5000" y="0.0000" z="97.5000" t="13.8333" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="115.5000" y="0.0000" z="97.5000" t="13.8343" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="103.0000" y="0.0000" z="107.0000" t="13.8887" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="103.0000" y="0.0000" z="107.0000" t="13.8897" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="86.5000" y="0.0000" z="111.5000" t="13.9447" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="86.5000" y="0.0000" z="111.5000" t="13.9457" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="64.5000" y="0.0000" z="111.0000" t="14.0000" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="64.5000" y="0.0000" z="111.0000" t="14.0010" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="36.5000" y="0.0000" z="106.0000" t="14.0553" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="36.5000" y="0.0000" z="106.0000" t="14.0563" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="5.5000" y="0.0000" z="93.5000" t="14.1113" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="5.5000" y="0.0000" z="93.5000" t="14.1123" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-23.0000" y="0.0000" z="73.5000" t="14.1667" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-23.0000" y="0.0000" z="73.5000" t="14.1677" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-23.0000" y="0.0000" z="73.5000" t="14.2010" hand="1:right">
+</event>
+<event x="-46.5000" y="0.0000" z="45.5000" t="14.2220" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-23.0000" y="0.0000" z="73.5000" t="14.2343" hand="1:right">
+</event>
+<event x="-55.1189" y="0.0000" z="37.1505" t="14.2553" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-23.0000" y="0.0000" z="73.5000" t="14.2677" hand="1:right">
+</event>
+<event x="-64.2133" y="0.0000" z="30.1856" t="14.2887" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-23.0000" y="0.0000" z="73.5000" t="14.3010" hand="1:right">
+</event>
+<event x="-76.1435" y="0.0000" z="31.4780" t="14.3220" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-23.0000" y="0.0000" z="73.5000" t="14.3343" hand="1:right">
+</event>
+<event x="-88.0737" y="0.0000" z="32.7705" t="14.3553" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-23.0000" y="0.0000" z="73.5000" t="14.3553" hand="1:right">
+</event>
+<event x="-100.0039" y="0.0000" z="34.0629" t="14.3887" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-111.9341" y="0.0000" z="35.3554" t="14.4220" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-119.8876" y="0.0000" z="36.2170" t="14.4442" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-119.8876" y="0.0000" z="36.2170" t="14.4776" hand="1:left">
+</event>
+<event x="-119.8876" y="0.0000" z="36.2170" t="14.5109" hand="1:left">
+</event>
+<event x="-119.8876" y="0.0000" z="36.2170" t="14.5442" hand="1:left">
+</event>
+<event x="-67.5000" y="0.0000" z="84.5000" t="14.5553" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-119.8876" y="0.0000" z="36.2170" t="14.5776" hand="1:left">
+</event>
+<event x="-58.8811" y="0.0000" z="92.8495" t="14.5887" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="-119.8876" y="0.0000" z="36.2170" t="14.6109" hand="1:left">
+</event>
+<event x="-49.7867" y="0.0000" z="99.8144" t="14.6220" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="-119.8876" y="0.0000" z="36.2170" t="14.6442" hand="1:left">
+</event>
+<event x="-37.8565" y="0.0000" z="98.5220" t="14.6553" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="-119.8876" y="0.0000" z="36.2170" t="14.6776" hand="1:left">
+</event>
+<event x="-25.9263" y="0.0000" z="97.2295" t="14.6887" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="-119.8876" y="0.0000" z="36.2170" t="14.6887" hand="1:left">
+</event>
+<event x="-13.9961" y="0.0000" z="95.9371" t="14.7220" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="-2.0659" y="0.0000" z="94.6446" t="14.7553" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="5.8876" y="0.0000" z="93.7830" t="14.7776" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="5.8876" y="0.0000" z="93.7830" t="14.8109" hand="1:right">
+</event>
+<event x="5.8876" y="0.0000" z="93.7830" t="14.8442" hand="1:right">
+</event>
+<event x="5.8876" y="0.0000" z="93.7830" t="14.8776" hand="1:right">
+</event>
+<event x="37.0000" y="0.0000" z="61.0000" t="14.8887" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="5.8876" y="0.0000" z="93.7830" t="14.9109" hand="1:right">
+</event>
+<event x="40.1911" y="0.0000" z="49.4321" t="14.9220" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="5.8876" y="0.0000" z="93.7830" t="14.9442" hand="1:right">
+</event>
+<event x="38.1217" y="0.0000" z="38.0166" t="14.9553" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="5.8876" y="0.0000" z="93.7830" t="14.9776" hand="1:right">
+</event>
+<event x="34.2661" y="0.0000" z="26.6529" t="14.9887" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="5.8876" y="0.0000" z="93.7830" t="15.0109" hand="1:right">
+</event>
+<event x="35.5513" y="0.0000" z="30.4408" t="15.0220" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="5.8876" y="0.0000" z="93.7830" t="15.0220" hand="1:right">
+</event>
+<event x="39.4069" y="0.0000" z="41.8045" t="15.0553" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="39.1274" y="0.0000" z="53.2881" t="15.0887" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="37.0000" y="0.0000" z="61.0000" t="15.1109" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="37.0000" y="0.0000" z="61.0000" t="15.1333" hand="1:left">
+</event>
+<event x="84.5000" y="0.0000" z="155.5000" t="15.2220" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="84.5000" y="0.0000" z="155.5000" t="15.2230" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="84.5000" y="0.0000" z="155.5000" t="15.2440" hand="1:right">
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="15.3333" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="15.3343" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="15.3553" hand="1:left">
+</event>
+<event x="48.5000" y="0.0000" z="104.5000" t="15.4440" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="48.5000" y="0.0000" z="104.5000" t="15.4450" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="48.5000" y="0.0000" z="104.5000" t="15.4667" hand="1:right">
+</event>
+<event x="43.2394" y="0.0000" z="151.2394" t="15.5553" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="43.2394" y="0.0000" z="151.2394" t="15.5563" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="43.2394" y="0.0000" z="151.2394" t="15.5773" hand="1:left">
+</event>
+<event x="41.5000" y="0.0000" z="149.5000" t="15.6667" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="41.5000" y="0.0000" z="149.5000" t="15.6677" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="41.5000" y="0.0000" z="149.5000" t="15.7010" hand="1:right">
+</event>
+<event x="41.5000" y="0.0000" z="149.5000" t="15.7343" hand="1:right">
+</event>
+<event x="41.5000" y="0.0000" z="149.5000" t="15.7677" hand="1:right">
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="15.7773" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="15.7783" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="41.5000" y="0.0000" z="149.5000" t="15.8000" hand="1:right">
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="15.8117" hand="1:left">
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="15.8450" hand="1:left">
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="15.8783" hand="1:left">
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="15.9117" hand="1:left">
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="15.9450" hand="1:left">
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="15.9783" hand="1:left">
+</event>
+<event x="-15.5000" y="0.0000" z="173.5000" t="16.0000" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="16.0117" hand="1:left">
+</event>
+<event x="-27.4348" y="0.0000" z="172.2510" t="16.0333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="16.0450" hand="1:left">
+</event>
+<event x="-39.3696" y="0.0000" z="171.0020" t="16.0667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="16.0783" hand="1:left">
+</event>
+<event x="-51.3045" y="0.0000" z="169.7530" t="16.1000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="16.1117" hand="1:left">
+</event>
+<event x="-63.2393" y="0.0000" z="168.5040" t="16.1333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="91.5000" y="0.0000" z="112.5000" t="16.1333" hand="1:left">
+</event>
+<event x="-75.1741" y="0.0000" z="167.2550" t="16.1667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-87.1089" y="0.0000" z="166.0060" t="16.2000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-95.0655" y="0.0000" z="165.1734" t="16.2222" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-95.0655" y="0.0000" z="165.1734" t="16.2556" hand="1:right">
+</event>
+<event x="-95.0655" y="0.0000" z="165.1734" t="16.2889" hand="1:right">
+</event>
+<event x="-95.0655" y="0.0000" z="165.1734" t="16.3222" hand="1:right">
+</event>
+<event x="-79.5000" y="0.0000" z="123.0000" t="16.3333" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-95.0655" y="0.0000" z="165.1734" t="16.3556" hand="1:right">
+</event>
+<event x="-80.7490" y="0.0000" z="111.0652" t="16.3667" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="-95.0655" y="0.0000" z="165.1734" t="16.3889" hand="1:right">
+</event>
+<event x="-81.9980" y="0.0000" z="99.1304" t="16.4000" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="-95.0655" y="0.0000" z="165.1734" t="16.4222" hand="1:right">
+</event>
+<event x="-83.2470" y="0.0000" z="87.1955" t="16.4333" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="-95.0655" y="0.0000" z="165.1734" t="16.4556" hand="1:right">
+</event>
+<event x="-84.4960" y="0.0000" z="75.2607" t="16.4667" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="-95.0655" y="0.0000" z="165.1734" t="16.4667" hand="1:right">
+</event>
+<event x="-85.7450" y="0.0000" z="63.3259" t="16.5000" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="-86.9940" y="0.0000" z="51.3911" t="16.5333" hand="1:left">
+<holding path="3"/>
+</event>
+<event x="-87.8266" y="0.0000" z="43.4345" t="16.5556" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-87.8266" y="0.0000" z="43.4345" t="16.5780" hand="1:left">
+</event>
+<event x="-55.0000" y="0.0000" z="10.5000" t="16.6667" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-55.0000" y="0.0000" z="10.5000" t="16.6677" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-55.0000" y="0.0000" z="10.5000" t="16.6887" hand="1:right">
+</event>
+<event x="-9.5000" y="0.0000" z="18.0000" t="16.7780" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="-9.5000" y="0.0000" z="18.0000" t="16.7790" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-9.5000" y="0.0000" z="18.0000" t="16.8000" hand="1:left">
+</event>
+<event x="20.5000" y="0.0000" z="52.5000" t="16.8887" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="20.5000" y="0.0000" z="52.5000" t="16.8897" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="19.0000" y="0.0000" z="97.5000" t="17.0000" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="14.9761" y="0.0000" z="108.8052" t="17.0333" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="10.9522" y="0.0000" z="120.1105" t="17.0667" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="17.0897" hand="1:right">
+</event>
+<event x="12.1838" y="0.0000" z="129.8979" t="17.1000" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="17.1230" hand="1:right">
+</event>
+<event x="21.6153" y="0.0000" z="137.3173" t="17.1333" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="17.1563" hand="1:right">
+</event>
+<event x="31.0467" y="0.0000" z="144.7368" t="17.1667" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="17.1897" hand="1:right">
+</event>
+<event x="40.4782" y="0.0000" z="152.1562" t="17.2000" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="17.2230" hand="1:right">
+</event>
+<event x="50.7337" y="0.0000" z="154.9714" t="17.2333" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="17.2563" hand="1:right">
+</event>
+<event x="62.1531" y="0.0000" z="151.2839" t="17.2667" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="17.2897" hand="1:right">
+</event>
+<event x="73.5725" y="0.0000" z="147.5964" t="17.3000" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="17.3230" hand="1:right">
+</event>
+<event x="84.9918" y="0.0000" z="143.9089" t="17.3333" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="17.3553" hand="1:right">
+</event>
+<event x="93.9196" y="0.0000" z="138.4675" t="17.3667" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="93.5388" y="0.0000" z="126.4735" t="17.4000" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="93.1581" y="0.0000" z="114.4795" t="17.4333" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="93.0312" y="0.0000" z="110.4816" t="17.4444" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="59.5000" y="0.0000" z="85.0000" t="17.5553" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="59.5000" y="0.0000" z="85.0000" t="17.5563" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="53.5000" y="0.0000" z="71.5000" t="17.6113" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="53.5000" y="0.0000" z="71.5000" t="17.6123" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="51.0000" y="0.0000" z="53.5000" t="17.6667" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="51.0000" y="0.0000" z="53.5000" t="17.6677" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="58.5000" y="0.0000" z="30.0000" t="17.7220" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="58.5000" y="0.0000" z="30.0000" t="17.7230" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="58.5000" y="0.0000" z="30.0000" t="17.7563" hand="1:left">
+</event>
+<event x="77.0000" y="0.0000" z="13.5000" t="17.7780" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="58.5000" y="0.0000" z="30.0000" t="17.7897" hand="1:left">
+</event>
+<event x="87.1025" y="0.0000" z="7.0240" t="17.8113" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="58.5000" y="0.0000" z="30.0000" t="17.8230" hand="1:left">
+</event>
+<event x="96.3996" y="0.0000" z="1.8315" t="17.8447" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="58.5000" y="0.0000" z="30.0000" t="17.8563" hand="1:left">
+</event>
+<event x="94.9618" y="0.0000" z="13.7450" t="17.8780" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="58.5000" y="0.0000" z="30.0000" t="17.8897" hand="1:left">
+</event>
+<event x="93.5240" y="0.0000" z="25.6586" t="17.9113" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="58.5000" y="0.0000" z="30.0000" t="17.9113" hand="1:left">
+</event>
+<event x="92.0861" y="0.0000" z="37.5721" t="17.9447" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="90.6483" y="0.0000" z="49.4857" t="17.9780" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="89.6897" y="0.0000" z="57.4281" t="18.0002" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="89.6897" y="0.0000" z="57.4281" t="18.0336" hand="1:right">
+</event>
+<event x="89.6897" y="0.0000" z="57.4281" t="18.0669" hand="1:right">
+</event>
+<event x="89.6897" y="0.0000" z="57.4281" t="18.1002" hand="1:right">
+</event>
+<event x="19.0000" y="0.0000" z="97.5000" t="18.1113" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="89.6897" y="0.0000" z="57.4281" t="18.1336" hand="1:right">
+</event>
+<event x="8.8975" y="0.0000" z="103.9760" t="18.1447" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="89.6897" y="0.0000" z="57.4281" t="18.1669" hand="1:right">
+</event>
+<event x="-0.3996" y="0.0000" z="109.1685" t="18.1780" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="89.6897" y="0.0000" z="57.4281" t="18.2002" hand="1:right">
+</event>
+<event x="1.0382" y="0.0000" z="97.2550" t="18.2113" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="89.6897" y="0.0000" z="57.4281" t="18.2336" hand="1:right">
+</event>
+<event x="2.4760" y="0.0000" z="85.3414" t="18.2447" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="89.6897" y="0.0000" z="57.4281" t="18.2447" hand="1:right">
+</event>
+<event x="3.9139" y="0.0000" z="73.4279" t="18.2780" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="5.3517" y="0.0000" z="61.5143" t="18.3113" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="6.3103" y="0.0000" z="53.5719" t="18.3336" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="6.3103" y="0.0000" z="53.5719" t="18.3669" hand="1:left">
+</event>
+<event x="6.3103" y="0.0000" z="53.5719" t="18.4002" hand="1:left">
+</event>
+<event x="6.3103" y="0.0000" z="53.5719" t="18.4336" hand="1:left">
+</event>
+<event x="-87.5000" y="0.0000" z="26.5000" t="18.4447" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="6.3103" y="0.0000" z="53.5719" t="18.4669" hand="1:left">
+</event>
+<event x="-99.3849" y="0.0000" z="28.1584" t="18.4780" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="6.3103" y="0.0000" z="53.5719" t="18.5002" hand="1:left">
+</event>
+<event x="-111.2697" y="0.0000" z="29.8167" t="18.5113" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="6.3103" y="0.0000" z="53.5719" t="18.5336" hand="1:left">
+</event>
+<event x="-123.1546" y="0.0000" z="31.4751" t="18.5447" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="6.3103" y="0.0000" z="53.5719" t="18.5669" hand="1:left">
+</event>
+<event x="-119.1930" y="0.0000" z="30.9223" t="18.5780" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="6.3103" y="0.0000" z="53.5719" t="18.5780" hand="1:left">
+</event>
+<event x="-107.3081" y="0.0000" z="29.2639" t="18.6113" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-95.4232" y="0.0000" z="27.6056" t="18.6447" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-87.5000" y="0.0000" z="26.5000" t="18.6669" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-87.5000" y="0.0000" z="26.5000" t="18.6887" hand="1:right">
+</event>
+<event x="-6.5000" y="0.0000" z="9.0000" t="18.7780" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="-6.5000" y="0.0000" z="9.0000" t="18.7790" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-6.5000" y="0.0000" z="9.0000" t="18.8000" hand="1:left">
+</event>
+<event x="-39.0000" y="0.0000" z="40.0000" t="18.8887" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-39.0000" y="0.0000" z="40.0000" t="18.8897" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-39.0000" y="0.0000" z="40.0000" t="18.9113" hand="1:right">
+</event>
+<event x="-67.0000" y="0.0000" z="75.0000" t="19.0000" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-67.0000" y="0.0000" z="75.0000" t="19.0010" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-67.0000" y="0.0000" z="75.0000" t="19.0220" hand="1:left">
+</event>
+<event x="-112.7606" y="0.0000" z="70.2394" t="19.1113" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-112.7606" y="0.0000" z="70.2394" t="19.1123" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-112.7606" y="0.0000" z="70.2394" t="19.1333" hand="1:right">
+</event>
+<event x="-114.5000" y="0.0000" z="68.5000" t="19.2220" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="-114.5000" y="0.0000" z="68.5000" t="19.2230" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-114.5000" y="0.0000" z="68.5000" t="19.2563" hand="1:left">
+</event>
+<event x="-114.5000" y="0.0000" z="68.5000" t="19.2897" hand="1:left">
+</event>
+<event x="-114.5000" y="0.0000" z="68.5000" t="19.3230" hand="1:left">
+</event>
+<event x="-95.0000" y="0.0000" z="113.5000" t="19.3333" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-95.0000" y="0.0000" z="113.5000" t="19.3343" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-114.5000" y="0.0000" z="68.5000" t="19.3553" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="19.5343" hand="1:right">
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="19.5553" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="19.5563" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="19.5677" hand="1:right">
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="19.5897" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="19.6010" hand="1:right">
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="19.6230" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="19.6343" hand="1:right">
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="19.6563" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="19.6677" hand="1:right">
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="19.6897" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="19.7010" hand="1:right">
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="19.7230" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="19.7343" hand="1:right">
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="19.7563" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="19.7677" hand="1:right">
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="19.7897" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="19.8000" hand="1:right">
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="19.8230" hand="1:left">
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="19.8563" hand="1:left">
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="19.8897" hand="1:left">
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="19.9113" hand="1:left">
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="20.0000" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="20.0010" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="1.0000" y="0.0000" z="184.0000" t="20.0220" hand="1:right">
+</event>
+<event x="-18.0000" y="0.0000" z="147.0000" t="20.1113" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-18.0000" y="0.0000" z="147.0000" t="20.1123" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="2.5000" y="0.0000" z="112.0000" t="20.2220" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="2.5000" y="0.0000" z="112.0000" t="20.2230" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="3.0000" y="0.0000" z="107.5000" t="20.2780" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="3.0000" y="0.0000" z="107.5000" t="20.2790" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="3.5000" y="0.0000" z="103.0000" t="20.3333" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="3.5000" y="0.0000" z="103.0000" t="20.3343" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="20.4790" hand="1:left">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="20.5123" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="20.5343" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="20.5457" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="20.5677" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="20.5790" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="20.6010" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="20.6123" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="20.6343" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="20.6457" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="20.6677" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="20.6790" hand="1:left">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="20.6887" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="20.7010" hand="1:right">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="20.7343" hand="1:right">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="20.7677" hand="1:right">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="20.8000" hand="1:right">
+</event>
+<event x="4.0000" y="0.0000" z="98.0000" t="20.8887" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="4.0000" y="0.0000" z="98.0000" t="20.8897" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-18.5000" y="0.0000" z="57.0000" t="21.0000" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-18.5000" y="0.0000" z="57.0000" t="21.0010" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-19.0000" y="0.0000" z="52.5000" t="21.0560" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="-19.0000" y="0.0000" z="52.5000" t="21.0570" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-19.5000" y="0.0000" z="48.0000" t="21.1113" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-19.5000" y="0.0000" z="48.0000" t="21.1123" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="25.5000" y="0.0000" z="26.5000" t="21.2220" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="25.5000" y="0.0000" z="26.5000" t="21.2230" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="26.0000" y="0.0000" z="22.0000" t="21.2780" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="26.0000" y="0.0000" z="22.0000" t="21.2790" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="26.5000" y="0.0000" z="17.5000" t="21.3333" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="26.5000" y="0.0000" z="17.5000" t="21.3343" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="35.5000" y="0.0000" z="13.5000" t="21.3887" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="35.5000" y="0.0000" z="13.5000" t="21.3897" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="47.0000" y="0.0000" z="12.0000" t="21.4447" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="47.0000" y="0.0000" z="12.0000" t="21.4457" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="61.5000" y="0.0000" z="16.5000" t="21.5000" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="61.5000" y="0.0000" z="16.5000" t="21.5010" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="74.0000" y="0.0000" z="25.5000" t="21.5553" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="74.0000" y="0.0000" z="25.5000" t="21.5563" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="83.0000" y="0.0000" z="43.0000" t="21.6113" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="83.0000" y="0.0000" z="43.0000" t="21.6123" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="83.5000" y="0.0000" z="63.0000" t="21.6667" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="83.5000" y="0.0000" z="63.0000" t="21.6677" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="72.0000" y="0.0000" z="83.0000" t="21.7220" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="72.0000" y="0.0000" z="83.0000" t="21.7230" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="48.5000" y="0.0000" z="95.5000" t="21.7780" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="48.5000" y="0.0000" z="95.5000" t="21.7790" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="22.5000" y="0.0000" z="96.5000" t="21.8333" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="22.5000" y="0.0000" z="96.5000" t="21.8343" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-0.5000" y="0.0000" z="83.0000" t="21.8887" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="-0.5000" y="0.0000" z="83.0000" t="21.8897" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-26.5000" y="0.0000" z="69.0000" t="21.9447" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-26.5000" y="0.0000" z="69.0000" t="21.9457" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-56.5000" y="0.0000" z="64.5000" t="22.0000" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-56.5000" y="0.0000" z="64.5000" t="22.0010" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-88.0000" y="0.0000" z="74.0000" t="22.0553" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-88.0000" y="0.0000" z="74.0000" t="22.0563" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-109.0000" y="0.0000" z="101.5000" t="22.1113" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="-109.0000" y="0.0000" z="101.5000" t="22.1123" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-112.0000" y="0.0000" z="137.5000" t="22.1667" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-112.0000" y="0.0000" z="137.5000" t="22.1677" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-93.5000" y="0.0000" z="169.5000" t="22.2220" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-93.5000" y="0.0000" z="169.5000" t="22.2230" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-59.0000" y="0.0000" z="182.5000" t="22.2780" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-59.0000" y="0.0000" z="182.5000" t="22.2790" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-22.0000" y="0.0000" z="178.0000" t="22.3333" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-22.0000" y="0.0000" z="178.0000" t="22.3343" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="10.5000" y="0.0000" z="157.5000" t="22.3887" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="10.5000" y="0.0000" z="157.5000" t="22.3897" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="27.0000" y="0.0000" z="124.0000" t="22.4447" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="27.0000" y="0.0000" z="124.0000" t="22.4457" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="27.5000" y="0.0000" z="86.0000" t="22.5000" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="27.5000" y="0.0000" z="86.0000" t="22.5010" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="9.5000" y="0.0000" z="50.5000" t="22.5553" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="9.5000" y="0.0000" z="50.5000" t="22.5563" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-26.0000" y="0.0000" z="34.5000" t="22.6113" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-26.0000" y="0.0000" z="34.5000" t="22.6123" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-26.0000" y="0.0000" z="34.5000" t="22.6457" hand="1:right">
+</event>
+<event x="-66.0000" y="0.0000" z="39.0000" t="22.6667" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="-26.0000" y="0.0000" z="34.5000" t="22.6790" hand="1:right">
+</event>
+<event x="-26.0000" y="0.0000" z="34.5000" t="22.6887" hand="1:right">
+</event>
+<event x="-77.6256" y="0.0000" z="41.9740" t="22.7000" hand="1:left">
+<holding path="2"/>
+</event>
+<event x="-81.5008" y="0.0000" z="42.9653" t="22.7333" hand="1:left">
+<holding path="2"/>
+</event>
+<event x="-69.8752" y="0.0000" z="39.9913" t="22.7667" hand="1:left">
+<holding path="2"/>
+</event>
+<event x="-73.7504" y="0.0000" z="40.9827" t="22.8000" hand="1:left">
+<holding path="2"/>
+</event>
+<event x="-85.3761" y="0.0000" z="43.9567" t="22.8333" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-85.3761" y="0.0000" z="43.9567" t="22.8667" hand="1:left">
+</event>
+<event x="-109.0000" y="0.0000" z="101.5000" t="22.8887" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-85.3761" y="0.0000" z="43.9567" t="22.9000" hand="1:left">
+</event>
+<event x="-85.3761" y="0.0000" z="43.9567" t="22.9113" hand="1:left">
+</event>
+<event x="-120.6256" y="0.0000" z="98.5260" t="22.9220" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-124.5008" y="0.0000" z="97.5347" t="22.9553" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-112.8752" y="0.0000" z="100.5087" t="22.9887" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-116.7504" y="0.0000" z="99.5173" t="23.0220" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-128.3761" y="0.0000" z="96.5433" t="23.0553" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-56.0000" y="0.0000" z="152.5000" t="23.1113" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-56.0000" y="0.0000" z="152.5000" t="23.1123" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-67.5000" y="0.0000" z="116.0000" t="23.1667" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-67.5000" y="0.0000" z="116.0000" t="23.1677" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-54.0000" y="0.0000" z="80.0000" t="23.2220" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="-54.0000" y="0.0000" z="80.0000" t="23.2230" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-25.5000" y="0.0000" z="55.0000" t="23.2780" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-25.5000" y="0.0000" z="55.0000" t="23.2790" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="9.5000" y="0.0000" z="50.5000" t="23.3333" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="9.5000" y="0.0000" z="50.5000" t="23.3343" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="41.0000" y="0.0000" z="63.5000" t="23.3887" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="41.0000" y="0.0000" z="63.5000" t="23.3897" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="61.5000" y="0.0000" z="87.5000" t="23.4447" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="61.5000" y="0.0000" z="87.5000" t="23.4457" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="66.5000" y="0.0000" z="115.0000" t="23.5000" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="66.5000" y="0.0000" z="115.0000" t="23.5010" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="60.5000" y="0.0000" z="140.5000" t="23.5553" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="60.5000" y="0.0000" z="140.5000" t="23.5563" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="45.5000" y="0.0000" z="160.5000" t="23.6113" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="45.5000" y="0.0000" z="160.5000" t="23.6123" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="22.5000" y="0.0000" z="170.0000" t="23.6667" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="22.5000" y="0.0000" z="170.0000" t="23.6677" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-0.5000" y="0.0000" z="168.0000" t="23.7220" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-0.5000" y="0.0000" z="168.0000" t="23.7230" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-18.5000" y="0.0000" z="156.5000" t="23.7780" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="-18.5000" y="0.0000" z="156.5000" t="23.7790" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="137.5000" t="23.8333" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="137.5000" t="23.8343" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-19.5000" y="0.0000" z="122.5000" t="23.8887" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-19.5000" y="0.0000" z="122.5000" t="23.8897" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-12.0000" y="0.0000" z="110.5000" t="23.9447" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-12.0000" y="0.0000" z="110.5000" t="23.9457" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-12.0000" y="0.0000" z="110.5000" t="23.9790" hand="1:right">
+</event>
+<event x="-0.5000" y="0.0000" z="105.5000" t="24.0000" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="-12.0000" y="0.0000" z="110.5000" t="24.0123" hand="1:right">
+</event>
+<event x="-12.0000" y="0.0000" z="110.5000" t="24.0220" hand="1:right">
+</event>
+<event x="11.3950" y="0.0000" z="104.9814" t="24.0333" hand="1:left">
+<holding path="4"/>
+</event>
+<event x="15.2717" y="0.0000" z="105.9524" t="24.0667" hand="1:left">
+<holding path="4"/>
+</event>
+<event x="3.4261" y="0.0000" z="104.7528" t="24.1000" hand="1:left">
+<holding path="4"/>
+</event>
+<event x="7.4188" y="0.0000" z="104.5788" t="24.1333" hand="1:left">
+<holding path="4"/>
+</event>
+<event x="18.9683" y="0.0000" z="107.4716" t="24.1667" hand="1:left">
+<holding path="4"/>
+</event>
+<event x="18.9683" y="0.0000" z="107.4716" t="24.1667" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="18.9683" y="0.0000" z="107.4716" t="24.2000" hand="1:left">
+</event>
+<event x="50.5000" y="0.0000" z="87.0000" t="24.2220" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="18.9683" y="0.0000" z="107.4716" t="24.2333" hand="1:left">
+</event>
+<event x="18.9683" y="0.0000" z="107.4716" t="24.2447" hand="1:left">
+</event>
+<event x="56.8489" y="0.0000" z="97.0804" t="24.2553" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="57.9682" y="0.0000" z="100.9172" t="24.2887" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="53.0784" y="0.0000" z="90.0539" t="24.3220" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="55.2084" y="0.0000" z="93.4358" t="24.3553" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="58.5447" y="0.0000" z="104.8722" t="24.3887" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="58.5447" y="0.0000" z="104.8722" t="24.3887" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="58.5447" y="0.0000" z="104.8722" t="24.4220" hand="1:right">
+</event>
+<event x="94.0000" y="0.0000" z="118.5000" t="24.4447" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="58.5447" y="0.0000" z="104.8722" t="24.4553" hand="1:right">
+</event>
+<event x="58.5447" y="0.0000" z="104.8722" t="24.4667" hand="1:right">
+</event>
+<event x="88.7605" y="0.0000" z="129.1834" t="24.4780" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="86.0194" y="0.0000" z="132.0913" t="24.5113" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="92.7962" y="0.0000" z="122.3106" t="24.5447" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="91.0365" y="0.0000" z="125.8986" t="24.5780" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="82.8745" y="0.0000" z="134.5571" t="24.6113" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="82.8745" y="0.0000" z="134.5571" t="24.6447" hand="1:left">
+</event>
+<event x="89.0000" y="0.0000" z="171.5000" t="24.6667" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="82.8745" y="0.0000" z="134.5571" t="24.6780" hand="1:left">
+</event>
+<event x="82.8745" y="0.0000" z="134.5571" t="24.6887" hand="1:left">
+</event>
+<event x="77.1050" y="0.0000" z="172.0186" t="24.7000" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="73.2283" y="0.0000" z="171.0476" t="24.7333" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="85.0739" y="0.0000" z="172.2472" t="24.7667" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="81.0812" y="0.0000" z="172.4212" t="24.8000" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="69.5317" y="0.0000" z="169.5284" t="24.8333" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="29.0000" y="0.0000" z="185.0000" t="24.8887" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="29.0000" y="0.0000" z="185.0000" t="24.8897" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="18.5000" y="0.0000" z="180.0000" t="24.9447" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="18.5000" y="0.0000" z="180.0000" t="24.9457" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="8.5000" y="0.0000" z="171.5000" t="25.0000" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="8.5000" y="0.0000" z="171.5000" t="25.0010" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="2.0000" y="0.0000" z="157.5000" t="25.0553" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="2.0000" y="0.0000" z="157.5000" t="25.0563" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="1.0000" y="0.0000" z="139.0000" t="25.1113" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="1.0000" y="0.0000" z="139.0000" t="25.1123" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="7.0000" y="0.0000" z="118.0000" t="25.1667" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="7.0000" y="0.0000" z="118.0000" t="25.1677" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="19.5000" y="0.0000" z="101.5000" t="25.2220" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="19.5000" y="0.0000" z="101.5000" t="25.2230" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="29.0000" y="0.0000" z="78.5000" t="25.2780" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="29.0000" y="0.0000" z="78.5000" t="25.2790" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="25.0000" y="0.0000" z="53.5000" t="25.3333" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="25.0000" y="0.0000" z="53.5000" t="25.3343" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="10.0000" y="0.0000" z="33.5000" t="25.3887" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="10.0000" y="0.0000" z="33.5000" t="25.3897" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-15.0000" y="0.0000" z="23.0000" t="25.4447" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="-15.0000" y="0.0000" z="23.0000" t="25.4457" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-44.5000" y="0.0000" z="20.5000" t="25.5000" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-44.5000" y="0.0000" z="20.5000" t="25.5010" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-74.0000" y="0.0000" z="29.5000" t="25.5553" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-74.0000" y="0.0000" z="29.5000" t="25.5563" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-95.5000" y="0.0000" z="52.5000" t="25.6113" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-95.5000" y="0.0000" z="52.5000" t="25.6123" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-104.0000" y="0.0000" z="84.5000" t="25.6667" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-104.0000" y="0.0000" z="84.5000" t="25.6677" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-100.5000" y="0.0000" z="118.0000" t="25.7220" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-100.5000" y="0.0000" z="118.0000" t="25.7230" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-80.5000" y="0.0000" z="145.5000" t="25.7780" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-80.5000" y="0.0000" z="145.5000" t="25.7790" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-51.0000" y="0.0000" z="165.0000" t="25.8333" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="-51.0000" y="0.0000" z="165.0000" t="25.8343" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-17.0000" y="0.0000" z="172.5000" t="25.8887" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-17.0000" y="0.0000" z="172.5000" t="25.8897" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="19.5000" y="0.0000" z="169.5000" t="25.9447" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="19.5000" y="0.0000" z="169.5000" t="25.9457" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="55.5000" y="0.0000" z="158.0000" t="26.0000" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="55.5000" y="0.0000" z="158.0000" t="26.0010" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="85.0000" y="0.0000" z="134.0000" t="26.0553" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="85.0000" y="0.0000" z="134.0000" t="26.0563" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="105.0000" y="0.0000" z="100.5000" t="26.1113" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="105.0000" y="0.0000" z="100.5000" t="26.1123" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="108.0000" y="0.0000" z="61.0000" t="26.1667" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="108.0000" y="0.0000" z="61.0000" t="26.1677" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="87.0000" y="0.0000" z="28.0000" t="26.2220" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="87.0000" y="0.0000" z="28.0000" t="26.2230" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="51.0000" y="0.0000" z="11.5000" t="26.2780" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="51.0000" y="0.0000" z="11.5000" t="26.2790" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="11.5000" y="0.0000" z="9.0000" t="26.3333" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="11.5000" y="0.0000" z="9.0000" t="26.3343" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-27.5000" y="0.0000" z="17.5000" t="26.3887" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-27.5000" y="0.0000" z="17.5000" t="26.3897" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-60.0000" y="0.0000" z="41.0000" t="26.4447" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-60.0000" y="0.0000" z="41.0000" t="26.4457" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-83.0000" y="0.0000" z="75.5000" t="26.5000" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-83.0000" y="0.0000" z="75.5000" t="26.5010" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-93.0000" y="0.0000" z="115.5000" t="26.5553" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-93.0000" y="0.0000" z="115.5000" t="26.5563" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-92.0000" y="0.0000" z="157.0000" t="26.6113" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="-92.0000" y="0.0000" z="157.0000" t="26.6123" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-92.0000" y="0.0000" z="157.0000" t="26.6457" hand="1:right">
+</event>
+<event x="-70.0000" y="0.0000" z="192.0000" t="26.6667" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-92.0000" y="0.0000" z="157.0000" t="26.6790" hand="1:right">
+</event>
+<event x="-92.0000" y="0.0000" z="157.0000" t="26.6887" hand="1:right">
+</event>
+<event x="-55.2117" y="0.0000" z="189.4888" t="26.7000" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-40.4234" y="0.0000" z="186.9776" t="26.7333" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-25.6351" y="0.0000" z="184.4663" t="26.7667" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-20.7057" y="0.0000" z="183.6293" t="26.7778" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-20.7057" y="0.0000" z="183.6293" t="26.8111" hand="1:left">
+</event>
+<event x="-20.7057" y="0.0000" z="183.6293" t="26.8444" hand="1:left">
+</event>
+<event x="-20.7057" y="0.0000" z="183.6293" t="26.8778" hand="1:left">
+</event>
+<event x="108.0000" y="0.0000" z="61.0000" t="26.8887" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-20.7057" y="0.0000" z="183.6293" t="26.9111" hand="1:left">
+</event>
+<event x="-20.7057" y="0.0000" z="183.6293" t="26.9113" hand="1:left">
+</event>
+<event x="93.2117" y="0.0000" z="58.4888" t="26.9220" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="78.4234" y="0.0000" z="55.9776" t="26.9553" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="63.6351" y="0.0000" z="53.4663" t="26.9887" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="58.7057" y="0.0000" z="52.6293" t="26.9998" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="58.7057" y="0.0000" z="52.6293" t="27.0220" hand="1:right">
+</event>
+<event x="-110.0000" y="0.0000" z="30.0000" t="27.1113" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="-110.0000" y="0.0000" z="30.0000" t="27.1123" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-110.0000" y="0.0000" z="30.0000" t="27.1333" hand="1:left">
+</event>
+<event x="-19.5000" y="0.0000" z="143.5000" t="27.2220" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-19.5000" y="0.0000" z="143.5000" t="27.2230" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="21.5000" y="0.0000" z="14.5000" t="27.3333" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="21.5000" y="0.0000" z="14.5000" t="27.3343" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="22.5000" y="0.0000" z="10.5000" t="27.3887" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="22.5000" y="0.0000" z="10.5000" t="27.3897" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="22.5000" y="0.0000" z="10.5000" t="27.4230" hand="1:right">
+</event>
+<event x="24.0000" y="0.0000" z="6.0000" t="27.4447" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="24.0000" y="0.0000" z="6.0000" t="27.4457" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="22.5000" y="0.0000" z="10.5000" t="27.4563" hand="1:right">
+</event>
+<event x="22.5000" y="0.0000" z="10.5000" t="27.4660" hand="1:right">
+</event>
+<event x="24.0000" y="0.0000" z="6.0000" t="27.4790" hand="1:left">
+</event>
+<event x="24.0000" y="0.0000" z="6.0000" t="27.5123" hand="1:left">
+</event>
+<event x="24.0000" y="0.0000" z="6.0000" t="27.5213" hand="1:left">
+</event>
+<event x="-7.0000" y="0.0000" z="48.5000" t="27.6660" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-7.0000" y="0.0000" z="48.5000" t="27.6670" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-8.0000" y="0.0000" z="44.5000" t="27.7213" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-8.0000" y="0.0000" z="44.5000" t="27.7223" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-8.0000" y="0.0000" z="44.5000" t="27.7557" hand="1:left">
+</event>
+<event x="-9.5000" y="0.0000" z="40.0000" t="27.7780" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-8.0000" y="0.0000" z="44.5000" t="27.7890" hand="1:left">
+</event>
+<event x="-8.0000" y="0.0000" z="44.5000" t="27.8000" hand="1:left">
+</event>
+<event x="-16.1782" y="0.0000" z="26.9267" t="27.8113" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="-31.0913" y="0.0000" z="25.3145" t="27.8447" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="-46.0044" y="0.0000" z="23.7022" t="27.8780" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="-50.9755" y="0.0000" z="23.1648" t="27.8891" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-50.9755" y="0.0000" z="23.1648" t="27.9113" hand="1:right">
+</event>
+<event x="26.5000" y="0.0000" z="72.0000" t="28.0000" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="26.5000" y="0.0000" z="72.0000" t="28.0010" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="26.5000" y="0.0000" z="72.0000" t="28.0220" hand="1:left">
+</event>
+<event x="-46.0000" y="0.0000" z="65.0000" t="28.1113" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-46.0000" y="0.0000" z="65.0000" t="28.1123" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-46.0000" y="0.0000" z="65.0000" t="28.1333" hand="1:right">
+</event>
+<event x="64.0000" y="0.0000" z="54.0000" t="28.2220" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="64.0000" y="0.0000" z="54.0000" t="28.2230" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="64.0000" y="0.0000" z="54.0000" t="28.2447" hand="1:left">
+</event>
+<event x="-47.0000" y="0.0000" z="106.5000" t="28.3333" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="-47.0000" y="0.0000" z="106.5000" t="28.3343" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-47.0000" y="0.0000" z="106.5000" t="28.3677" hand="1:right">
+</event>
+<event x="-47.0000" y="0.0000" z="106.5000" t="28.4010" hand="1:right">
+</event>
+<event x="-47.0000" y="0.0000" z="106.5000" t="28.4343" hand="1:right">
+</event>
+<event x="40.5000" y="0.0000" z="149.5000" t="28.4447" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-47.0000" y="0.0000" z="106.5000" t="28.4667" hand="1:right">
+</event>
+<event x="45.8283" y="0.0000" z="163.5218" t="28.4780" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="47.6044" y="0.0000" z="168.1957" t="28.5113" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="42.2761" y="0.0000" z="154.1739" t="28.5447" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="40.5000" y="0.0000" z="149.5000" t="28.5558" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="40.5000" y="0.0000" z="149.5000" t="28.5891" hand="1:left">
+</event>
+<event x="40.5000" y="0.0000" z="149.5000" t="28.6224" hand="1:left">
+</event>
+<event x="40.5000" y="0.0000" z="149.5000" t="28.6333" hand="1:left">
+</event>
+<event x="105.0000" y="0.0000" z="81.0000" t="28.6667" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="108.3243" y="0.0000" z="66.3730" t="28.7000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="111.6486" y="0.0000" z="51.7460" t="28.7333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="107.4082" y="0.0000" z="38.0710" t="28.7667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="105.1266" y="0.0000" z="33.6219" t="28.7778" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="94.0000" y="0.0000" z="17.0000" t="28.8333" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="94.0000" y="0.0000" z="17.0000" t="28.8343" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="94.0000" y="0.0000" z="17.0000" t="28.8677" hand="1:left">
+</event>
+<event x="77.5000" y="0.0000" z="1.5000" t="28.8887" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="94.0000" y="0.0000" z="17.0000" t="28.9010" hand="1:left">
+</event>
+<event x="94.0000" y="0.0000" z="17.0000" t="28.9113" hand="1:left">
+</event>
+<event x="62.6291" y="0.0000" z="3.4641" t="28.9220" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="47.7583" y="0.0000" z="5.4282" t="28.9553" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="32.8874" y="0.0000" z="7.3922" t="28.9887" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="27.9305" y="0.0000" z="8.0469" t="28.9998" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="1.5000" y="0.0000" z="87.0000" t="29.1113" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="1.5000" y="0.0000" z="87.0000" t="29.1123" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-1.5000" y="0.0000" z="113.5000" t="29.1667" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-1.5000" y="0.0000" z="113.5000" t="29.1677" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-4.5000" y="0.0000" z="140.5000" t="29.2220" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="-4.5000" y="0.0000" z="140.5000" t="29.2230" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-8.0000" y="0.0000" z="166.0000" t="29.2780" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-8.0000" y="0.0000" z="166.0000" t="29.2790" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-8.0000" y="0.0000" z="166.0000" t="29.3123" hand="1:right">
+</event>
+<event x="-13.0000" y="0.0000" z="190.5000" t="29.3333" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-8.0000" y="0.0000" z="166.0000" t="29.3457" hand="1:right">
+</event>
+<event x="-8.0000" y="0.0000" z="166.0000" t="29.3553" hand="1:right">
+</event>
+<event x="-21.8420" y="0.0000" z="178.3831" t="29.3667" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-25.3117" y="0.0000" z="165.0021" t="29.4000" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-22.8005" y="0.0000" z="150.2138" t="29.4333" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-21.9634" y="0.0000" z="145.2844" t="29.4444" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-21.9634" y="0.0000" z="145.2844" t="29.4778" hand="1:left">
+</event>
+<event x="-21.9634" y="0.0000" z="145.2844" t="29.5111" hand="1:left">
+</event>
+<event x="-21.9634" y="0.0000" z="145.2844" t="29.5444" hand="1:left">
+</event>
+<event x="31.0000" y="0.0000" z="55.5000" t="29.5553" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-21.9634" y="0.0000" z="145.2844" t="29.5778" hand="1:left">
+</event>
+<event x="-21.9634" y="0.0000" z="145.2844" t="29.5780" hand="1:left">
+</event>
+<event x="39.8420" y="0.0000" z="67.6169" t="29.5887" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="43.3117" y="0.0000" z="80.9979" t="29.6220" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="40.8005" y="0.0000" z="95.7862" t="29.6553" hand="1:right">
+<holding path="3"/>
+</event>
+<event x="39.9634" y="0.0000" z="100.7156" t="29.6664" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-80.5000" y="0.0000" z="152.5000" t="29.7780" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-80.5000" y="0.0000" z="152.5000" t="29.7790" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-87.0000" y="0.0000" z="117.5000" t="29.8333" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-87.0000" y="0.0000" z="117.5000" t="29.8343" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-94.5000" y="0.0000" z="82.0000" t="29.8887" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-94.5000" y="0.0000" z="82.0000" t="29.8897" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-13.0000" y="0.0000" z="20.5000" t="30.0000" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="-13.0000" y="0.0000" z="20.5000" t="30.0010" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-20.5000" y="0.0000" z="56.0000" t="30.0553" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-20.5000" y="0.0000" z="56.0000" t="30.0563" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-27.0000" y="0.0000" z="91.0000" t="30.1107" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-27.0000" y="0.0000" z="91.0000" t="30.1117" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-27.0000" y="0.0000" z="91.0000" t="30.1450" hand="1:right">
+</event>
+<event x="-27.0000" y="0.0000" z="91.0000" t="30.1783" hand="1:right">
+</event>
+<event x="-27.0000" y="0.0000" z="91.0000" t="30.2117" hand="1:right">
+</event>
+<event x="40.0000" y="0.0000" z="101.0000" t="30.2220" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="-27.0000" y="0.0000" z="91.0000" t="30.2447" hand="1:right">
+</event>
+<event x="54.8404" y="0.0000" z="103.1824" t="30.2553" hand="1:left">
+<holding path="2"/>
+</event>
+<event x="59.7872" y="0.0000" z="103.9099" t="30.2887" hand="1:left">
+<holding path="2"/>
+</event>
+<event x="44.9468" y="0.0000" z="101.7275" t="30.3220" hand="1:left">
+<holding path="2"/>
+</event>
+<event x="40.0000" y="0.0000" z="101.0000" t="30.3331" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="40.0000" y="0.0000" z="101.0000" t="30.3664" hand="1:left">
+</event>
+<event x="40.0000" y="0.0000" z="101.0000" t="30.3998" hand="1:left">
+</event>
+<event x="40.0000" y="0.0000" z="101.0000" t="30.4331" hand="1:left">
+</event>
+<event x="-58.5000" y="0.0000" z="25.5000" t="30.4447" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="40.0000" y="0.0000" z="101.0000" t="30.4664" hand="1:left">
+</event>
+<event x="40.0000" y="0.0000" z="101.0000" t="30.4667" hand="1:left">
+</event>
+<event x="-73.0006" y="0.0000" z="29.3384" t="30.4780" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-87.5012" y="0.0000" z="33.1768" t="30.5113" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-102.0017" y="0.0000" z="37.0152" t="30.5447" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-106.8353" y="0.0000" z="38.2946" t="30.5558" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-106.8353" y="0.0000" z="38.2946" t="30.5780" hand="1:right">
+</event>
+<event x="-27.0000" y="0.0000" z="91.0000" t="30.6667" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-27.0000" y="0.0000" z="91.0000" t="30.6677" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-27.0000" y="0.0000" z="91.0000" t="30.6887" hand="1:left">
+</event>
+<event x="-13.0000" y="0.0000" z="20.5000" t="30.7780" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-13.0000" y="0.0000" z="20.5000" t="30.7790" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="5.9788" y="0.0000" z="129.4788" t="30.8887" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="5.9788" y="0.0000" z="129.4788" t="30.8897" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="4.2394" y="0.0000" z="127.7394" t="30.9447" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="4.2394" y="0.0000" z="127.7394" t="30.9457" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="2.5000" y="0.0000" z="126.0000" t="31.0000" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="2.5000" y="0.0000" z="126.0000" t="31.0010" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="2.5000" y="0.0000" z="126.0000" t="31.0220" hand="1:left">
+</event>
+<event x="49.0000" y="0.0000" z="148.5000" t="31.1113" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="49.0000" y="0.0000" z="148.5000" t="31.1123" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="65.0000" y="0.0000" z="105.0000" t="31.2220" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="65.0000" y="0.0000" z="105.0000" t="31.2230" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="64.5000" y="0.0000" z="98.5000" t="31.2780" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="64.5000" y="0.0000" z="98.5000" t="31.2790" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="63.5000" y="0.0000" z="92.0000" t="31.3333" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="63.5000" y="0.0000" z="92.0000" t="31.3343" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="31.0000" y="0.0000" z="64.0000" t="31.4447" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="31.0000" y="0.0000" z="64.0000" t="31.4457" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="31.5000" y="0.0000" z="57.5000" t="31.5007" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="31.5000" y="0.0000" z="57.5000" t="31.5017" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="32.5000" y="0.0000" z="51.0000" t="31.5560" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="32.5000" y="0.0000" z="51.0000" t="31.5570" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="69.0000" y="0.0000" z="26.0000" t="31.6667" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="69.0000" y="0.0000" z="26.0000" t="31.6677" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="69.5000" y="0.0000" z="19.5000" t="31.7227" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="69.5000" y="0.0000" z="19.5000" t="31.7237" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="70.5000" y="0.0000" z="13.0000" t="31.7780" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="70.5000" y="0.0000" z="13.0000" t="31.7790" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="71.0000" y="0.0000" z="6.5000" t="31.8333" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="71.0000" y="0.0000" z="6.5000" t="31.8343" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="72.0000" y="0.0000" z="0.0000" t="31.8887" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="72.0000" y="0.0000" z="0.0000" t="31.8897" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="72.0000" y="0.0000" z="0.0000" t="31.9230" hand="1:left">
+</event>
+<event x="72.0000" y="0.0000" z="0.0000" t="31.9563" hand="1:left">
+</event>
+<event x="72.0000" y="0.0000" z="0.0000" t="31.9897" hand="1:left">
+</event>
+<event x="105.0000" y="0.0000" z="52.5000" t="32.0000" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="72.0000" y="0.0000" z="0.0000" t="32.0220" hand="1:left">
+</event>
+<event x="105.8984" y="0.0000" z="67.4731" t="32.0333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="106.1978" y="0.0000" z="72.4641" t="32.0667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="105.2995" y="0.0000" z="57.4910" t="32.1000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="105.0000" y="0.0000" z="52.5000" t="32.1111" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="105.0000" y="0.0000" z="52.5000" t="32.1444" hand="1:right">
+</event>
+<event x="105.0000" y="0.0000" z="52.5000" t="32.1778" hand="1:right">
+</event>
+<event x="105.0000" y="0.0000" z="52.5000" t="32.1887" hand="1:right">
+</event>
+<event x="19.5000" y="0.0000" z="8.0000" t="32.2220" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="5.0602" y="0.0000" z="3.9388" t="32.2553" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-9.6884" y="0.0000" z="5.7517" t="32.2887" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-24.4744" y="0.0000" z="8.2761" t="32.3220" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-29.4031" y="0.0000" z="9.1176" t="32.3331" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-39.0000" y="0.0000" z="29.0000" t="32.3887" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-39.0000" y="0.0000" z="29.0000" t="32.3897" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-39.0000" y="0.0000" z="29.0000" t="32.4230" hand="1:right">
+</event>
+<event x="-45.5000" y="0.0000" z="50.5000" t="32.4447" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-39.0000" y="0.0000" z="29.0000" t="32.4563" hand="1:right">
+</event>
+<event x="-39.0000" y="0.0000" z="29.0000" t="32.4667" hand="1:right">
+</event>
+<event x="-44.4313" y="0.0000" z="65.4619" t="32.4780" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-43.3626" y="0.0000" z="80.4238" t="32.5113" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-42.2939" y="0.0000" z="95.3856" t="32.5447" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-41.9376" y="0.0000" z="100.3729" t="32.5558" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-41.9376" y="0.0000" z="100.3729" t="32.5780" hand="1:left">
+</event>
+<event x="-38.0000" y="0.0000" z="162.5000" t="32.6667" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-38.0000" y="0.0000" z="162.5000" t="32.6677" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-38.0000" y="0.0000" z="162.5000" t="32.6887" hand="1:right">
+</event>
+<event x="-85.5000" y="0.0000" z="81.0000" t="32.7780" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-85.5000" y="0.0000" z="81.0000" t="32.7790" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-85.5000" y="0.0000" z="81.0000" t="32.8123" hand="1:left">
+</event>
+<event x="-85.5000" y="0.0000" z="81.0000" t="32.8457" hand="1:left">
+</event>
+<event x="-85.5000" y="0.0000" z="81.0000" t="32.8790" hand="1:left">
+</event>
+<event x="10.5000" y="0.0000" z="127.0000" t="32.8887" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="-85.5000" y="0.0000" z="81.0000" t="32.9113" hand="1:left">
+</event>
+<event x="20.8880" y="0.0000" z="116.1792" t="32.9220" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="35.1202" y="0.0000" z="113.3527" t="32.9553" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="50.0586" y="0.0000" z="111.9947" t="32.9887" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="55.0381" y="0.0000" z="111.5420" t="32.9998" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="55.0381" y="0.0000" z="111.5420" t="33.0331" hand="1:right">
+</event>
+<event x="55.0381" y="0.0000" z="111.5420" t="33.0664" hand="1:right">
+</event>
+<event x="55.0381" y="0.0000" z="111.5420" t="33.0998" hand="1:right">
+</event>
+<event x="-38.0000" y="0.0000" z="162.5000" t="33.1113" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="55.0381" y="0.0000" z="111.5420" t="33.1331" hand="1:right">
+</event>
+<event x="55.0381" y="0.0000" z="111.5420" t="33.1333" hand="1:right">
+</event>
+<event x="-48.3880" y="0.0000" z="173.3208" t="33.1447" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-62.6186" y="0.0000" z="176.1648" t="33.1780" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-77.5551" y="0.0000" z="177.5436" t="33.2113" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-82.5340" y="0.0000" z="178.0031" t="33.2224" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="10.5000" y="0.0000" z="127.0000" t="33.3333" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="10.5000" y="0.0000" z="127.0000" t="33.3343" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="4.0000" y="0.0000" z="92.0000" t="33.3887" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="4.0000" y="0.0000" z="92.0000" t="33.3897" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-3.5000" y="0.0000" z="56.5000" t="33.4440" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-3.5000" y="0.0000" z="56.5000" t="33.4450" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="55.5000" y="0.0000" z="112.0000" t="33.5553" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="55.5000" y="0.0000" z="112.0000" t="33.5563" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="62.0000" y="0.0000" z="147.0000" t="33.6107" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="62.0000" y="0.0000" z="147.0000" t="33.6117" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="69.5000" y="0.0000" z="182.5000" t="33.6660" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="69.5000" y="0.0000" z="182.5000" t="33.6670" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="69.5000" y="0.0000" z="182.5000" t="33.7003" hand="1:left">
+</event>
+<event x="69.5000" y="0.0000" z="182.5000" t="33.7337" hand="1:left">
+</event>
+<event x="69.5000" y="0.0000" z="182.5000" t="33.7670" hand="1:left">
+</event>
+<event x="103.0000" y="0.0000" z="97.0000" t="33.7780" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="69.5000" y="0.0000" z="182.5000" t="33.8000" hand="1:left">
+</event>
+<event x="105.7772" y="0.0000" z="82.2593" t="33.8113" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="106.7030" y="0.0000" z="77.3458" t="33.8447" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="103.9257" y="0.0000" z="92.0864" t="33.8780" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="103.0000" y="0.0000" z="97.0000" t="33.8891" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="103.0000" y="0.0000" z="97.0000" t="33.9224" hand="1:right">
+</event>
+<event x="103.0000" y="0.0000" z="97.0000" t="33.9558" hand="1:right">
+</event>
+<event x="103.0000" y="0.0000" z="97.0000" t="33.9891" hand="1:right">
+</event>
+<event x="-3.5000" y="0.0000" z="56.5000" t="34.0000" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="103.0000" y="0.0000" z="97.0000" t="34.0220" hand="1:right">
+</event>
+<event x="-5.8394" y="0.0000" z="41.6836" t="34.0333" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="-3.0288" y="0.0000" z="27.3104" t="34.0667" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="1.8081" y="0.0000" z="13.1117" t="34.1000" hand="1:left">
+<holding path="1"/>
+</event>
+<event x="3.4204" y="0.0000" z="8.3788" t="34.1111" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="3.4204" y="0.0000" z="8.3788" t="34.1333" hand="1:left">
+</event>
+<event x="-46.0000" y="0.0000" z="72.0000" t="34.2220" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-46.0000" y="0.0000" z="72.0000" t="34.2230" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-46.0000" y="0.0000" z="72.0000" t="34.2447" hand="1:right">
+</event>
+<event x="41.0000" y="0.0000" z="38.0000" t="34.3333" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="41.0000" y="0.0000" z="38.0000" t="34.3343" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-45.0212" y="0.0000" z="6.4788" t="34.4447" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-45.0212" y="0.0000" z="6.4788" t="34.4457" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-46.7606" y="0.0000" z="4.7394" t="34.5000" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-46.7606" y="0.0000" z="4.7394" t="34.5010" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-48.5000" y="0.0000" z="3.0000" t="34.5553" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="-48.5000" y="0.0000" z="3.0000" t="34.5563" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-79.0000" y="0.0000" z="40.5000" t="34.6667" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-79.0000" y="0.0000" z="40.5000" t="34.6677" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-99.0000" y="0.0000" z="48.5000" t="34.7220" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-99.0000" y="0.0000" z="48.5000" t="34.7230" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-119.5000" y="0.0000" z="56.0000" t="34.7780" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="-119.5000" y="0.0000" z="56.0000" t="34.7790" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-119.5000" y="0.0000" z="56.0000" t="34.8123" hand="1:left">
+</event>
+<event x="-119.5000" y="0.0000" z="56.0000" t="34.8457" hand="1:left">
+</event>
+<event x="-119.5000" y="0.0000" z="56.0000" t="34.8790" hand="1:left">
+</event>
+<event x="-113.0000" y="0.0000" z="104.0000" t="34.8887" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-119.5000" y="0.0000" z="56.0000" t="34.9113" hand="1:left">
+</event>
+<event x="-92.5113" y="0.0000" z="109.1608" t="34.9220" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-72.0437" y="0.0000" z="102.2589" t="34.9553" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-51.5761" y="0.0000" z="95.3570" t="34.9887" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-31.1084" y="0.0000" z="88.4552" t="35.0220" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-10.6408" y="0.0000" z="81.5533" t="35.0553" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="22.0000" y="0.0000" z="69.0000" t="35.1113" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="22.0000" y="0.0000" z="69.0000" t="35.1123" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="53.0000" y="0.0000" z="100.0000" t="35.2220" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="53.0000" y="0.0000" z="100.0000" t="35.2230" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="57.5000" y="0.0000" z="105.5000" t="35.2780" hand="1:left">
+<catch path="4"/>
+</event>
+<event x="57.5000" y="0.0000" z="105.5000" t="35.2790" hand="1:left">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="61.0000" y="0.0000" z="110.0000" t="35.3333" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="58.8081" y="0.0000" z="127.2614" t="35.3667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="57.3468" y="0.0000" z="138.7690" t="35.3889" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="14.5000" y="0.0000" z="156.0000" t="35.4447" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="14.5000" y="0.0000" z="156.0000" t="35.4457" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="14.5000" y="0.0000" z="156.0000" t="35.4667" hand="1:left">
+</event>
+<event x="-33.0000" y="0.0000" z="137.5000" t="35.5553" hand="1:right">
+<catch path="3"/>
+</event>
+<event x="-33.0000" y="0.0000" z="137.5000" t="35.5563" hand="1:right">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-14.5000" y="0.0000" z="93.5000" t="35.6667" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-14.5000" y="0.0000" z="93.5000" t="35.6677" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-13.0000" y="0.0000" z="87.5000" t="35.7220" hand="1:right">
+<catch path="2"/>
+</event>
+<event x="-13.0000" y="0.0000" z="87.5000" t="35.7230" hand="1:right">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-11.0000" y="0.0000" z="81.5000" t="35.7780" hand="1:left">
+<catch path="3"/>
+</event>
+<event x="-11.0000" y="0.0000" z="81.5000" t="35.7790" hand="1:left">
+<throw path="3" mod="g=0.1"/>
+</event>
+<event x="-11.0000" y="0.0000" z="81.5000" t="35.8123" hand="1:left">
+</event>
+<event x="-11.0000" y="0.0000" z="81.5000" t="35.8457" hand="1:left">
+</event>
+<event x="-11.0000" y="0.0000" z="81.5000" t="35.8790" hand="1:left">
+</event>
+<event x="-33.0000" y="0.0000" z="137.5000" t="35.8887" hand="1:right">
+<catch path="4"/>
+</event>
+<event x="-11.0000" y="0.0000" z="81.5000" t="35.9113" hand="1:left">
+</event>
+<event x="-30.0850" y="0.0000" z="152.2140" t="35.9220" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="-27.1699" y="0.0000" z="166.9280" t="35.9553" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="-24.2549" y="0.0000" z="181.6421" t="35.9887" hand="1:right">
+<holding path="4"/>
+</event>
+<event x="-23.2832" y="0.0000" z="186.5467" t="35.9998" hand="1:right">
+<throw path="4" mod="g=0.1"/>
+</event>
+<event x="-53.0000" y="0.0000" z="67.5000" t="36.1113" hand="1:left">
+<catch path="1"/>
+</event>
+<event x="-53.0000" y="0.0000" z="67.5000" t="36.1123" hand="1:left">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-54.5000" y="0.0000" z="61.5000" t="36.1667" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-54.5000" y="0.0000" z="61.5000" t="36.1677" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-56.5000" y="0.0000" z="55.5000" t="36.2227" hand="1:left">
+<catch path="2"/>
+</event>
+<event x="-56.5000" y="0.0000" z="55.5000" t="36.2237" hand="1:left">
+<throw path="2" mod="g=0.1"/>
+</event>
+<event x="-106.5000" y="0.0000" z="109.5000" t="36.3333" hand="1:right">
+<catch path="1"/>
+</event>
+<event x="-96.3718" y="0.0000" z="120.4803" t="36.3667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-83.2699" y="0.0000" z="128.3659" t="36.4000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.4237" hand="1:left">
+</event>
+<event x="-69.9037" y="0.0000" z="132.4125" t="36.4333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.4570" hand="1:left">
+</event>
+<event x="-53.2801" y="0.0000" z="133.2388" t="36.4667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.4903" hand="1:left">
+</event>
+<event x="-40.2656" y="0.0000" z="131.1354" t="36.5000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.5237" hand="1:left">
+</event>
+<event x="-24.7827" y="0.0000" z="125.9545" t="36.5333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.5570" hand="1:left">
+</event>
+<event x="-11.3797" y="0.0000" z="119.5680" t="36.5667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.5903" hand="1:left">
+</event>
+<event x="2.1175" y="0.0000" z="111.9339" t="36.6000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.6237" hand="1:left">
+</event>
+<event x="13.4756" y="0.0000" z="105.1165" t="36.6333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.6570" hand="1:left">
+</event>
+<event x="27.3505" y="0.0000" z="97.1268" t="36.6667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.6903" hand="1:left">
+</event>
+<event x="41.6873" y="0.0000" z="90.3048" t="36.7000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.7237" hand="1:left">
+</event>
+<event x="54.1889" y="0.0000" z="86.3565" t="36.7333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.7570" hand="1:left">
+</event>
+<event x="70.1635" y="0.0000" z="84.8578" t="36.7667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.7903" hand="1:left">
+</event>
+<event x="84.5774" y="0.0000" z="87.3197" t="36.8000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.8237" hand="1:left">
+</event>
+<event x="97.0356" y="0.0000" z="92.3980" t="36.8333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.8570" hand="1:left">
+</event>
+<event x="110.4970" y="0.0000" z="100.8066" t="36.8667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.8903" hand="1:left">
+</event>
+<event x="115.4730" y="0.0000" z="111.4558" t="36.9000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.9237" hand="1:left">
+</event>
+<event x="105.1652" y="0.0000" z="119.3086" t="36.9333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.9570" hand="1:left">
+</event>
+<event x="90.7982" y="0.0000" z="127.6379" t="36.9667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="36.9903" hand="1:left">
+</event>
+<event x="77.6106" y="0.0000" z="132.2723" t="37.0000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.0237" hand="1:left">
+</event>
+<event x="61.6009" y="0.0000" z="133.5700" t="37.0333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.0570" hand="1:left">
+</event>
+<event x="47.0615" y="0.0000" z="130.3771" t="37.0667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.0903" hand="1:left">
+</event>
+<event x="33.6348" y="0.0000" z="123.8810" t="37.1000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.1237" hand="1:left">
+</event>
+<event x="22.5176" y="0.0000" z="116.4206" t="37.1333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.1570" hand="1:left">
+</event>
+<event x="10.2122" y="0.0000" z="106.9310" t="37.1667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.1903" hand="1:left">
+</event>
+<event x="-2.0096" y="0.0000" z="97.5517" t="37.2000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.2237" hand="1:left">
+</event>
+<event x="-14.5056" y="0.0000" z="89.4701" t="37.2333" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.2570" hand="1:left">
+</event>
+<event x="-27.6338" y="0.0000" z="83.8735" t="37.2667" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.2903" hand="1:left">
+</event>
+<event x="-43.6043" y="0.0000" z="82.0259" t="37.3000" hand="1:right">
+<holding path="1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.3237" hand="1:left">
+</event>
+<event x="-57.2182" y="0.0000" z="84.8844" t="37.3333" hand="1:right">
+<throw path="1" mod="g=0.1"/>
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.3570" hand="1:left">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.3903" hand="1:left">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.4237" hand="1:left">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.4570" hand="1:left">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.4903" hand="1:left">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.5237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.5333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.5570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.5667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.5903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.6000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.6237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.6333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.6570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.6667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.6903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.7000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.7237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.7333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.7570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.7667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.7903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.8000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.8237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.8333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.8570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.8667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.8903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.9000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.9237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.9333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.9570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="37.9667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="37.9903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.0000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.0237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.0333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.0570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.0667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.0903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.1000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.1237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.1333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.1570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.1667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.1903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.2000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.2237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.2333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.2570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.2667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.2903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.3000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.3237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.3333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.3570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.3667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.3903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.4000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.4237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.4333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.4570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.4667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.4903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.5000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.5237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.5333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.5570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.5667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.5903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.6000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.6237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.6333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.6570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.6667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.6903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.7000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.7237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.7333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.7570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.7667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.7903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.8000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.8237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.8333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.8570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.8667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.8903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.9000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.9237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.9333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.9570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="38.9667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="38.9903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.0000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.0237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.0333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.0570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.0667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.0903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.1000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.1237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.1333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.1570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.1667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.1903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.2000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.2237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.2333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.2570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.2667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.2903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.3000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.3237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.3333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.3570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.3667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.3903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.4000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.4237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.4333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.4570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.4667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.4903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.5000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.5237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.5333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.5570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.5667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.5903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.6000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.6237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.6333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.6570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.6667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.6903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.7000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.7237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.7333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.7570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.7667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.7903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.8000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.8237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.8333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.8570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.8667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.8903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.9000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.9237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.9333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.9570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="39.9667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="39.9903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="40.0000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="40.0237" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="40.0333" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="40.0570" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="40.0667" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="40.0903" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="40.1000" hand="1:right">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="40.1237" hand="1:left">
+</event>
+<event x="-25.0000" y="0.0000" z="0.0000" t="40.1333" hand="1:left">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="40.1333" hand="1:right">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="40.1667" hand="1:right">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="40.2000" hand="1:right">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="40.2333" hand="1:right">
+</event>
+<event x="25.0000" y="0.0000" z="0.0000" t="40.2447" hand="1:right">
+</event>
+</pattern>
+</jml>
